@@ -1,0 +1,987 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="en">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.3" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.3">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.3" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="BlockChain,Smart Contract,ETH,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="BasicWhat contract itself has an address and balance contains some functions for its logic the output will be post to blockchain  made by Solidity">
+<meta name="keywords" content="BlockChain,Smart Contract,ETH">
+<meta property="og:type" content="article">
+<meta property="og:title" content="BlockChain -1- Smart Contract">
+<meta property="og:url" content="https://ryanluoxu.github.io/2018/01/11/BlockChain-1-Smart-Contract/index.html">
+<meta property="og:site_name" content="途探生灵">
+<meta property="og:description" content="BasicWhat contract itself has an address and balance contains some functions for its logic the output will be post to blockchain  made by Solidity">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https://ryanluoxu.github.io/images/smart_contract_demo1.png">
+<meta property="og:image" content="https://ryanluoxu.github.io/images/smart_contract_demo2.png">
+<meta property="og:updated_time" content="2020-04-30T09:23:19.525Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="BlockChain -1- Smart Contract">
+<meta name="twitter:description" content="BasicWhat contract itself has an address and balance contains some functions for its logic the output will be post to blockchain  made by Solidity">
+<meta name="twitter:image" content="https://ryanluoxu.github.io/images/smart_contract_demo1.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.3',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://ryanluoxu.github.io/2018/01/11/BlockChain-1-Smart-Contract/">
+
+
+
+
+
+  <title>BlockChain -1- Smart Contract | 途探生灵</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">途探生灵</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">A Programmer's Blog</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            About
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-commonweal">
+          <a href="/404/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br>
+            
+            Commonweal 404
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://ryanluoxu.github.io/2018/01/11/BlockChain-1-Smart-Contract/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Ryan Luo Xu 罗旭">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar1.JPG">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="途探生灵">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">BlockChain -1- Smart Contract</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-01-11T15:15:13+08:00">
+                2018-01-11
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Post modified&#58;</span>
+              
+              <time title="Post modified" itemprop="dateModified" datetime="2020-04-30T17:23:19+08:00">
+                2020-04-30
+              </time>
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/BlockChain/" itemprop="url" rel="index">
+                    <span itemprop="name">BlockChain</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/01/11/BlockChain-1-Smart-Contract/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count gitment-comments-count" data-xid="/2018/01/11/BlockChain-1-Smart-Contract/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i> View
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="Basic"><a href="#Basic" class="headerlink" title="Basic"></a>Basic</h1><h2 id="What"><a href="#What" class="headerlink" title="What"></a>What</h2><ul>
+<li>contract itself has an address and balance</li>
+<li>contains some functions for its logic</li>
+<li>the output will be post to blockchain </li>
+<li>made by <code>Solidity</code></li>
+</ul>
+<a id="more"></a>
+
+<h2 id="Editor"><a href="#Editor" class="headerlink" title="Editor"></a>Editor</h2><p><a href="https://remix.ethereum.org/" target="_blank" rel="noopener">Remix - Solidity IDE</a></p>
+<h1 id="Sample"><a href="#Sample" class="headerlink" title="Sample"></a>Sample</h1><h2 id="RyanCoin-sol"><a href="#RyanCoin-sol" class="headerlink" title="RyanCoin.sol"></a>RyanCoin.sol</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">pragma solidity ^0.4.0;</span><br><span class="line">contract RyanCoin &#123;</span><br><span class="line">    address public creator; </span><br><span class="line">    mapping (address =&gt; uint) public balances;</span><br><span class="line">    </span><br><span class="line">    /**</span><br><span class="line">     * - msg is global attribute.</span><br><span class="line">     * - This constructor is &apos;create&apos; button</span><br><span class="line">     */</span><br><span class="line">    function RyanCoin()&#123;</span><br><span class="line">        creator = msg.sender;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    /**</span><br><span class="line">     * - creator use this function to give other people coins</span><br><span class="line">     * - make sure it is the creator running this function</span><br><span class="line">     */</span><br><span class="line">     function setCoin(address receiver, uint amount)&#123;</span><br><span class="line">         if(msg.sender != creator) throw;</span><br><span class="line">         balances[receiver] += amount;</span><br><span class="line">     &#125;</span><br><span class="line">     </span><br><span class="line">     /**</span><br><span class="line">      * - other participants use this function to transfer coins</span><br><span class="line">      */</span><br><span class="line">      function transfer(address receiver, uint amount)&#123;</span><br><span class="line">          if(amount &gt; balances[msg.sender]) throw;</span><br><span class="line">          balances[msg.sender] -= amount;</span><br><span class="line">          balances[receiver] += amount;</span><br><span class="line">      &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Run"><a href="#Run" class="headerlink" title="Run"></a>Run</h2><ol>
+<li><code>Run</code></li>
+<li>Choose one of account as creator</li>
+<li><code>Create</code></li>
+</ol>
+<p><img src="/images/smart_contract_demo1.png" alt="smart_contract_demo1"></p>
+<p>Now RyanCoin is created with its own address.</p>
+<h2 id="Test"><a href="#Test" class="headerlink" title="Test"></a>Test</h2><h3 id="Give-1st-account-10-2nd-account-self-5"><a href="#Give-1st-account-10-2nd-account-self-5" class="headerlink" title="Give 1st account 10, 2nd account(self) 5"></a>Give 1st account 10, 2nd account(self) 5</h3><ol>
+<li>make sure select creator as account</li>
+<li>input <code>&quot;0xca35b7d915458ef540ade6068dfe2f44e8fa733c&quot;,10</code></li>
+<li><code>setCoin</code></li>
+</ol>
+<p><img src="/images/smart_contract_demo2.png" alt="smart_contract_demo2"></p>
+<h3 id="Check-balance"><a href="#Check-balance" class="headerlink" title="Check balance"></a>Check balance</h3><ol>
+<li>give <code>&quot;0x14723a09acff6d2a60dcdf7aa4aff308fddc160c&quot;</code></li>
+<li><code>balances</code></li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&quot;0&quot;: &quot;uint256: 5&quot;</span><br></pre></td></tr></table></figure>
+
+<h3 id="Tranfer-2-coins-to-2nd-from-1st"><a href="#Tranfer-2-coins-to-2nd-from-1st" class="headerlink" title="Tranfer 2 coins to 2nd from 1st"></a>Tranfer 2 coins to 2nd from 1st</h3><ol>
+<li>select 1st account</li>
+<li>give <code>&quot;2nd address&quot;,2</code></li>
+<li><code>transfer</code></li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&quot;address receiver&quot;: &quot;0x14723a09acff6d2a60dcdf7aa4aff308fddc160c&quot;,</span><br><span class="line">&quot;uint256 amount&quot;: &quot;2&quot;</span><br></pre></td></tr></table></figure>
+
+<h1 id="Buy-RyanCoin-using-ETH"><a href="#Buy-RyanCoin-using-ETH" class="headerlink" title="Buy RyanCoin using ETH"></a>Buy RyanCoin using ETH</h1><h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">pragma solidity ^0.4.0;</span><br><span class="line">contract RyanCoin &#123;</span><br><span class="line">    mapping (address =&gt; uint) public balances;</span><br><span class="line">    uint constant public PRICE = 2000000000000000000; // 2 ETH as PRICE</span><br><span class="line">    </span><br><span class="line">    function RyanCoin()&#123;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    function buyCoin() payable&#123;     // pay ETH to create coin</span><br><span class="line">        require(msg.value &gt; 0 &amp;&amp; msg.value % PRICE == 0);</span><br><span class="line">        balances[msg.sender] += (msg.value / PRICE);</span><br><span class="line">    &#125;        </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ol>
+<li>Set price.</li>
+<li>Anyone can buy coin by paying ETH</li>
+<li><code>require</code> instead of <code>if</code></li>
+<li><code>uint</code> require integer number of coin</li>
+</ol>
+<h2 id="Run-1"><a href="#Run-1" class="headerlink" title="Run"></a>Run</h2><ol>
+<li>Use 1st user to create contract</li>
+<li>Choose 2nd user</li>
+<li>Enter <code>10 ether</code> as value</li>
+<li><code>buyCoin</code></li>
+<li>2nd user receive 5 RyanCoin</li>
+</ol>
+<h1 id="Escrow-sol"><a href="#Escrow-sol" class="headerlink" title="Escrow.sol"></a>Escrow.sol</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">pragma solidity ^0.4.0;</span><br><span class="line"></span><br><span class="line">// temperature account where store money during transaction</span><br><span class="line"></span><br><span class="line">contract Escrow &#123;</span><br><span class="line">    </span><br><span class="line">    address public buyer;</span><br><span class="line">    address public seller;</span><br><span class="line">    address public arbiter;    // settle any dispute</span><br><span class="line">    </span><br><span class="line">    function Escrow(address _buyer, address _seller, address _arbiter)&#123;</span><br><span class="line">        buyer = _buyer;</span><br><span class="line">        seller = _seller;</span><br><span class="line">        arbiter = _arbiter;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    // we have different stages in this contract</span><br><span class="line">    </span><br><span class="line">    function confirmPayment() payable &#123;</span><br><span class="line">        require (msg.sender == buyer);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="Auction-sol"><a href="#Auction-sol" class="headerlink" title="Auction.sol"></a>Auction.sol</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><span class="line">pragma solidity ^0.4.0;</span><br><span class="line"></span><br><span class="line">contract Auction &#123;</span><br><span class="line">    </span><br><span class="line">    string public description;</span><br><span class="line">    address public owner;</span><br><span class="line">    address public maxBidder;</span><br><span class="line">    uint public maxBid;</span><br><span class="line">    uint public autionEnd;</span><br><span class="line">    mapping(address =&gt; uint) pendingWithdrawals;</span><br><span class="line">    </span><br><span class="line">    event BidAccepted(address bidder, uint bidAmount);</span><br><span class="line">    event AuctionCompleted(address winner, uint bidAmount);</span><br><span class="line">    </span><br><span class="line">    function Auction(uint durationMinutes, string _description)&#123;</span><br><span class="line">        description = _description;</span><br><span class="line">        autionEnd = now + (durationMinutes * 1 minutes); // `now` is global var</span><br><span class="line">        owner = msg.sender;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    // rollback function</span><br><span class="line">    function() payable &#123;</span><br><span class="line">        // fire some log, invoke other function</span><br><span class="line">        throw;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    function bid() payable &#123;</span><br><span class="line">        require(msg.value &gt; maxBid);</span><br><span class="line">        require(now &lt; autionEnd);</span><br><span class="line">        </span><br><span class="line">        if(maxBidder != 0)&#123;</span><br><span class="line">            pendingWithdrawals[maxBidder] += maxBid;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        maxBid = msg.value;</span><br><span class="line">        maxBidder =  msg.sender;</span><br><span class="line">        BidAccepted(maxBidder, maxBid);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    function end()&#123;</span><br><span class="line">        require(msg.sender == owner);</span><br><span class="line">        require(now &gt;= autionEnd);</span><br><span class="line">        </span><br><span class="line">        pendingWithdrawals[owner] = maxBid;</span><br><span class="line">        AuctionCompleted(maxBidder, maxBid);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    function withdraw() returns (bool)&#123;</span><br><span class="line">        uint amount = pendingWithdrawals[msg.sender];</span><br><span class="line">        if(amount &gt; 0)&#123;</span><br><span class="line">            pendingWithdrawals[msg.sender] = 0;</span><br><span class="line">            if(!msg.sender.send(amount))&#123;</span><br><span class="line">                pendingWithdrawals[msg.sender] = amount;</span><br><span class="line">                return false;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        return true;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    
+    
+    
+	
+	<div>
+      
+        
+      
+	</div>
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>土豪专用</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>Donate</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/微信打赏.png" alt="Ryan Luo Xu 罗旭 WeChat Pay">
+        <p>WeChat Pay</p>
+      </div>
+    
+
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>Post author:</strong>
+    Ryan Luo Xu 罗旭
+  </li>
+  <li class="post-copyright-link">
+    <strong>Post link:</strong>
+    <a href="https://ryanluoxu.github.io/2018/01/11/BlockChain-1-Smart-Contract/" title="BlockChain -1- Smart Contract">https://ryanluoxu.github.io/2018/01/11/BlockChain-1-Smart-Contract/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>Copyright Notice: </strong>
+    All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> unless stating additionally. 转载请注明出处。
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/BlockChain/" rel="tag"># BlockChain</a>
+          
+            <a href="/tags/Smart-Contract/" rel="tag"># Smart Contract</a>
+          
+            <a href="/tags/ETH/" rel="tag"># ETH</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/12/25/学习-Spring-Boot-2/" rel="next" title="学习 Spring Boot - 2">
+                <i class="fa fa-chevron-left"></i> 学习 Spring Boot - 2
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/01/16/编程入门指南/" rel="prev" title="编程入门指南">
+                编程入门指南 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      
+        <div id="gitment-container"></div>
+      
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/avatar1.JPG" alt="Ryan Luo Xu 罗旭">
+            
+              <p class="site-author-name" itemprop="name">Ryan Luo Xu 罗旭</p>
+              <p class="site-description motion-element" itemprop="description">Share What I learned</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">39</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                
+				  <a href="/categories/index.html">
+				
+                  <span class="site-state-item-count">21</span>
+                  <span class="site-state-item-name">categories</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+				  <a href="/tags/index.html">
+				
+                  <span class="site-state-item-count">108</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          <div class="links-of-author motion-element">
+            
+              
+                <span class="links-of-author-item">
+                  <a href="https://github.com/Ryanluoxu" target="_blank" title="GitHub">
+                    
+                      <i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://www.linkedin.com/in/ryanluoxu/" target="_blank" title="Linkedin">
+                    
+                      <i class="fa fa-fw fa-linkedin"></i>Linkedin</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://www.zhihu.com/people/luojiuri/activities" target="_blank" title="ZhiHu">
+                    
+                      <i class="fa fa-fw fa-globe"></i>ZhiHu</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="mailto:luoxu2011@gmail.com" target="_blank" title="E-Mail">
+                    
+                      <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                </span>
+              
+            
+          </div>
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Basic"><span class="nav-number">1.</span> <span class="nav-text">Basic</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#What"><span class="nav-number">1.1.</span> <span class="nav-text">What</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Editor"><span class="nav-number">1.2.</span> <span class="nav-text">Editor</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Sample"><span class="nav-number">2.</span> <span class="nav-text">Sample</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#RyanCoin-sol"><span class="nav-number">2.1.</span> <span class="nav-text">RyanCoin.sol</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Run"><span class="nav-number">2.2.</span> <span class="nav-text">Run</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Test"><span class="nav-number">2.3.</span> <span class="nav-text">Test</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Give-1st-account-10-2nd-account-self-5"><span class="nav-number">2.3.1.</span> <span class="nav-text">Give 1st account 10, 2nd account(self) 5</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Check-balance"><span class="nav-number">2.3.2.</span> <span class="nav-text">Check balance</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Tranfer-2-coins-to-2nd-from-1st"><span class="nav-number">2.3.3.</span> <span class="nav-text">Tranfer 2 coins to 2nd from 1st</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Buy-RyanCoin-using-ETH"><span class="nav-number">3.</span> <span class="nav-text">Buy RyanCoin using ETH</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Code"><span class="nav-number">3.1.</span> <span class="nav-text">Code</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Run-1"><span class="nav-number">3.2.</span> <span class="nav-text">Run</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Escrow-sol"><span class="nav-number">4.</span> <span class="nav-text">Escrow.sol</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Auction-sol"><span class="nav-number">5.</span> <span class="nav-text">Auction.sol</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2017 &mdash; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Ryan Luo Xu 罗旭</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.3</div>
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i> Visitor
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i> Total Visit
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.3"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.3"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.3"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.3"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.3"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+<!-- LOCAL: You can save these files to your site and update links -->
+    
+        
+        <link rel="stylesheet" href="https://aimingoo.github.io/gitmint/style/default.css">
+        <script src="https://aimingoo.github.io/gitmint/dist/gitmint.browser.js"></script>
+    
+<!-- END LOCAL -->
+
+    
+
+    
+      <script type="text/javascript">
+      function renderGitment(){
+        var gitment = new Gitmint({
+            id: window.location.pathname, 
+            owner: 'Ryanluoxu',
+            repo: 'gitment-comments',
+            
+            lang: "" || navigator.language || navigator.systemLanguage || navigator.userLanguage,
+            
+            oauth: {
+            
+            
+                client_secret: '86e751e15567e1af27d173720c74f969bb8d73c0',
+            
+                client_id: '478df3241d7aa56819e0'
+            }});
+        gitment.render('gitment-container');
+      }
+
+      
+      renderGitment();
+      
+      </script>
+    
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+</body>
+</html>

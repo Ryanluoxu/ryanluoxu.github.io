@@ -1,0 +1,1008 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="en">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.3" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.3">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.3" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="程序员,指南,入门,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="这是一篇《编程入门指南 v1.5》的摘要。">
+<meta name="keywords" content="程序员,指南,入门">
+<meta property="og:type" content="article">
+<meta property="og:title" content="编程入门指南">
+<meta property="og:url" content="https://ryanluoxu.github.io/2018/01/16/编程入门指南/index.html">
+<meta property="og:site_name" content="途探生灵">
+<meta property="og:description" content="这是一篇《编程入门指南 v1.5》的摘要。">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2020-04-30T09:23:19.531Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="编程入门指南">
+<meta name="twitter:description" content="这是一篇《编程入门指南 v1.5》的摘要。">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.3',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://ryanluoxu.github.io/2018/01/16/编程入门指南/">
+
+
+
+
+
+  <title>编程入门指南 | 途探生灵</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">途探生灵</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">A Programmer's Blog</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            About
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-commonweal">
+          <a href="/404/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br>
+            
+            Commonweal 404
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://ryanluoxu.github.io/2018/01/16/编程入门指南/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Ryan Luo Xu 罗旭">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar1.JPG">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="途探生灵">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">编程入门指南</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-01-16T09:23:42+08:00">
+                2018-01-16
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Post modified&#58;</span>
+              
+              <time title="Post modified" itemprop="dateModified" datetime="2020-04-30T17:23:19+08:00">
+                2020-04-30
+              </time>
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/指南-Guide/" itemprop="url" rel="index">
+                    <span itemprop="name">指南-Guide</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/01/16/编程入门指南/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count gitment-comments-count" data-xid="/2018/01/16/编程入门指南/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i> View
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>这是一篇《编程入门指南 v1.5》的摘要。</p>
+<a id="more"></a>
+
+<p>最近陷入一个很糟糕的状况，就是看到什么都想学，学一会就停下来了。<br>我觉得可能跟我基础不扎实有关系。恰好读到这篇文章，摘下关键部分来提醒自己。</p>
+<p>源地址：<a href="https://zhuanlan.zhihu.com/p/19959253" target="_blank" rel="noopener">编程入门指南 v1.5</a></p>
+<h1 id="启蒙"><a href="#启蒙" class="headerlink" title="启蒙"></a>启蒙</h1><ol>
+<li>完成 <a href="https://courses.edx.org/courses/course-v1:MITx+6.00.1x_7+3T2015/course/" target="_blank" rel="noopener">MIT 6.00.1x</a> （计算机科学和 Python 编程导论）。<a href="http://open.163.com/special/opencourse/bianchengdaolun.html" target="_blank" rel="noopener">网易公开课地址</a>:它强调学习计算机科学领域里的重要概念和范式。能让你在自学时开阔眼界；课程内容：<ol>
+<li>计算概念</li>
+<li>Python 编程语言</li>
+<li>简单的数据结构与算法</li>
+<li>测试与调试。</li>
+</ol>
+</li>
+<li>完成 <a href="http://open.163.com/special/opencourse/cs50.html" target="_blank" rel="noopener">Harvard CS50x</a>（哈佛大学：计算机科学）。这门课与MIT的导论课互补。教学语言涉及 <ol>
+<li>C</li>
+<li>PHP</li>
+<li>JavaScript + SQL</li>
+<li>HTML + CSS，</li>
+</ol>
+</li>
+<li>支线任务：阅读《编码》</li>
+<li>完成 <a href="https://www.liaoxuefeng.com/wiki/0014316089557264a6b348958f449949df42a6d3a2e542c000" target="_blank" rel="noopener">Python 教程</a></li>
+</ol>
+<h1 id="入门"><a href="#入门" class="headerlink" title="入门"></a>入门</h1><h2 id="Structure-and-Interpretation-of-Computer-Programs-SICP-《计算机程序的构造和解释》"><a href="#Structure-and-Interpretation-of-Computer-Programs-SICP-《计算机程序的构造和解释》" class="headerlink" title="Structure and Interpretation of Computer Programs (SICP)《计算机程序的构造和解释》"></a>Structure and Interpretation of Computer Programs (SICP)《计算机程序的构造和解释》</h2><ol>
+<li><a href="https://classroom.udacity.com/courses/cs212" target="_blank" rel="noopener">Udacity CS212: Design of Computer Program</a>：教学语言为 Python，内容有一定难度。</li>
+<li><a href="http://www.ccs.neu.edu/home/matthias/HtDP2e/Draft/index.html" target="_blank" rel="noopener">How to Design Programs, Second Edition</a>：HtDP 的起点比SICP低，书中的内容循循善诱，对初学者很友好，如果觉得完成SICP过于困难，可以考虑先读一读 HtDP。</li>
+<li><a href="https://github.com/DeathKing/Learning-SICP/" target="_blank" rel="noopener">UC Berkeley SICP 授课视频以及 SICP 的两位作者给 Hewlett-Packard 公司员工培训时的录像</a>（中文化项目）</li>
+<li><a href="http://composingprograms.com/" target="_blank" rel="noopener">Composing Programs</a>：一个继承了SICP思想但使用Python作为教学语言的编程导论（其中包含了一些小项目）</li>
+<li><a href="http://sicp.readthedocs.io/en/latest/index.html" target="_blank" rel="noopener">SICP 解题集</a>：对于书后的习题，作为初学者应尽力并量力完成。</li>
+<li>开始一些简单的项目，诸如搭建一个网站并维护它，或是编写一个小游戏再不断进行扩展，如果你自己的想法不明确，推荐你关注<a href="http://zhuanlan.zhihu.com/alchemelon" target="_blank" rel="noopener">炼瓜研究所</a> ，或者从 <a href="https://github.com/karan/Projects/" target="_blank" rel="noopener">Mega Project List</a> 中选取自己喜欢的项目。</li>
+</ol>
+<h2 id="The-Elements-of-Computing-Systems"><a href="#The-Elements-of-Computing-Systems" class="headerlink" title="The Elements of Computing Systems"></a>The Elements of Computing Systems</h2><ul>
+<li>它会教会你从最基本的 Nand 门开始构建计算机，直到俄罗斯方块在你的计算机上顺利运行。 </li>
+<li>入门阶段的目标就是坚持完成这本书的所有项目（包括一个最简的编译器与操作系统）。</li>
+</ul>
+<h3 id="计算机系统基础-Computer-Systems-A-Programmer’s-Perspective-3-E《深入理解计算机系统》"><a href="#计算机系统基础-Computer-Systems-A-Programmer’s-Perspective-3-E《深入理解计算机系统》" class="headerlink" title="计算机系统基础: Computer Systems: A Programmer’s Perspective, 3/E《深入理解计算机系统》"></a>计算机系统基础: Computer Systems: A Programmer’s Perspective, 3/E《深入理解计算机系统》</h3><ul>
+<li>该书就是从一个程序员的视角观察计算机系统，以「程序在计算机中如何执行」为主线，全面阐述计算机系统内部实现的诸多细节。</li>
+<li>上层设计到底层实现都了然于胸，并能在脑中回放数据在网络-&gt;内存-&gt;缓存-&gt;CPU 的流向</li>
+</ul>
+<ol>
+<li>Coursera 上的 MOOC: The Hardware/Software Interface，这门课的内容是 CSAPP 的一个子集，但是最经典的实验部分都移植过来了.</li>
+<li>看看 The C Programming Language (C程序设计语言)，回顾一下C语言的知识</li>
+</ol>
+<h3 id="数据结构与算法基础"><a href="#数据结构与算法基础" class="headerlink" title="数据结构与算法基础"></a>数据结构与算法基础</h3><ol>
+<li>《算法导论》 Introduction to Algorithms。都不懂就跳过习题和证明，如果还觉得心虚先看看《数据结构与算法分析》</li>
+<li><a href="https://www.coursera.org/specializations/algorithms" target="_blank" rel="noopener">Algorithms: Design and Analysis Part 1 &amp; Part 2</a>；网易公开课：<a href="http://open.163.com/special/opencourse/algorithms.html" target="_blank" rel="noopener">麻省理工学院：算法导论</a><br>•    培养使用常规算法解决小规模问题的能力，结合前文的SICP部分可以读读：《编程珠玑》，《程序设计实践》</li>
+</ol>
+<h3 id="编程语言基础"><a href="#编程语言基础" class="headerlink" title="编程语言基础"></a>编程语言基础</h3><ul>
+<li>能至少实现一个简单的解释器</li>
+</ul>
+<ol>
+<li>《程序设计语言-实践之路》：CMU 编程语言原理的教材，程序语言入门书，极大扩展眼界，拉开与普通人的差距。</li>
+<li><a href="https://www.coursera.org/learn/programming-languages" target="_blank" rel="noopener">Programming Languages</a>：课堂上你能接触到<ul>
+<li>极端 FP （函数式）的 SML</li>
+<li>中性偏 FP 的 Racket</li>
+<li>以及极端 OOP （面向对象）的 Ruby</li>
+<li>问题的 FP 分解 vs OOP 分解</li>
+<li>ML 的模式匹配</li>
+<li>Lisp 宏、不变性与可变性、解释器的实现原理</li>
+<li>让你在将来学习新语言时更加轻松并写出更好的程序。</li>
+</ul>
+</li>
+<li><a href="https://www.udacity.com/course/programming-languages--cs262" target="_blank" rel="noopener">Udacity CS262 Programming Language</a>：写一个简单的浏览器——其实就是一个 JavaScript 和 HTML 的解释器，完成后的成品还是很有趣的；接下来，试着完成一个之前在SICP部分提到过的项目：用Python写一个 <a href="http://inst.eecs.berkeley.edu/~cs61a/fa13/proj/scheme/scheme.html" target="_blank" rel="noopener">Scheme Interpreter</a></li>
+</ol>
+<h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><ol>
+<li>到 Stack Overflow 提问：<a href="https://mp.weixin.qq.com/s?__biz=MzI3NDI5ODQ2Ng==&mid=2247483666&idx=1&sn=201c119360515cfd7765a6fe6fb5d855" target="_blank" rel="noopener">能有效解决问题的提问方法。</a></li>
+<li>到 CoCode 与人交流</li>
+<li>搭建一个个人博客，像你看到这样的</li>
+<li>订阅自己喜欢的博客</li>
+</ol>
+<p>在 Stack Overflow 上票选得出的程序员必读书单中，排在前两位的两本书：</p>
+<ol>
+<li><p>Code Complete：不管是对于经验丰富的程序员还是对于那些没有受过太多的正规训练的新手程序员，此书都能用来填补自己的知识缺陷。对于入门阶段的新手们，可以重点看看涉及变量名，测试，个人性格的章节。</p>
+</li>
+<li><p>The Pragmatic Programmer :有人称这本书为代码小全：从 DRY 到 KISS，从做人到做程序员均有涉及。</p>
+</li>
+</ol>
+<p>完成这些，你就入门啦!</p>
+
+      
+    </div>
+    
+    
+    
+	
+	<div>
+      
+        
+      
+	</div>
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>土豪专用</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>Donate</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/微信打赏.png" alt="Ryan Luo Xu 罗旭 WeChat Pay">
+        <p>WeChat Pay</p>
+      </div>
+    
+
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>Post author:</strong>
+    Ryan Luo Xu 罗旭
+  </li>
+  <li class="post-copyright-link">
+    <strong>Post link:</strong>
+    <a href="https://ryanluoxu.github.io/2018/01/16/编程入门指南/" title="编程入门指南">https://ryanluoxu.github.io/2018/01/16/编程入门指南/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>Copyright Notice: </strong>
+    All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> unless stating additionally. 转载请注明出处。
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/程序员/" rel="tag"># 程序员</a>
+          
+            <a href="/tags/指南/" rel="tag"># 指南</a>
+          
+            <a href="/tags/入门/" rel="tag"># 入门</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/01/11/BlockChain-1-Smart-Contract/" rel="next" title="BlockChain -1- Smart Contract">
+                <i class="fa fa-chevron-left"></i> BlockChain -1- Smart Contract
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/01/20/Bootstrap-CheatSheet/" rel="prev" title="Bootstrap CheatSheet">
+                Bootstrap CheatSheet <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      
+        <div id="gitment-container"></div>
+      
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/avatar1.JPG" alt="Ryan Luo Xu 罗旭">
+            
+              <p class="site-author-name" itemprop="name">Ryan Luo Xu 罗旭</p>
+              <p class="site-description motion-element" itemprop="description">Share What I learned</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">39</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                
+				  <a href="/categories/index.html">
+				
+                  <span class="site-state-item-count">21</span>
+                  <span class="site-state-item-name">categories</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+				  <a href="/tags/index.html">
+				
+                  <span class="site-state-item-count">108</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          <div class="links-of-author motion-element">
+            
+              
+                <span class="links-of-author-item">
+                  <a href="https://github.com/Ryanluoxu" target="_blank" title="GitHub">
+                    
+                      <i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://www.linkedin.com/in/ryanluoxu/" target="_blank" title="Linkedin">
+                    
+                      <i class="fa fa-fw fa-linkedin"></i>Linkedin</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://www.zhihu.com/people/luojiuri/activities" target="_blank" title="ZhiHu">
+                    
+                      <i class="fa fa-fw fa-globe"></i>ZhiHu</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="mailto:luoxu2011@gmail.com" target="_blank" title="E-Mail">
+                    
+                      <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                </span>
+              
+            
+          </div>
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#启蒙"><span class="nav-number">1.</span> <span class="nav-text">启蒙</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#入门"><span class="nav-number">2.</span> <span class="nav-text">入门</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Structure-and-Interpretation-of-Computer-Programs-SICP-《计算机程序的构造和解释》"><span class="nav-number">2.1.</span> <span class="nav-text">Structure and Interpretation of Computer Programs (SICP)《计算机程序的构造和解释》</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#The-Elements-of-Computing-Systems"><span class="nav-number">2.2.</span> <span class="nav-text">The Elements of Computing Systems</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#计算机系统基础-Computer-Systems-A-Programmer’s-Perspective-3-E《深入理解计算机系统》"><span class="nav-number">2.2.1.</span> <span class="nav-text">计算机系统基础: Computer Systems: A Programmer’s Perspective, 3/E《深入理解计算机系统》</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数据结构与算法基础"><span class="nav-number">2.2.2.</span> <span class="nav-text">数据结构与算法基础</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#编程语言基础"><span class="nav-number">2.2.3.</span> <span class="nav-text">编程语言基础</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#其他"><span class="nav-number">2.2.4.</span> <span class="nav-text">其他</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2017 &mdash; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Ryan Luo Xu 罗旭</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.3</div>
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i> Visitor
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i> Total Visit
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.3"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.3"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.3"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.3"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.3"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+<!-- LOCAL: You can save these files to your site and update links -->
+    
+        
+        <link rel="stylesheet" href="https://aimingoo.github.io/gitmint/style/default.css">
+        <script src="https://aimingoo.github.io/gitmint/dist/gitmint.browser.js"></script>
+    
+<!-- END LOCAL -->
+
+    
+
+    
+      <script type="text/javascript">
+      function renderGitment(){
+        var gitment = new Gitmint({
+            id: window.location.pathname, 
+            owner: 'Ryanluoxu',
+            repo: 'gitment-comments',
+            
+            lang: "" || navigator.language || navigator.systemLanguage || navigator.userLanguage,
+            
+            oauth: {
+            
+            
+                client_secret: '86e751e15567e1af27d173720c74f969bb8d73c0',
+            
+                client_id: '478df3241d7aa56819e0'
+            }});
+        gitment.render('gitment-container');
+      }
+
+      
+      renderGitment();
+      
+      </script>
+    
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+</body>
+</html>

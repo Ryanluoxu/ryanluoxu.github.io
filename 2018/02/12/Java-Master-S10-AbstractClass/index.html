@@ -1,0 +1,982 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="en">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.3" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.3">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.3" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Java,course,note,Abstract，Abstract Class,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="Notes and Exersice for Abstract Class of Completed Java Master Class.">
+<meta name="keywords" content="Java,course,note,Abstract，Abstract Class">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java Master - S10.AbstractClass">
+<meta property="og:url" content="https://ryanluoxu.github.io/2018/02/12/Java-Master-S10-AbstractClass/index.html">
+<meta property="og:site_name" content="途探生灵">
+<meta property="og:description" content="Notes and Exersice for Abstract Class of Completed Java Master Class.">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2020-04-30T09:23:19.529Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Java Master - S10.AbstractClass">
+<meta name="twitter:description" content="Notes and Exersice for Abstract Class of Completed Java Master Class.">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.3',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://ryanluoxu.github.io/2018/02/12/Java-Master-S10-AbstractClass/">
+
+
+
+
+
+  <title>Java Master - S10.AbstractClass | 途探生灵</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">途探生灵</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">A Programmer's Blog</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            About
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-commonweal">
+          <a href="/404/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br>
+            
+            Commonweal 404
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://ryanluoxu.github.io/2018/02/12/Java-Master-S10-AbstractClass/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Ryan Luo Xu 罗旭">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar1.JPG">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="途探生灵">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Java Master - S10.AbstractClass</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-02-12T07:38:59+08:00">
+                2018-02-12
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Post modified&#58;</span>
+              
+              <time title="Post modified" itemprop="dateModified" datetime="2020-04-30T17:23:19+08:00">
+                2020-04-30
+              </time>
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java-Master-Course/" itemprop="url" rel="index">
+                    <span itemprop="name">Java Master Course</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/02/12/Java-Master-S10-AbstractClass/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count gitment-comments-count" data-xid="/2018/02/12/Java-Master-S10-AbstractClass/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i> View
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>Notes and Exersice for Abstract Class of Completed Java Master Class.</p>
+<a id="more"></a>
+
+<h1 id="Notes"><a href="#Notes" class="headerlink" title="Notes"></a>Notes</h1><p>Abstract class is a normal class but with abstract method.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">public abstract class Animal &#123;</span><br><span class="line">	private String name;</span><br><span class="line">	public Animal(String name) &#123;</span><br><span class="line">		this.name = name;</span><br><span class="line">	&#125;</span><br><span class="line">	public String getName() &#123;</span><br><span class="line">		return name;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	public abstract void eat();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ol>
+<li><p>Abstract class can not be instantiated. Abstract method needs to be implemented.</p>
+</li>
+<li><p>The class extends it have to implement all the abstract classes.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">public class Dog extends Animal&#123;</span><br><span class="line">	</span><br><span class="line">	public Dog(String name) &#123;</span><br><span class="line">		super(name);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	@Override</span><br><span class="line">	public void eat() &#123;</span><br><span class="line">		System.out.println(getName() + &quot; is eating bones..&quot;);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Abstract class can be extended by another abstract class</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">public abstract class Bird extends Animal&#123;</span><br><span class="line"></span><br><span class="line">	public Bird(String name) &#123;</span><br><span class="line">		super(name);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	@Override</span><br><span class="line">	public void eat() &#123;</span><br><span class="line">		System.out.println(getName() + &quot; is eating ..&quot;);</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	public abstract void fly();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Need to be implemented by another class so that we can initiate it.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">public class Chicken extends Bird&#123;</span><br><span class="line">	</span><br><span class="line">	public Chicken(String name) &#123;</span><br><span class="line">		super(name);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	@Override</span><br><span class="line">	public void fly() &#123;</span><br><span class="line">		System.out.println(getName() + &quot; is hardly flying..&quot;);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>main:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">public class main &#123;</span><br><span class="line"></span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		</span><br><span class="line">		Animal myDog = new Dog(&quot;funny&quot;);</span><br><span class="line">		myDog.eat();</span><br><span class="line">		</span><br><span class="line">		//Animal myChicken = new Chicken(&quot;fat&quot;);  X no fly method</span><br><span class="line">		Bird myChicken = new Chicken(&quot;fat&quot;);</span><br><span class="line">		myChicken.eat();</span><br><span class="line">		myChicken.fly();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<h1 id="Common-and-Difference-between-Abstract-Class-and-Interface"><a href="#Common-and-Difference-between-Abstract-Class-and-Interface" class="headerlink" title="Common and Difference between Abstract Class and Interface"></a>Common and Difference between Abstract Class and Interface</h1><h2 id="Common"><a href="#Common" class="headerlink" title="Common"></a>Common</h2><ol>
+<li>Cannot instantiate them. Methods without an implementation</li>
+</ol>
+<h2 id="Difference"><a href="#Difference" class="headerlink" title="Difference"></a>Difference</h2><ol>
+<li>Abstract class can declare fields that are not static and final</li>
+<li>Abstract class can define public, protected and private concrete methods</li>
+<li>Abstract class can extend only one parent class but implement multiple interfaces</li>
+</ol>
+<p>The purpose of an abtract class is to provide a common definition of a base class that multiple derived classes can share.</p>
+<h1 id="Exercise"><a href="#Exercise" class="headerlink" title="Exercise"></a>Exercise</h1><h2 id="Requirements"><a href="#Requirements" class="headerlink" title="Requirements"></a>Requirements</h2><ul>
+<li>Create own LinkedList class</li>
+<li>the item can be added with auto sorting from small to large</li>
+<li>the item can be removed</li>
+<li>use traverse method to iterate and print all the items </li>
+</ul>
+<h2 id="Codes"><a href="#Codes" class="headerlink" title="Codes"></a>Codes</h2><h3 id="abstract-class-ListItem"><a href="#abstract-class-ListItem" class="headerlink" title="abstract class ListItem"></a>abstract class ListItem</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">public abstract class ListItem &#123;</span><br><span class="line"></span><br><span class="line">	// need to access by subclass in the same package</span><br><span class="line">	protected ListItem leftLink;</span><br><span class="line">	protected ListItem rightLink;</span><br><span class="line">	private Object value;</span><br><span class="line">	</span><br><span class="line">	public ListItem(Object value) &#123;</span><br><span class="line">		this.value = value;</span><br><span class="line">	&#125;</span><br><span class="line">	public Object getValue() &#123;</span><br><span class="line">		return value;</span><br><span class="line">	&#125;</span><br><span class="line">	public void setValue(Object value) &#123;</span><br><span class="line">		this.value = value;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	abstract ListItem next();</span><br><span class="line">	abstract ListItem previous();</span><br><span class="line">	abstract ListItem setNext(ListItem listItem);</span><br><span class="line">	abstract ListItem setPrevious(ListItem listItem);</span><br><span class="line">	</span><br><span class="line">	abstract int compareTo(ListItem listItem);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="class-Node-extends-ListItem"><a href="#class-Node-extends-ListItem" class="headerlink" title="class Node extends ListItem"></a>class Node extends ListItem</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line">public class Node extends ListItem &#123;</span><br><span class="line"></span><br><span class="line">	public Node(Object value) &#123;</span><br><span class="line">		super(value);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	@Override</span><br><span class="line">	ListItem next() &#123;</span><br><span class="line">		return rightLink;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	@Override</span><br><span class="line">	ListItem previous() &#123;</span><br><span class="line">		return leftLink;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	/**</span><br><span class="line">	 * return listItem, so that simplify the steps: </span><br><span class="line">	 * currentItem.setPrevious(listItem).setNext(currentItem);</span><br><span class="line">	 */</span><br><span class="line">	</span><br><span class="line">	@Override</span><br><span class="line">	ListItem setNext(ListItem listItem) &#123;</span><br><span class="line">		rightLink = listItem;</span><br><span class="line">		return listItem;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	@Override</span><br><span class="line">	ListItem setPrevious(ListItem listItem) &#123;</span><br><span class="line">		leftLink = listItem;</span><br><span class="line">		return listItem;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	@Override</span><br><span class="line">	int compareTo(ListItem listItem) &#123;</span><br><span class="line">		return this.getValue().toString().compareTo(listItem.getValue().toString());</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="interface-MyList"><a href="#interface-MyList" class="headerlink" title="interface MyList"></a>interface MyList</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">public interface MyList &#123;</span><br><span class="line"></span><br><span class="line">	ListItem getRoot();</span><br><span class="line">	boolean addItem(ListItem listItem);</span><br><span class="line">	boolean removeItem(ListItem listItem);</span><br><span class="line">	void traverse(ListItem listItem);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="MyLinkedList-implements-MyList"><a href="#MyLinkedList-implements-MyList" class="headerlink" title="MyLinkedList implements MyList"></a>MyLinkedList implements MyList</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br></pre></td><td class="code"><pre><span class="line">public class MyLinkedList implements MyList &#123;</span><br><span class="line">	private ListItem root = null;</span><br><span class="line"></span><br><span class="line">	@Override</span><br><span class="line">	public ListItem getRoot() &#123;</span><br><span class="line">		return root;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	/**</span><br><span class="line">	 * sort in order</span><br><span class="line">	 * </span><br><span class="line">	 * search from root</span><br><span class="line">	 * if newItem is greater, go to next item until end</span><br><span class="line">	 * if newItem is smaller, insert into</span><br><span class="line">	 */</span><br><span class="line">	</span><br><span class="line">	@Override</span><br><span class="line">	public boolean addItem(ListItem listItem) &#123;</span><br><span class="line">		if (root == null) &#123;</span><br><span class="line">			root = listItem;</span><br><span class="line">			return true;</span><br><span class="line">		&#125; </span><br><span class="line">		ListItem currentItem = root;</span><br><span class="line">		while (currentItem != null) &#123;</span><br><span class="line">			int comparison = currentItem.compareTo(listItem);</span><br><span class="line">			if (comparison &lt; 0) &#123; // listItem is greater.</span><br><span class="line">				if (currentItem.next()==null) &#123;</span><br><span class="line">					currentItem.setNext(listItem).setPrevious(currentItem);</span><br><span class="line">					return true;</span><br><span class="line">				&#125; else &#123;</span><br><span class="line">					currentItem = currentItem.next();</span><br><span class="line">				&#125;</span><br><span class="line">			&#125; else if (comparison &gt; 0) &#123; // listItem is smaller</span><br><span class="line">				if (currentItem.previous()==null) &#123;</span><br><span class="line">					currentItem.setPrevious(listItem).setNext(currentItem);</span><br><span class="line">					root = listItem;</span><br><span class="line">				&#125; else &#123;</span><br><span class="line">					currentItem.previous().setNext(listItem).setPrevious(currentItem.previous());</span><br><span class="line">					currentItem.setPrevious(listItem).setNext(currentItem);</span><br><span class="line">				&#125; </span><br><span class="line">				return true;</span><br><span class="line">			&#125; else &#123;</span><br><span class="line">				System.out.println(&quot;Duplicated item : &quot; + listItem.getValue() );</span><br><span class="line">				return false;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		return false;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	@Override</span><br><span class="line">	public boolean removeItem(ListItem listItem) &#123;</span><br><span class="line">		ListItem currentItem = this.getRoot();</span><br><span class="line">		while (currentItem != null) &#123;</span><br><span class="line">			int comparison = currentItem.compareTo(listItem);</span><br><span class="line">			if (comparison == 0) &#123;</span><br><span class="line">				System.out.println(&quot;Deleting item : &quot; + listItem.getValue());</span><br><span class="line">				if (currentItem.previous()==null) &#123;</span><br><span class="line">					if (currentItem.next()!=null) &#123;</span><br><span class="line">						root = currentItem.next();</span><br><span class="line">						root.setPrevious(null);</span><br><span class="line">					&#125; else &#123;</span><br><span class="line">						root = null;</span><br><span class="line">					&#125;</span><br><span class="line">					return true;</span><br><span class="line">				&#125;</span><br><span class="line">				if (currentItem.next()==null) &#123;</span><br><span class="line">					currentItem.previous().setNext(null);</span><br><span class="line">					return true;</span><br><span class="line">				&#125;</span><br><span class="line">				currentItem.previous().setNext(currentItem.next()).setPrevious(currentItem.previous());</span><br><span class="line">				return true;</span><br><span class="line">			&#125; else &#123;</span><br><span class="line">				currentItem = currentItem.next();</span><br><span class="line">			&#125;</span><br><span class="line">		&#125; </span><br><span class="line">		</span><br><span class="line">		System.out.println(&quot;No existing: &quot; + listItem.getValue());</span><br><span class="line">		return false;</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	@Override</span><br><span class="line">	public void traverse(ListItem listItem) &#123;</span><br><span class="line">		if (root == null) &#123;</span><br><span class="line">			System.out.println(&quot;Empty list..&quot;);</span><br><span class="line">		&#125; else &#123;</span><br><span class="line">			ListItem currentItem = root;</span><br><span class="line">			while (currentItem != null) &#123;</span><br><span class="line">				System.out.println(currentItem.getValue());</span><br><span class="line">				currentItem = currentItem.next();</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="main"><a href="#main" class="headerlink" title="main"></a>main</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * @author luoxu</span><br><span class="line"> * </span><br><span class="line"> * Create own LinkedList class</span><br><span class="line"> * the item can be added with auto sorting from small to large</span><br><span class="line"> * the item can be removed</span><br><span class="line"> * use traverse method to iterate and print all the items </span><br><span class="line"> */</span><br><span class="line"></span><br><span class="line">public class Main &#123;</span><br><span class="line"></span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line"></span><br><span class="line">		MyList myList = new MyLinkedList();</span><br><span class="line">		</span><br><span class="line">		String testData = &quot;2 3 1 2 5 6 7 4 9 8 7 4&quot;;</span><br><span class="line">		String[] dataArray =  testData.split(&quot; &quot;);</span><br><span class="line">		for (String data : dataArray) &#123;</span><br><span class="line">			myList.addItem(new Node(data));</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">		myList.traverse(myList.getRoot());</span><br><span class="line">		</span><br><span class="line">		myList.removeItem(new Node(&quot;7&quot;));</span><br><span class="line">		myList.traverse(myList.getRoot());</span><br><span class="line">		myList.removeItem(new Node(&quot;7&quot;));</span><br><span class="line">		myList.traverse(myList.getRoot());</span><br><span class="line">		myList.removeItem(new Node(&quot;9&quot;));</span><br><span class="line">		myList.traverse(myList.getRoot());</span><br><span class="line">		myList.removeItem(new Node(&quot;5&quot;));</span><br><span class="line">		myList.traverse(myList.getRoot());</span><br><span class="line">		myList.removeItem(myList.getRoot());</span><br><span class="line">		myList.traverse(myList.getRoot());</span><br><span class="line">		myList.removeItem(myList.getRoot());</span><br><span class="line">		myList.traverse(myList.getRoot());</span><br><span class="line">		myList.removeItem(myList.getRoot());</span><br><span class="line">		myList.traverse(myList.getRoot());</span><br><span class="line">		myList.removeItem(myList.getRoot());</span><br><span class="line">		myList.traverse(myList.getRoot());</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Search-Tree"><a href="#Search-Tree" class="headerlink" title="Search Tree"></a>Search Tree</h2><h3 id="SearchTree-implements-MyList"><a href="#SearchTree-implements-MyList" class="headerlink" title="SearchTree implements MyList"></a>SearchTree implements MyList</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br></pre></td><td class="code"><pre><span class="line">public class SearchTree implements MyList&#123;</span><br><span class="line">	</span><br><span class="line">	/**</span><br><span class="line">	 * the difference: single direction</span><br><span class="line">	 * starting from root to leaf, invalid for reverse</span><br><span class="line">	 * </span><br><span class="line">	 */</span><br><span class="line">	</span><br><span class="line">	private ListItem root = null;</span><br><span class="line"></span><br><span class="line">	@Override</span><br><span class="line">	public ListItem getRoot() &#123;</span><br><span class="line">		return root;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	@Override</span><br><span class="line">	public boolean addItem(ListItem listItem) &#123;</span><br><span class="line">		if (root == null) &#123;</span><br><span class="line">			// empty tree, listItem become root</span><br><span class="line">			root = listItem;</span><br><span class="line">			return true;</span><br><span class="line">		&#125; </span><br><span class="line">		</span><br><span class="line">		// otherwise start comparing</span><br><span class="line">		ListItem currentItem = root;</span><br><span class="line">		while (currentItem != null) &#123;</span><br><span class="line">			int comparison = currentItem.compareTo(listItem);</span><br><span class="line">			if (comparison &lt; 0) &#123; </span><br><span class="line">				// listItem is greater, move right if possible</span><br><span class="line">				if (currentItem.next()==null) &#123;</span><br><span class="line">					// no node to the right, so add at this point</span><br><span class="line">					currentItem.setNext(listItem);</span><br><span class="line">					return true;</span><br><span class="line">				&#125; else &#123;</span><br><span class="line">					currentItem = currentItem.next();</span><br><span class="line">				&#125;</span><br><span class="line">			&#125; else if (comparison &gt; 0) &#123; </span><br><span class="line">				// listItem is smaller, move left if possible</span><br><span class="line">				if (currentItem.previous()==null) &#123;</span><br><span class="line">					// no node to the left, so add at this point</span><br><span class="line">					currentItem.setPrevious(listItem);</span><br><span class="line">					return true;</span><br><span class="line">				&#125; else &#123;</span><br><span class="line">					currentItem = currentItem.previous();</span><br><span class="line">				&#125; </span><br><span class="line">			&#125; else &#123;</span><br><span class="line">				System.out.println(&quot;Duplicated item : &quot; + listItem.getValue() );</span><br><span class="line">				return false;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		return false;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	@Override</span><br><span class="line">	public boolean removeItem(ListItem listItem) &#123;</span><br><span class="line">		ListItem currentItem = this.getRoot();</span><br><span class="line">		ListItem parentItem = currentItem;</span><br><span class="line">		</span><br><span class="line">		while (currentItem != null) &#123;</span><br><span class="line">			int comparison = currentItem.compareTo(listItem);</span><br><span class="line">			</span><br><span class="line">			if (comparison &lt; 0) &#123;</span><br><span class="line">				parentItem = currentItem;</span><br><span class="line">				currentItem = currentItem.next();</span><br><span class="line">			&#125; else if (comparison &gt; 0) &#123;</span><br><span class="line">				parentItem = currentItem;</span><br><span class="line">				currentItem = currentItem.previous();</span><br><span class="line">			&#125; else &#123;</span><br><span class="line">				// found item</span><br><span class="line">				performRemove(currentItem, parentItem);</span><br><span class="line">				return true;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125; </span><br><span class="line">		</span><br><span class="line">		System.out.println(&quot;No existing: &quot; + listItem.getValue());</span><br><span class="line">		return false;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	private void performRemove(ListItem currentItem, ListItem parentItem) &#123;</span><br><span class="line">		System.out.println(&quot;Deleting:&quot; + currentItem.getValue());</span><br><span class="line">		if (currentItem.next()==null) &#123;</span><br><span class="line">			// no right branch, make parent link to the left branch</span><br><span class="line">			if (parentItem.next() == currentItem) &#123;</span><br><span class="line">				// currentItem is the right child of parent</span><br><span class="line">				parentItem.setNext(currentItem.previous());</span><br><span class="line">			&#125; else if (parentItem.previous() == currentItem) &#123;</span><br><span class="line">				// currentItem is the left child of parent</span><br><span class="line">				parentItem.setPrevious(currentItem.previous());</span><br><span class="line">			&#125; else &#123;</span><br><span class="line">				// parentItem == currentItem which is root</span><br><span class="line">				root = currentItem.previous();</span><br><span class="line">			&#125;</span><br><span class="line">		&#125; else if (currentItem.previous() == null) &#123;</span><br><span class="line">			// no left branch, make parent link to the right branch</span><br><span class="line">			if (parentItem.next() == currentItem) &#123;</span><br><span class="line">				// currentItem is the right child of parent</span><br><span class="line">				parentItem.setNext(currentItem.next());</span><br><span class="line">			&#125; else if (parentItem.previous() == currentItem) &#123;</span><br><span class="line">				// currentItem is the left child of parent</span><br><span class="line">				parentItem.setPrevious(currentItem.next());</span><br><span class="line">			&#125; else &#123;</span><br><span class="line">				// parentItem == currentItem which is root</span><br><span class="line">				root = currentItem.next();</span><br><span class="line">			&#125;</span><br><span class="line">		&#125; else &#123;</span><br><span class="line">			// both left and right exist</span><br><span class="line">			// from the right branch, find the smallest value</span><br><span class="line">			ListItem current = currentItem.next();</span><br><span class="line">			ListItem leftMostParent = currentItem;</span><br><span class="line">			while (current.previous()!=null) &#123;</span><br><span class="line">				leftMostParent = current;</span><br><span class="line">				current = current.previous();</span><br><span class="line">			&#125;</span><br><span class="line">			</span><br><span class="line">			// now current is the smallest node in the right branch</span><br><span class="line">			// put it into current deleting node</span><br><span class="line">			currentItem.setValue(current.getValue());</span><br><span class="line">			</span><br><span class="line">			// delete smallest node</span><br><span class="line">			if (leftMostParent == currentItem) &#123;</span><br><span class="line">				// no leftmost node, so current points to</span><br><span class="line">				// the smallest node</span><br><span class="line">				currentItem.setNext(current.next());</span><br><span class="line">			&#125; else &#123;</span><br><span class="line">				// set the smallest node&apos;s parent to point to </span><br><span class="line">				// the smallest node&apos;s right child</span><br><span class="line">				leftMostParent.setPrevious(current.next());</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	@Override</span><br><span class="line">	public void traverse(ListItem listItem) &#123;</span><br><span class="line">		// recursive method</span><br><span class="line">		if (listItem != null) &#123;</span><br><span class="line">			traverse(listItem.previous());</span><br><span class="line">			System.out.println(listItem.getValue());</span><br><span class="line">			traverse(listItem.next());</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="main-1"><a href="#main-1" class="headerlink" title="main"></a>main</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">public class Main &#123;</span><br><span class="line">	</span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line"></span><br><span class="line">		MyList myTree = new SearchTree();</span><br><span class="line">		</span><br><span class="line">		String testData = &quot;2 3 1 2 5 6 7 4 9 8 7 4&quot;;</span><br><span class="line">		String[] dataArray =  testData.split(&quot; &quot;);</span><br><span class="line">		for (String data : dataArray) &#123;</span><br><span class="line">			myTree.addItem(new Node(data));</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">		myTree.traverse(myTree.getRoot());</span><br><span class="line">		</span><br><span class="line">		myTree.removeItem(new Node(&quot;7&quot;));</span><br><span class="line">		myTree.traverse(myTree.getRoot());</span><br><span class="line">		myTree.removeItem(new Node(&quot;7&quot;));</span><br><span class="line">		myTree.traverse(myTree.getRoot());</span><br><span class="line">		myTree.removeItem(new Node(&quot;9&quot;));</span><br><span class="line">		myTree.traverse(myTree.getRoot());</span><br><span class="line">		myTree.removeItem(new Node(&quot;5&quot;));</span><br><span class="line">		myTree.traverse(myTree.getRoot());</span><br><span class="line">		myTree.removeItem(myTree.getRoot());</span><br><span class="line">		myTree.traverse(myTree.getRoot());</span><br><span class="line">		myTree.removeItem(myTree.getRoot());</span><br><span class="line">		myTree.traverse(myTree.getRoot());</span><br><span class="line">		myTree.removeItem(myTree.getRoot());</span><br><span class="line">		myTree.traverse(myTree.getRoot());</span><br><span class="line">		myTree.removeItem(myTree.getRoot());</span><br><span class="line">		myTree.traverse(myTree.getRoot());</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    
+    
+    
+	
+	<div>
+      
+        
+      
+	</div>
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>土豪专用</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>Donate</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/微信打赏.png" alt="Ryan Luo Xu 罗旭 WeChat Pay">
+        <p>WeChat Pay</p>
+      </div>
+    
+
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>Post author:</strong>
+    Ryan Luo Xu 罗旭
+  </li>
+  <li class="post-copyright-link">
+    <strong>Post link:</strong>
+    <a href="https://ryanluoxu.github.io/2018/02/12/Java-Master-S10-AbstractClass/" title="Java Master - S10.AbstractClass">https://ryanluoxu.github.io/2018/02/12/Java-Master-S10-AbstractClass/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>Copyright Notice: </strong>
+    All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> unless stating additionally. 转载请注明出处。
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Java/" rel="tag"># Java</a>
+          
+            <a href="/tags/course/" rel="tag"># course</a>
+          
+            <a href="/tags/note/" rel="tag"># note</a>
+          
+            <a href="/tags/Abstract，Abstract-Class/" rel="tag"># Abstract，Abstract Class</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/02/11/Java-Master-S10-Interface/" rel="next" title="Java Master - S10.Interface">
+                <i class="fa fa-chevron-left"></i> Java Master - S10.Interface
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/02/12/Selenium-Simple-URL-Ping/" rel="prev" title="Selenium - Simple URL Ping">
+                Selenium - Simple URL Ping <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      
+        <div id="gitment-container"></div>
+      
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/avatar1.JPG" alt="Ryan Luo Xu 罗旭">
+            
+              <p class="site-author-name" itemprop="name">Ryan Luo Xu 罗旭</p>
+              <p class="site-description motion-element" itemprop="description">Share What I learned</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">39</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                
+				  <a href="/categories/index.html">
+				
+                  <span class="site-state-item-count">21</span>
+                  <span class="site-state-item-name">categories</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+				  <a href="/tags/index.html">
+				
+                  <span class="site-state-item-count">108</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          <div class="links-of-author motion-element">
+            
+              
+                <span class="links-of-author-item">
+                  <a href="https://github.com/Ryanluoxu" target="_blank" title="GitHub">
+                    
+                      <i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://www.linkedin.com/in/ryanluoxu/" target="_blank" title="Linkedin">
+                    
+                      <i class="fa fa-fw fa-linkedin"></i>Linkedin</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://www.zhihu.com/people/luojiuri/activities" target="_blank" title="ZhiHu">
+                    
+                      <i class="fa fa-fw fa-globe"></i>ZhiHu</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="mailto:luoxu2011@gmail.com" target="_blank" title="E-Mail">
+                    
+                      <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                </span>
+              
+            
+          </div>
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Notes"><span class="nav-number">1.</span> <span class="nav-text">Notes</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Common-and-Difference-between-Abstract-Class-and-Interface"><span class="nav-number">2.</span> <span class="nav-text">Common and Difference between Abstract Class and Interface</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Common"><span class="nav-number">2.1.</span> <span class="nav-text">Common</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Difference"><span class="nav-number">2.2.</span> <span class="nav-text">Difference</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Exercise"><span class="nav-number">3.</span> <span class="nav-text">Exercise</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Requirements"><span class="nav-number">3.1.</span> <span class="nav-text">Requirements</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Codes"><span class="nav-number">3.2.</span> <span class="nav-text">Codes</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#abstract-class-ListItem"><span class="nav-number">3.2.1.</span> <span class="nav-text">abstract class ListItem</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#class-Node-extends-ListItem"><span class="nav-number">3.2.2.</span> <span class="nav-text">class Node extends ListItem</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#interface-MyList"><span class="nav-number">3.2.3.</span> <span class="nav-text">interface MyList</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MyLinkedList-implements-MyList"><span class="nav-number">3.2.4.</span> <span class="nav-text">MyLinkedList implements MyList</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#main"><span class="nav-number">3.2.5.</span> <span class="nav-text">main</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Search-Tree"><span class="nav-number">3.3.</span> <span class="nav-text">Search Tree</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#SearchTree-implements-MyList"><span class="nav-number">3.3.1.</span> <span class="nav-text">SearchTree implements MyList</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#main-1"><span class="nav-number">3.3.2.</span> <span class="nav-text">main</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2017 &mdash; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Ryan Luo Xu 罗旭</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.3</div>
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i> Visitor
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i> Total Visit
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.3"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.3"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.3"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.3"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.3"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+<!-- LOCAL: You can save these files to your site and update links -->
+    
+        
+        <link rel="stylesheet" href="https://aimingoo.github.io/gitmint/style/default.css">
+        <script src="https://aimingoo.github.io/gitmint/dist/gitmint.browser.js"></script>
+    
+<!-- END LOCAL -->
+
+    
+
+    
+      <script type="text/javascript">
+      function renderGitment(){
+        var gitment = new Gitmint({
+            id: window.location.pathname, 
+            owner: 'Ryanluoxu',
+            repo: 'gitment-comments',
+            
+            lang: "" || navigator.language || navigator.systemLanguage || navigator.userLanguage,
+            
+            oauth: {
+            
+            
+                client_secret: '86e751e15567e1af27d173720c74f969bb8d73c0',
+            
+                client_id: '478df3241d7aa56819e0'
+            }});
+        gitment.render('gitment-container');
+      }
+
+      
+      renderGitment();
+      
+      </script>
+    
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+</body>
+</html>
