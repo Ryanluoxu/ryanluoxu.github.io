@@ -1,0 +1,1001 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="en">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.3" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.3">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.3" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Java,BlockChain,demo,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="This blog will be removed since some of the concepts are wrong.">
+<meta name="keywords" content="Java,BlockChain,demo">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Blockchain Demo using Java">
+<meta property="og:url" content="https://ryanluoxu.github.io/2017/04/15/Blockchain-Demo-using-Java/index.html">
+<meta property="og:site_name" content="途探生灵">
+<meta property="og:description" content="This blog will be removed since some of the concepts are wrong.">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2020-04-30T09:44:14.521Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Blockchain Demo using Java">
+<meta name="twitter:description" content="This blog will be removed since some of the concepts are wrong.">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.3',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://ryanluoxu.github.io/2017/04/15/Blockchain-Demo-using-Java/">
+
+
+
+
+
+  <title>Blockchain Demo using Java | 途探生灵</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">途探生灵</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">A Programmer's Blog</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            About
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-commonweal">
+          <a href="/404/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br>
+            
+            Commonweal 404
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://ryanluoxu.github.io/2017/04/15/Blockchain-Demo-using-Java/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Ryan Luo Xu 罗旭">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar1.JPG">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="途探生灵">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Blockchain Demo using Java</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-04-15T15:34:33+08:00">
+                2017-04-15
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Post modified&#58;</span>
+              
+              <time title="Post modified" itemprop="dateModified" datetime="2020-04-30T17:44:14+08:00">
+                2020-04-30
+              </time>
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/BlockChain/" itemprop="url" rel="index">
+                    <span itemprop="name">BlockChain</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/04/15/Blockchain-Demo-using-Java/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count gitment-comments-count" data-xid="/2017/04/15/Blockchain-Demo-using-Java/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i> View
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>This blog will be removed since some of the concepts are wrong.</p>
+<a id="more"></a>
+
+<h1 id="Flow"><a href="#Flow" class="headerlink" title="Flow"></a>Flow</h1><h2 id="New-Blockchain"><a href="#New-Blockchain" class="headerlink" title="New Blockchain()"></a>New Blockchain()</h2><ol>
+<li>create an empty chain</li>
+<li>create genesis block<ol>
+<li>with null previous hash, current timestamp and null transaction</li>
+<li>calculateHash using SHA256;</li>
+</ol>
+</li>
+<li>add genesis block into chain</li>
+<li>define miningReward</li>
+<li>create an account list and add system as 1st account</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">public Blockchain() &#123;</span><br><span class="line">	chain = new ArrayList&lt;&gt;();</span><br><span class="line">	genesisBlock = createGenesisBlock();</span><br><span class="line">	chain.add(genesisBlock);</span><br><span class="line">	difficulty = 1;</span><br><span class="line">	pendingTransactions = new ArrayList&lt;&gt;();</span><br><span class="line">	miningReward = 1000;</span><br><span class="line">	bonusAmount = 100;</span><br><span class="line">	accounts = new ArrayList&lt;&gt;();</span><br><span class="line">	accounts.add(new Account(&quot;system&quot;, &quot;system&quot;, 0));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Create-account"><a href="#Create-account" class="headerlink" title="Create account"></a>Create account</h2><ol>
+<li>user input any string</li>
+<li>encript (input+dateTime) to get address and key for a single user</li>
+<li>add to account list</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">private void createAccount() &#123;</span><br><span class="line">	System.out.print(&quot;Enter your name : &quot;);</span><br><span class="line">	String input = scanner.nextLine();</span><br><span class="line">	Date dateTime = new Date();</span><br><span class="line">	Encrypt encrypt = new Encrypt();</span><br><span class="line">	String address = encrypt.SHA256((input+dateTime)).substring(0, 8);</span><br><span class="line">	String key = encrypt.SHA256((input+dateTime)).substring(8, 16);</span><br><span class="line">	Account newAccount = new Account(address, key, 0);</span><br><span class="line">	blockchain.addAccount(newAccount);</span><br><span class="line">	System.out.println(&quot;Account created..&quot;);</span><br><span class="line">	System.out.println(&quot;\tAddress : &quot; + address);</span><br><span class="line">	System.out.println(&quot;\tkey : &quot; + key);</span><br><span class="line">	System.out.println(&quot;&quot;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Transaction"><a href="#Transaction" class="headerlink" title="Transaction"></a>Transaction</h2><ol>
+<li>provide fromAddress, fromKey, toAddress and amountStr</li>
+<li>check if two addresses are existed and fromKey matches</li>
+<li>push this transaction to pendingTransactions</li>
+<li>transaction will only take effects after mining (new block is added into chain)</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">void createTransaction(Transaction newTransaction, String fromKey) &#123;</span><br><span class="line">	// verification</span><br><span class="line">	boolean isValidFromAddress = false;</span><br><span class="line">	boolean isValidFromKey = false;</span><br><span class="line">	boolean isValidToAddress = false;</span><br><span class="line"></span><br><span class="line">	String fromAddress = newTransaction.getFromAddress();</span><br><span class="line">	String toAddress = newTransaction.getToAddress();</span><br><span class="line"></span><br><span class="line">	for (Account account : accounts) &#123;</span><br><span class="line">		if (account.getAddress().equals(fromAddress)) &#123;</span><br><span class="line">			isValidFromAddress = true;</span><br><span class="line">			if (account.getKey().equals(fromKey)) &#123;</span><br><span class="line">				isValidFromKey = true;</span><br><span class="line">			&#125;</span><br><span class="line">			break;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	for (Account account : accounts) &#123;</span><br><span class="line">		if (account.getAddress().equals(toAddress)) &#123;</span><br><span class="line">			isValidToAddress = true;</span><br><span class="line">			break;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	if (isValidToAddress &amp;&amp; isValidFromAddress &amp;&amp; isValidFromKey) &#123;</span><br><span class="line">		pendingTransactions.add(newTransaction);</span><br><span class="line">	&#125; else &#123;</span><br><span class="line">		System.out.println(&quot;Invalid fromAddress, fromKey or toAddress..&quot;);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Mine-Pending-Transaction"><a href="#Mine-Pending-Transaction" class="headerlink" title="Mine Pending Transaction"></a>Mine Pending Transaction</h2><ol>
+<li><p>provide miner address</p>
+</li>
+<li><p>new Block using lastest block hash, current timestamp and pendingTransactions</p>
+</li>
+<li><p>mine block by passing difficulty (proof of work)</p>
+<ol>
+<li>by passing increasing nonce to get different hash</li>
+<li>until 1st two charactars are “00” if difficulty is 2<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">void mineBlock(int difficulty) &#123;</span><br><span class="line">	StringBuilder sb = new StringBuilder();</span><br><span class="line">	for (int i = 0; i &lt; difficulty; i++) &#123;</span><br><span class="line">		sb.append(&quot;0&quot;);</span><br><span class="line">	&#125;</span><br><span class="line">	while (!this.hash.substring(0, difficulty).equals(sb.toString())) &#123;</span><br><span class="line">		this.nonce++;</span><br><span class="line">		this.hash = this.calculateHash();</span><br><span class="line">		System.out.println(&quot;hash : &quot; + hash);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+</li>
+<li><p>add new block into the chain</p>
+</li>
+<li><p>close pending transaction</p>
+<ol>
+<li>withdraw from fromAddress</li>
+<li>top up to toAddress</li>
+</ol>
+</li>
+<li><p>cleare pending transaction</p>
+</li>
+<li><p>give miner reward in the next block</p>
+<ol>
+<li>top up system by reward amount</li>
+<li>system transfer to miner</li>
+<li>transaction push into pending transaction</li>
+</ol>
+</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">void minePendingTransaction(String miningRewardAddress) &#123;</span><br><span class="line">		Block newBlock = new Block(getLatestBlock().getHash(), new Timestamp(System.currentTimeMillis()), pendingTransactions);</span><br><span class="line">		newBlock.mineBlock(difficulty);</span><br><span class="line">		chain.add(newBlock);</span><br><span class="line"></span><br><span class="line">		// close pending transaction</span><br><span class="line">		for (Transaction transaction : pendingTransactions) &#123;</span><br><span class="line">			// deduct from FromAddress</span><br><span class="line">			boolean isWithdrawSuccess = false;</span><br><span class="line">			boolean isTopUpSuccess = false;</span><br><span class="line">			for (Account account : accounts) &#123;</span><br><span class="line">				if (account.getAddress().equals(transaction.getFromAddress())) &#123;</span><br><span class="line">					isWithdrawSuccess = account.withdraw(transaction.getAmount());</span><br><span class="line">					break;</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">			// top up on toAddress</span><br><span class="line">			for (Account account : accounts) &#123;</span><br><span class="line">				if (isWithdrawSuccess) &#123;</span><br><span class="line">					if (account.getAddress().equals(transaction.getToAddress())) &#123;</span><br><span class="line">						isTopUpSuccess = account.topUp(transaction.getAmount());</span><br><span class="line">						break;</span><br><span class="line">					&#125;</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line"></span><br><span class="line">			if (isWithdrawSuccess &amp;&amp; !isTopUpSuccess) &#123;</span><br><span class="line">				System.out.println(&quot;miningRewardAddress to [&quot; + miningRewardAddress + &quot;] is not successful..&quot;);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		// cleare pending transaction</span><br><span class="line">		pendingTransactions = new ArrayList&lt;&gt;();</span><br><span class="line"></span><br><span class="line">		// reward given in next new block</span><br><span class="line">		accounts.get(0).topUp(miningReward);</span><br><span class="line">		pendingTransactions.add(new Transaction(&quot;system&quot;, miningRewardAddress, miningReward));</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h1><h2 id="RyanCoin"><a href="#RyanCoin" class="headerlink" title="RyanCoin"></a>RyanCoin</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br></pre></td><td class="code"><pre><span class="line">package io.ryanluoxu.blockchain;</span><br><span class="line"></span><br><span class="line">import java.util.Date;</span><br><span class="line">import java.util.Scanner;</span><br><span class="line"></span><br><span class="line">public class RyanCoin &#123;</span><br><span class="line"></span><br><span class="line">	static String option = &quot;&quot;;</span><br><span class="line">	static Scanner scanner = new Scanner(System.in);</span><br><span class="line">	static Blockchain blockchain;</span><br><span class="line"></span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line"></span><br><span class="line">		RyanCoin ryanCoin = new RyanCoin();</span><br><span class="line">		blockchain = new Blockchain();</span><br><span class="line"></span><br><span class="line">		while (!option.equals(&quot;0&quot;)) &#123;</span><br><span class="line">			ryanCoin.printMenu();</span><br><span class="line">			System.out.println(&quot;&quot;);</span><br><span class="line">			System.out.print(&quot;    Please choose : &quot;);</span><br><span class="line">			option = ryanCoin.getOption();</span><br><span class="line">			System.out.println(&quot;&quot;);</span><br><span class="line">			switch (option) &#123;</span><br><span class="line">			case &quot;1&quot;:</span><br><span class="line">				ryanCoin.createAccount();</span><br><span class="line">				break;</span><br><span class="line">			case &quot;2&quot;:</span><br><span class="line">				ryanCoin.addTransaction();</span><br><span class="line">				break;</span><br><span class="line">			case &quot;3&quot;:</span><br><span class="line">				ryanCoin.minePendingTransaction();</span><br><span class="line">				break;</span><br><span class="line">			case &quot;4&quot;:</span><br><span class="line">				ryanCoin.viewAccount();</span><br><span class="line">				break;</span><br><span class="line">			case &quot;9&quot;:</span><br><span class="line">				ryanCoin.bonus();</span><br><span class="line">				break;</span><br><span class="line"></span><br><span class="line">			default:</span><br><span class="line">				System.out.println(&quot;Invalid option..&quot;);</span><br><span class="line">				break;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	private void viewAccount() &#123;</span><br><span class="line">		blockchain.viewAccount();</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	private void bonus() &#123;</span><br><span class="line">		blockchain.bonus();</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	private void minePendingTransaction() &#123;</span><br><span class="line">		System.out.print(&quot;Miner address : &quot;);</span><br><span class="line">		String miningRewardAddress = scanner.nextLine();</span><br><span class="line">		blockchain.minePendingTransaction(miningRewardAddress);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	private void addTransaction() &#123;</span><br><span class="line">		String fromAddress;</span><br><span class="line">		String fromKey;</span><br><span class="line">		String toAddress;</span><br><span class="line">		String amountStr;</span><br><span class="line"></span><br><span class="line">		System.out.print(&quot;From Address : &quot;);</span><br><span class="line">		fromAddress = scanner.nextLine();</span><br><span class="line">		System.out.print(&quot;From Key : &quot;);</span><br><span class="line">		fromKey = scanner.nextLine();</span><br><span class="line">		System.out.print(&quot;To Address : &quot;);</span><br><span class="line">		toAddress = scanner.nextLine();</span><br><span class="line">		System.out.print(&quot;Transaction Amount : &quot;);</span><br><span class="line">		amountStr = scanner.nextLine();</span><br><span class="line"></span><br><span class="line">		try &#123;</span><br><span class="line">			double amount = Integer.valueOf(amountStr);</span><br><span class="line">			if (amount &gt;= 0) &#123;</span><br><span class="line">				blockchain.createTransaction(new Transaction(fromAddress, toAddress, amount), fromKey);</span><br><span class="line">			&#125; else &#123;</span><br><span class="line">				System.out.println(&quot;Invalid amount..&quot;);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125; catch (Exception e) &#123;</span><br><span class="line">			System.out.println(e);</span><br><span class="line">			System.out.println(&quot;invalid amount..&quot;);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	private void createAccount() &#123;</span><br><span class="line">		System.out.print(&quot;Enter your name : &quot;);</span><br><span class="line">		String input = scanner.nextLine();</span><br><span class="line">		Date dateTime = new Date();</span><br><span class="line">		Encrypt encrypt = new Encrypt();</span><br><span class="line">		String address = encrypt.SHA256((input+dateTime)).substring(0, 8);</span><br><span class="line">		String key = encrypt.SHA256((input+dateTime)).substring(8, 16);</span><br><span class="line">		Account newAccount = new Account(address, key, 0);</span><br><span class="line">		blockchain.addAccount(newAccount);</span><br><span class="line">		System.out.println(&quot;Account created..&quot;);</span><br><span class="line">		System.out.println(&quot;\tAddress : &quot; + address);</span><br><span class="line">		System.out.println(&quot;\tkey : &quot; + key);</span><br><span class="line">		System.out.println(&quot;&quot;);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	private String getOption() &#123;</span><br><span class="line">		String result = null;</span><br><span class="line">		result = scanner.nextLine();</span><br><span class="line">		return result;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	private void printMenu() &#123;</span><br><span class="line">		System.out.println(&quot;&quot;);</span><br><span class="line">		System.out.println(&quot;\t Ryan Coin 1.0           &quot;);</span><br><span class="line">		System.out.println(&quot;\t===============          &quot;);</span><br><span class="line">		System.out.println(&quot;\t1. Create Account&quot;);</span><br><span class="line">		System.out.println(&quot;\t2. New Transaction&quot;);</span><br><span class="line">		System.out.println(&quot;\t3. Mine Pending Transaction&quot;);</span><br><span class="line">		System.out.println(&quot;\t4. View Account&quot;);</span><br><span class="line">		System.out.println(&quot;\t9. Ryan Bonus&quot;);</span><br><span class="line">		System.out.println(&quot;\t0. Destroy coin&quot;);</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Blockchain"><a href="#Blockchain" class="headerlink" title="Blockchain"></a>Blockchain</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br></pre></td><td class="code"><pre><span class="line">package io.ryanluoxu.blockchain;</span><br><span class="line"></span><br><span class="line">import java.sql.Timestamp;</span><br><span class="line">import java.util.ArrayList;</span><br><span class="line">import java.util.List;</span><br><span class="line"></span><br><span class="line">public class Blockchain &#123;</span><br><span class="line"></span><br><span class="line">	private List&lt;Block&gt; chain;</span><br><span class="line">	private Block genesisBlock;</span><br><span class="line">	private int difficulty;</span><br><span class="line">	private List&lt;Transaction&gt; pendingTransactions;</span><br><span class="line">	private long miningReward;</span><br><span class="line">	private long bonusAmount;</span><br><span class="line">	private List&lt;Account&gt; accounts;</span><br><span class="line"></span><br><span class="line">	public Blockchain() &#123;</span><br><span class="line">		chain = new ArrayList&lt;&gt;();</span><br><span class="line">		genesisBlock = createGenesisBlock();</span><br><span class="line">		chain.add(genesisBlock);</span><br><span class="line">		// genesisBlock info</span><br><span class="line">		System.out.println(&quot;Genesis Block is created:&quot;);</span><br><span class="line">		System.out.println(&quot;\tgenesisBlock.hash : &quot; + genesisBlock.getHash());</span><br><span class="line">		System.out.println(&quot;\tgenesisBlock.nonce : &quot; + genesisBlock.getNonce());</span><br><span class="line">		System.out.println(&quot;\tgenesisBlock.timestamp : &quot; + genesisBlock.getTimestamp());</span><br><span class="line">		System.out.println(&quot;&quot;);</span><br><span class="line"></span><br><span class="line">		difficulty = 1;</span><br><span class="line">		pendingTransactions = new ArrayList&lt;&gt;();</span><br><span class="line">		miningReward = 1000;</span><br><span class="line">		bonusAmount = 100;</span><br><span class="line">		accounts = new ArrayList&lt;&gt;();</span><br><span class="line">		accounts.add(new Account(&quot;system&quot;, &quot;system&quot;, 0));</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	private Block createGenesisBlock() &#123;</span><br><span class="line">		return new Block(null, new Timestamp(System.currentTimeMillis()), null);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	private Block getLatestBlock()&#123;</span><br><span class="line">		return chain.get(chain.size()-1);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	public boolean isChainValid() &#123;</span><br><span class="line"></span><br><span class="line">		for (int i = 0; i &lt; chain.size(); i++) &#123;</span><br><span class="line">			Block currentBlock = chain.get(i);</span><br><span class="line">			Block previousBlock = chain.get(i-1);</span><br><span class="line"></span><br><span class="line">			if (currentBlock.getHash() != currentBlock.calculateHash()) &#123;</span><br><span class="line">				return false;</span><br><span class="line">			&#125;</span><br><span class="line"></span><br><span class="line">			if (currentBlock.getPreviousHash() != previousBlock.getHash()) &#123;</span><br><span class="line">				return false;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		return true;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	void createTransaction(Transaction newTransaction, String fromKey) &#123;</span><br><span class="line">		// verification</span><br><span class="line">		boolean isValidFromAddress = false;</span><br><span class="line">		boolean isValidFromKey = false;</span><br><span class="line">		boolean isValidToAddress = false;</span><br><span class="line"></span><br><span class="line">		String fromAddress = newTransaction.getFromAddress();</span><br><span class="line">		String toAddress = newTransaction.getToAddress();</span><br><span class="line"></span><br><span class="line">		for (Account account : accounts) &#123;</span><br><span class="line">			if (account.getAddress().equals(fromAddress)) &#123;</span><br><span class="line">				isValidFromAddress = true;</span><br><span class="line">				if (account.getKey().equals(fromKey)) &#123;</span><br><span class="line">					isValidFromKey = true;</span><br><span class="line">				&#125;</span><br><span class="line">				break;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		for (Account account : accounts) &#123;</span><br><span class="line">			if (account.getAddress().equals(toAddress)) &#123;</span><br><span class="line">				isValidToAddress = true;</span><br><span class="line">				break;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		if (isValidToAddress &amp;&amp; isValidFromAddress &amp;&amp; isValidFromKey) &#123;</span><br><span class="line">			pendingTransactions.add(newTransaction);</span><br><span class="line">		&#125; else &#123;</span><br><span class="line">			System.out.println(&quot;Invalid fromAddress, fromKey or toAddress..&quot;);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	void minePendingTransaction(String miningRewardAddress) &#123;</span><br><span class="line">		Block newBlock = new Block(getLatestBlock().getHash(), new Timestamp(System.currentTimeMillis()), pendingTransactions);</span><br><span class="line">		newBlock.mineBlock(difficulty);</span><br><span class="line">		chain.add(newBlock);</span><br><span class="line">		// newBlock info</span><br><span class="line">		System.out.println(&quot;new Block is created:&quot;);</span><br><span class="line">		System.out.println(&quot;\tnewBlock.previousHash : &quot; + newBlock.getPreviousHash());</span><br><span class="line">		System.out.println(&quot;\tnewBlock.hash : &quot; + newBlock.getHash());</span><br><span class="line">		System.out.println(&quot;\tnewBlock.nonce : &quot; + newBlock.getNonce());</span><br><span class="line">		System.out.println(&quot;\tnewBlock.timestamp : &quot; + newBlock.getTimestamp());</span><br><span class="line">		System.out.println(&quot;&quot;);</span><br><span class="line"></span><br><span class="line">		// close pending transaction</span><br><span class="line">		for (Transaction transaction : pendingTransactions) &#123;</span><br><span class="line">			// deduct from FromAddress</span><br><span class="line">			boolean isWithdrawSuccess = false;</span><br><span class="line">			boolean isTopUpSuccess = false;</span><br><span class="line">			for (Account account : accounts) &#123;</span><br><span class="line">				if (account.getAddress().equals(transaction.getFromAddress())) &#123;</span><br><span class="line">					isWithdrawSuccess = account.withdraw(transaction.getAmount());</span><br><span class="line">					break;</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">			// top up on toAddress</span><br><span class="line">			for (Account account : accounts) &#123;</span><br><span class="line">				if (isWithdrawSuccess) &#123;</span><br><span class="line">					if (account.getAddress().equals(transaction.getToAddress())) &#123;</span><br><span class="line">						isTopUpSuccess = account.topUp(transaction.getAmount());</span><br><span class="line">						break;</span><br><span class="line">					&#125;</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line"></span><br><span class="line">			if (isWithdrawSuccess &amp;&amp; !isTopUpSuccess) &#123;</span><br><span class="line">				System.out.println(&quot;miningRewardAddress to [&quot; + miningRewardAddress + &quot;] is not successful..&quot;);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		// cleare pending transaction</span><br><span class="line">		pendingTransactions = new ArrayList&lt;&gt;();</span><br><span class="line"></span><br><span class="line">		// reward given in next new block</span><br><span class="line">		accounts.get(0).topUp(miningReward);</span><br><span class="line">//		System.out.println(&quot;System top up mining reward amount : &quot; + miningReward);</span><br><span class="line">		pendingTransactions.add(new Transaction(&quot;system&quot;, miningRewardAddress, miningReward));</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	public void addAccount(Account newAccount) &#123;</span><br><span class="line">		accounts.add(newAccount);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	public void bonus() &#123;</span><br><span class="line">		for (int i = 1; i &lt; accounts.size(); i++) &#123;</span><br><span class="line">			accounts.get(0).topUp(bonusAmount);</span><br><span class="line">//			System.out.println(&quot;System top up bonus amount : &quot; + bonusAmount);</span><br><span class="line">			pendingTransactions.add(new Transaction(&quot;system&quot;, accounts.get(i).getAddress(), bonusAmount));</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	public void viewAccount() &#123;</span><br><span class="line">		System.out.println(&quot;View Accounts: &quot;);</span><br><span class="line">		for (int i = 1; i &lt; accounts.size(); i++) &#123;</span><br><span class="line">			System.out.println(&quot;\t&quot; + accounts.get(i).getAddress() + &quot; : &quot; + accounts.get(i).getBalance());</span><br><span class="line">		&#125;</span><br><span class="line">		System.out.println(&quot;&quot;);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Block"><a href="#Block" class="headerlink" title="Block"></a>Block</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br></pre></td><td class="code"><pre><span class="line">package io.ryanluoxu.blockchain;</span><br><span class="line"></span><br><span class="line">import java.sql.Timestamp;</span><br><span class="line">import java.util.List;</span><br><span class="line"></span><br><span class="line">public class Block &#123;</span><br><span class="line"></span><br><span class="line">	private long nonce;</span><br><span class="line">	private String previousHash;</span><br><span class="line">	private Timestamp timestamp;</span><br><span class="line">	private List&lt;Transaction&gt; transactions;</span><br><span class="line">	private String hash;</span><br><span class="line"></span><br><span class="line">	public Block(String previousHash, Timestamp timestamp, List&lt;Transaction&gt; transactions) &#123;</span><br><span class="line">		this.previousHash = previousHash;</span><br><span class="line">		this.timestamp = timestamp;</span><br><span class="line">		this.transactions = transactions;</span><br><span class="line">		this.hash = calculateHash();</span><br><span class="line">		this.nonce = 0;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	String calculateHash() &#123;</span><br><span class="line">		Encrypt encrypt = new Encrypt();</span><br><span class="line">		String strText = null;</span><br><span class="line">		if (previousHash == null) &#123;</span><br><span class="line">			if (transactions == null) &#123;</span><br><span class="line">				strText = (&quot;&quot; + timestamp + &quot;&quot; + nonce).toString();</span><br><span class="line">			&#125; else &#123;</span><br><span class="line">				strText = (&quot;&quot; + timestamp + transactions.toString() + nonce).toString();</span><br><span class="line">			&#125;</span><br><span class="line">		&#125; else &#123;</span><br><span class="line">			strText = (previousHash + timestamp + transactions.toString() + nonce).toString();</span><br><span class="line">		&#125;</span><br><span class="line">//		System.out.println(&quot;strText of block : &quot;+strText);</span><br><span class="line">		return encrypt.SHA256(strText);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	void mineBlock(int difficulty) &#123;</span><br><span class="line">		StringBuilder sb = new StringBuilder();</span><br><span class="line">		for (int i = 0; i &lt; difficulty; i++) &#123;</span><br><span class="line">			sb.append(&quot;0&quot;);</span><br><span class="line">		&#125;</span><br><span class="line">		while (!this.hash.substring(0, difficulty).equals(sb.toString())) &#123;</span><br><span class="line">			this.nonce++;</span><br><span class="line">			this.hash = this.calculateHash();</span><br><span class="line">			System.out.println(&quot;hash : &quot; + hash);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	public long getNonce() &#123;</span><br><span class="line">		return nonce;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	public String getPreviousHash() &#123;</span><br><span class="line">		return previousHash;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	public Timestamp getTimestamp() &#123;</span><br><span class="line">		return timestamp;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	public List&lt;Transaction&gt; getTransactions() &#123;</span><br><span class="line">		return transactions;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	public String getHash() &#123;</span><br><span class="line">		return hash;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Encrypt"><a href="#Encrypt" class="headerlink" title="Encrypt"></a>Encrypt</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line">package io.ryanluoxu.blockchain;</span><br><span class="line"></span><br><span class="line">import java.security.MessageDigest;</span><br><span class="line">import java.security.NoSuchAlgorithmException;</span><br><span class="line"></span><br><span class="line">public class Encrypt &#123;</span><br><span class="line"></span><br><span class="line">	public String SHA256(final String strText) &#123;</span><br><span class="line">		return SHA(strText,&quot;SHA-256&quot;);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	public String SHA512(final String strText) &#123;</span><br><span class="line">		return SHA(strText,&quot;SHA-512&quot;);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	private String SHA(final String strText, final String strType) &#123;</span><br><span class="line">		String strResult = null;</span><br><span class="line"></span><br><span class="line">		if (strText != null &amp;&amp; strText.length() &gt; 0) &#123;</span><br><span class="line"></span><br><span class="line">			byte byteBuffer[] = null;</span><br><span class="line"></span><br><span class="line">			try &#123;</span><br><span class="line">				MessageDigest messageDigest = MessageDigest.getInstance(strType);</span><br><span class="line">				messageDigest.update(strText.getBytes());</span><br><span class="line">				byteBuffer = messageDigest.digest();</span><br><span class="line">			&#125; catch (NoSuchAlgorithmException e) &#123;</span><br><span class="line">				e.printStackTrace();</span><br><span class="line">			&#125;</span><br><span class="line"></span><br><span class="line">			StringBuffer strHexString = new StringBuffer();</span><br><span class="line">			if (byteBuffer != null &amp;&amp; byteBuffer.length &gt; 0) &#123;</span><br><span class="line">				for (int i = 0; i &lt; byteBuffer.length; i++) &#123;</span><br><span class="line">					String hex = Integer.toHexString(0xff &amp; byteBuffer[i]);</span><br><span class="line">					if (hex.length() == 1) &#123;</span><br><span class="line">						strHexString.append(&apos;0&apos;);</span><br><span class="line">					&#125;</span><br><span class="line">					strHexString.append(hex);</span><br><span class="line">				&#125;</span><br><span class="line">				strResult = strHexString.toString();</span><br><span class="line">			&#125; else &#123;</span><br><span class="line">				System.out.println(&quot;messageDigest.digest() fail..&quot;);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		return strResult;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Transaction-1"><a href="#Transaction-1" class="headerlink" title="Transaction"></a>Transaction</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line">package io.ryanluoxu.blockchain;</span><br><span class="line"></span><br><span class="line">public class Transaction &#123;</span><br><span class="line"></span><br><span class="line">	private String fromAddress;</span><br><span class="line">	private String toAddress;</span><br><span class="line">	private double amount;</span><br><span class="line"></span><br><span class="line">	public Transaction(String fromAddress, String toAddress, double amount) &#123;</span><br><span class="line">		super();</span><br><span class="line">		this.fromAddress = fromAddress;</span><br><span class="line">		this.toAddress = toAddress;</span><br><span class="line">		this.amount = amount;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	public String getFromAddress() &#123;</span><br><span class="line">		return fromAddress;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	public void setFromAddress(String fromAddress) &#123;</span><br><span class="line">		this.fromAddress = fromAddress;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	public String getToAddress() &#123;</span><br><span class="line">		return toAddress;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	public void setToAddress(String toAddress) &#123;</span><br><span class="line">		this.toAddress = toAddress;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	public double getAmount() &#123;</span><br><span class="line">		return amount;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	public void setAmount(double amount) &#123;</span><br><span class="line">		this.amount = amount;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Account"><a href="#Account" class="headerlink" title="Account"></a>Account</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">package io.ryanluoxu.blockchain;</span><br><span class="line"></span><br><span class="line">public class Account &#123;</span><br><span class="line"></span><br><span class="line">	private String address;</span><br><span class="line">	private String key;</span><br><span class="line">	private double balance;</span><br><span class="line">	public Account(String address, String key, double balance) &#123;</span><br><span class="line">		this.address = address;</span><br><span class="line">		this.key = key;</span><br><span class="line">		this.balance = balance;</span><br><span class="line">	&#125;</span><br><span class="line">	public String getAddress() &#123;</span><br><span class="line">		return address;</span><br><span class="line">	&#125;</span><br><span class="line">	public String getKey() &#123;</span><br><span class="line">		return key;</span><br><span class="line">	&#125;</span><br><span class="line">	public double getBalance() &#123;</span><br><span class="line">		return balance;</span><br><span class="line">	&#125;</span><br><span class="line">	public boolean topUp(double amount) &#123;</span><br><span class="line">		balance += amount;</span><br><span class="line">		System.out.println(&quot;Top up of [&quot; + amount + &quot;] into [&quot; + address + &quot;] is successful..&quot;);</span><br><span class="line">		return true;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	public boolean withdraw(double amount) &#123;</span><br><span class="line">		if (balance - amount &gt;= 0) &#123;</span><br><span class="line">			balance -= amount;</span><br><span class="line">			System.out.println(&quot;Withdraw of [&quot; + amount + &quot;] from [&quot; + address + &quot;] is successful..&quot;);</span><br><span class="line">			return true;</span><br><span class="line">		&#125;</span><br><span class="line">		System.out.println(&quot;Insuffient balance..&quot;);</span><br><span class="line">		return false;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    
+    
+    
+	
+	<div>
+      
+        
+      
+	</div>
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>土豪专用</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>Donate</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/微信打赏.png" alt="Ryan Luo Xu 罗旭 WeChat Pay">
+        <p>WeChat Pay</p>
+      </div>
+    
+
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>Post author:</strong>
+    Ryan Luo Xu 罗旭
+  </li>
+  <li class="post-copyright-link">
+    <strong>Post link:</strong>
+    <a href="https://ryanluoxu.github.io/2017/04/15/Blockchain-Demo-using-Java/" title="Blockchain Demo using Java">https://ryanluoxu.github.io/2017/04/15/Blockchain-Demo-using-Java/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>Copyright Notice: </strong>
+    All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> unless stating additionally. 转载请注明出处。
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Java/" rel="tag"># Java</a>
+          
+            <a href="/tags/BlockChain/" rel="tag"># BlockChain</a>
+          
+            <a href="/tags/demo/" rel="tag"># demo</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/11/14/Ohm-0-Promo-Code-OHMREF5F498F/" rel="prev" title="Ohm $20 Promo Code: OHMREF5F498F">
+                Ohm $20 Promo Code: OHMREF5F498F <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      
+        <div id="gitment-container"></div>
+      
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/avatar1.JPG" alt="Ryan Luo Xu 罗旭">
+            
+              <p class="site-author-name" itemprop="name">Ryan Luo Xu 罗旭</p>
+              <p class="site-description motion-element" itemprop="description">Share What I learned</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">39</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                
+				  <a href="/categories/index.html">
+				
+                  <span class="site-state-item-count">21</span>
+                  <span class="site-state-item-name">categories</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+				  <a href="/tags/index.html">
+				
+                  <span class="site-state-item-count">108</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          <div class="links-of-author motion-element">
+            
+              
+                <span class="links-of-author-item">
+                  <a href="https://github.com/Ryanluoxu" target="_blank" title="GitHub">
+                    
+                      <i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://www.linkedin.com/in/ryanluoxu/" target="_blank" title="Linkedin">
+                    
+                      <i class="fa fa-fw fa-linkedin"></i>Linkedin</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://www.zhihu.com/people/luojiuri/activities" target="_blank" title="ZhiHu">
+                    
+                      <i class="fa fa-fw fa-globe"></i>ZhiHu</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="mailto:luoxu2011@gmail.com" target="_blank" title="E-Mail">
+                    
+                      <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                </span>
+              
+            
+          </div>
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Flow"><span class="nav-number">1.</span> <span class="nav-text">Flow</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#New-Blockchain"><span class="nav-number">1.1.</span> <span class="nav-text">New Blockchain()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Create-account"><span class="nav-number">1.2.</span> <span class="nav-text">Create account</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Transaction"><span class="nav-number">1.3.</span> <span class="nav-text">Transaction</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Mine-Pending-Transaction"><span class="nav-number">1.4.</span> <span class="nav-text">Mine Pending Transaction</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Code"><span class="nav-number">2.</span> <span class="nav-text">Code</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#RyanCoin"><span class="nav-number">2.1.</span> <span class="nav-text">RyanCoin</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Blockchain"><span class="nav-number">2.2.</span> <span class="nav-text">Blockchain</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Block"><span class="nav-number">2.3.</span> <span class="nav-text">Block</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Encrypt"><span class="nav-number">2.4.</span> <span class="nav-text">Encrypt</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Transaction-1"><span class="nav-number">2.5.</span> <span class="nav-text">Transaction</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Account"><span class="nav-number">2.6.</span> <span class="nav-text">Account</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2017 &mdash; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Ryan Luo Xu 罗旭</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.3</div>
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i> Visitor
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i> Total Visit
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.3"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.3"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.3"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.3"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.3"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+<!-- LOCAL: You can save these files to your site and update links -->
+    
+        
+        <link rel="stylesheet" href="https://aimingoo.github.io/gitmint/style/default.css">
+        <script src="https://aimingoo.github.io/gitmint/dist/gitmint.browser.js"></script>
+    
+<!-- END LOCAL -->
+
+    
+
+    
+      <script type="text/javascript">
+      function renderGitment(){
+        var gitment = new Gitmint({
+            id: window.location.pathname, 
+            owner: 'Ryanluoxu',
+            repo: 'gitment-comments',
+            
+            lang: "" || navigator.language || navigator.systemLanguage || navigator.userLanguage,
+            
+            oauth: {
+            
+            
+                client_secret: '86e751e15567e1af27d173720c74f969bb8d73c0',
+            
+                client_id: '478df3241d7aa56819e0'
+            }});
+        gitment.render('gitment-container');
+      }
+
+      
+      renderGitment();
+      
+      </script>
+    
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+</body>
+</html>
