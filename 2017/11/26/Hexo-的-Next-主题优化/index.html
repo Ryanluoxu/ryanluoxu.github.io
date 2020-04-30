@@ -91,7 +91,7 @@
 <meta property="og:image" content="https://ryanluoxu.github.io/images/%E6%96%87%E7%AB%A0%E9%A1%B5%E9%9D%A2%E8%AE%BF%E9%97%AE%E9%87%8F.png">
 <meta property="og:image" content="https://ryanluoxu.github.io/images/%E6%B7%BB%E5%8A%A0%E9%A1%B5%E9%9D%A2%E4%B9%8B%E5%89%8D.png">
 <meta property="og:image" content="https://ryanluoxu.github.io/images/%E6%B7%BB%E5%8A%A0%E9%A1%B5%E9%9D%A2%E4%B9%8B%E5%90%8E.png">
-<meta property="og:updated_time" content="2020-04-30T09:23:19.528Z">
+<meta property="og:updated_time" content="2020-04-30T10:15:45.266Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo 的 Next 主题优化">
 <meta name="twitter:description" content="声明：本文为 ryanluoxu 原创文章，欢迎转载，请在明显位置注明出处。 这篇博客用来记录和分享我对博客优化的过程，均为实际经历。欢迎纠正，与君共勉。 修改 Next 主题的 SchemeNext 默认的风格是 Muse。现有的四个风格里，我最喜欢 Gemini。因为此风格的博客首页里，每篇博客有明显的分割。菜单在左侧，方便访问时转到别的页面。   操作如下：  打开 D:\blog\them">
@@ -323,7 +323,7 @@
               
                 <span class="post-meta-item-text">Post modified&#58;</span>
               
-              <time title="Post modified" itemprop="dateModified" datetime="2020-04-30T17:23:19+08:00">
+              <time title="Post modified" itemprop="dateModified" datetime="2020-04-30T18:15:45+08:00">
                 2020-04-30
               </time>
             
@@ -401,7 +401,7 @@
 <ol>
 <li>打开 D:\blog\themes\next_config.yml</li>
 <li>找到 <code>Scheme Settings</code></li>
-<li>去掉 <code>Gemini</code> 前面的 <code>#</code>。 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># Schemes</span><br><span class="line">#scheme: Muse</span><br><span class="line">#scheme: Mist</span><br><span class="line">#scheme: Pisces</span><br><span class="line">scheme: Gemini</span><br></pre></td></tr></table></figure>
+<li>去掉 <code>Gemini</code> 前面的 <code>#</code>。<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># Schemes</span><br><span class="line">#scheme: Muse</span><br><span class="line">#scheme: Mist</span><br><span class="line">#scheme: Pisces</span><br><span class="line">scheme: Gemini</span><br></pre></td></tr></table></figure>
 
 </li>
 </ol>
@@ -416,7 +416,14 @@
 <ol>
 <li>打开 D:\blog\themes\next_config.yml</li>
 <li>找到 <code>busuanzi_count</code></li>
-<li>如下修改： <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">busuanzi_count:</span><br><span class="line">  # count values only if the other configs are false</span><br><span class="line">  enable: true	// 此处</span><br><span class="line">  # custom uv span for the whole site</span><br><span class="line">  site_uv: true</span><br><span class="line">  site_uv_header: &lt;i class=&quot;fa fa-user&quot;&gt;&lt;/i&gt; Visitor // 此处</span><br><span class="line">  site_uv_footer:</span><br><span class="line">  # custom pv span for the whole site</span><br><span class="line">  site_pv: true</span><br><span class="line">  site_pv_header: &lt;i class=&quot;fa fa-eye&quot;&gt;&lt;/i&gt; Total Visit // 此处</span><br><span class="line">  site_pv_footer:</span><br><span class="line">  # custom pv span for one page only</span><br><span class="line">  page_pv: true</span><br><span class="line">  page_pv_header: &lt;i class=&quot;fa fa-file-o&quot;&gt;&lt;/i&gt; View // 此处</span><br><span class="line">  page_pv_footer:</span><br></pre></td></tr></table></figure>
+<li>如下修改：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">busuanzi_count:</span><br><span class="line">  # count values only if the other configs are false</span><br><span class="line">  enable: true	// 此处</span><br><span class="line">  # custom uv span for the whole site</span><br><span class="line">  site_uv: true</span><br><span class="line">  site_uv_header: &lt;i class=&quot;fa fa-user&quot;&gt;&lt;/i&gt; Visitor // 此处</span><br><span class="line">  site_uv_footer:</span><br><span class="line">  # custom pv span for the whole site</span><br><span class="line">  site_pv: true</span><br><span class="line">  site_pv_header: &lt;i class=&quot;fa fa-eye&quot;&gt;&lt;/i&gt; Total Visit // 此处</span><br><span class="line">  site_pv_footer:</span><br><span class="line">  # custom pv span for one page only</span><br><span class="line">  page_pv: true</span><br><span class="line">  page_pv_header: &lt;i class=&quot;fa fa-file-o&quot;&gt;&lt;/i&gt; View // 此处</span><br><span class="line">  page_pv_footer:</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<p><strong>统计数字失效解决方案</strong></p>
+<ol>
+<li>打开 <code>\themes\next\layout\_third-party\analytics\busuanzi-counter.swig</code></li>
+<li>将 src 替换：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;script async src=&quot;https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js&quot;&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure>
 
 </li>
 </ol>
@@ -425,7 +432,7 @@
 <li>将头像照片 <code>头像1.jpg</code> 保存到 D:\blog\themes\next\source\images 路径下。</li>
 <li>打开 D:\blog\themes\next_config.yml</li>
 <li>找到 <code>Sidebar Avatar</code></li>
-<li>如下修改： <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># Sidebar Avatar</span><br><span class="line"># in theme directory(source/images): /images/avatar.gif</span><br><span class="line"># in site  directory(source/uploads): /uploads/avatar.gif</span><br><span class="line">avatar: /images/avatar1.JPG</span><br></pre></td></tr></table></figure>
+<li>如下修改：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># Sidebar Avatar</span><br><span class="line"># in theme directory(source/images): /images/avatar.gif</span><br><span class="line"># in site  directory(source/uploads): /uploads/avatar.gif</span><br><span class="line">avatar: /images/avatar1.JPG</span><br></pre></td></tr></table></figure>
 
 </li>
 </ol>
@@ -442,7 +449,7 @@
 </li>
 <li><p>找到 <code>Menu Settings</code></p>
 </li>
-<li><p>如下修改： </p>
+<li><p>如下修改：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">menu:</span><br><span class="line">  home: / || home</span><br><span class="line">  about: /about/ || user  // 此处</span><br><span class="line">  #tags: /tags/ || tags</span><br><span class="line">  #categories: /categories/ || th</span><br><span class="line">  archives: /archives/ || archive</span><br><span class="line">  #schedule: /schedule/ || calendar</span><br></pre></td></tr></table></figure>
 
 </li>
@@ -462,7 +469,7 @@
 
 </li>
 </ol>
-<p>没有深入研究，但应该是 <code>hasTagsPage</code> 没有实现，所以总是没有链接效果。所以给它加了一个 <code>else</code>   条件。就可以了。 </p>
+<p>没有深入研究，但应该是 <code>hasTagsPage</code> 没有实现，所以总是没有链接效果。所以给它加了一个 <code>else</code>   条件。就可以了。</p>
 <h2 id="分类和标签页面的自动生成-categories-amp-tags"><a href="#分类和标签页面的自动生成-categories-amp-tags" class="headerlink" title="分类和标签页面的自动生成 categories &amp; tags"></a>分类和标签页面的自动生成 categories &amp; tags</h2><p>一开始我自己手动添加了这两个页面的内容，后来无意看到了正确的打开方式：<a href="http://theme-next.iissnan.com/theme-settings.html" target="_blank" rel="noopener">主题配置</a><br>很简单，分别加上 type 就可以了。</p>
 <p><strong>分类页面：</strong></p>
 <ol>
@@ -485,7 +492,7 @@
 <ol>
 <li>打开 D:\blog\themes\next_config.yml</li>
 <li>找到 <code>Social Links.</code></li>
-<li>修改如下：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">social:</span><br><span class="line">  GitHub: https://github.com/Ryanluoxu || github</span><br><span class="line">  Linkedin: https://www.linkedin.com/in/luo-xu-ryan-675a8041/ ||  linkedin</span><br><span class="line">  ZhiHu: https://www.zhihu.com/people/luojiuri/activities || </span><br><span class="line">  #StackOverflow: https://stackoverflow.com/users/7640451/ryan-l || stack-overflow</span><br><span class="line">  E-Mail: mailto:luoxu2011@gmail.com || envelope</span><br><span class="line">  #右键复制: mailto:luoxu2011@gmail.com || envelope</span><br><span class="line">  #Google: https://plus.google.com/yourname || google</span><br><span class="line">  #Twitter: https://twitter.com/yourname || twitter</span><br><span class="line">  #FB Page: https://www.facebook.com/yourname || facebook</span><br><span class="line">  #VK Group: https://vk.com/yourname || vk</span><br><span class="line">  #YouTube: https://youtube.com/yourname || youtube</span><br><span class="line">  #Instagram: https://instagram.com/yourname || instagram</span><br><span class="line">  #Skype: skype:yourname?call|chat || skype</span><br><span class="line"></span><br><span class="line">social_icons:</span><br><span class="line">  enable: true</span><br><span class="line">  icons_only: false</span><br><span class="line">  transition: false</span><br><span class="line">  GitHub: github</span><br><span class="line">  Linkedin: linkedin</span><br></pre></td></tr></table></figure>
+<li>修改如下：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">social:</span><br><span class="line">  GitHub: https://github.com/Ryanluoxu || github</span><br><span class="line">  Linkedin: https://www.linkedin.com/in/luo-xu-ryan-675a8041/ ||  linkedin</span><br><span class="line">  ZhiHu: https://www.zhihu.com/people/luojiuri/activities ||</span><br><span class="line">  #StackOverflow: https://stackoverflow.com/users/7640451/ryan-l || stack-overflow</span><br><span class="line">  E-Mail: mailto:luoxu2011@gmail.com || envelope</span><br><span class="line">  #右键复制: mailto:luoxu2011@gmail.com || envelope</span><br><span class="line">  #Google: https://plus.google.com/yourname || google</span><br><span class="line">  #Twitter: https://twitter.com/yourname || twitter</span><br><span class="line">  #FB Page: https://www.facebook.com/yourname || facebook</span><br><span class="line">  #VK Group: https://vk.com/yourname || vk</span><br><span class="line">  #YouTube: https://youtube.com/yourname || youtube</span><br><span class="line">  #Instagram: https://instagram.com/yourname || instagram</span><br><span class="line">  #Skype: skype:yourname?call|chat || skype</span><br><span class="line"></span><br><span class="line">social_icons:</span><br><span class="line">  enable: true</span><br><span class="line">  icons_only: false</span><br><span class="line">  transition: false</span><br><span class="line">  GitHub: github</span><br><span class="line">  Linkedin: linkedin</span><br></pre></td></tr></table></figure>
 
 </li>
 </ol>
