@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="途探生灵">
 <meta property="og:description" content="This post includes:  use python to get labels from GMail API deploy python package to AWS Lambda setup a AWS gateway API to get labels">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2020-05-18T10:26:03.099Z">
+<meta property="og:updated_time" content="2020-05-18T16:15:14.610Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="AWS Lambda - Pyhton - GMail API">
 <meta name="twitter:description" content="This post includes:  use python to get labels from GMail API deploy python package to AWS Lambda setup a AWS gateway API to get labels">
@@ -318,8 +318,8 @@
               
                 <span class="post-meta-item-text">Post modified&#58;</span>
               
-              <time title="Post modified" itemprop="dateModified" datetime="2020-05-18T18:26:03+08:00">
-                2020-05-18
+              <time title="Post modified" itemprop="dateModified" datetime="2020-05-19T00:15:14+08:00">
+                2020-05-19
               </time>
             
           </span>
@@ -434,6 +434,11 @@
 <h2 id="create-a-usage-plan"><a href="#create-a-usage-plan" class="headerlink" title="create a usage plan"></a>create a usage plan</h2><p>API(test) &lt;-&gt; Usage Plan &lt;-&gt; API key(a customer)</p>
 <h1 id="PostMan"><a href="#PostMan" class="headerlink" title="PostMan"></a>PostMan</h1><p>GET: <a href="https://xxtqwmuo0i.execute-api.us-east-2.amazonaws.com/test/labels?id=INBOX" target="_blank" rel="noopener">https://xxtqwmuo0i.execute-api.us-east-2.amazonaws.com/test/labels?id=INBOX</a></p>
 <p>Put API key to header: <code>x-api-key</code></p>
+<h1 id="issues"><a href="#issues" class="headerlink" title="issues"></a>issues</h1><h2 id="Read-only-file-system-‘token-pickle’"><a href="#Read-only-file-system-‘token-pickle’" class="headerlink" title="Read-only file system: ‘token.pickle’"></a>Read-only file system: ‘token.pickle’</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[Errno 30] Read-only file system: &apos;token.pickle&apos;</span><br><span class="line">with open(&apos;token.pickle&apos;, &apos;wb&apos;) as token</span><br></pre></td></tr></table></figure>
+
+<p>make change:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">token_path = <span class="string">'/tmp/token.pickle'</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># for offline use, token must put into tmp dir first</span></span><br><span class="line"><span class="keyword">if</span> <span class="keyword">not</span> os.path.exists(token_path):</span><br><span class="line">    copyfile(<span class="string">'token.pickle'</span>,token_path)</span><br><span class="line"></span><br><span class="line"><span class="comment"># The file token.pickle stores the user's access and refresh tokens, and is</span></span><br><span class="line"><span class="comment"># created automatically when the authorization flow completes for the first time.</span></span><br><span class="line"><span class="keyword">with</span> open(token_path, <span class="string">'rb'</span>) <span class="keyword">as</span> token:</span><br><span class="line">    creds = pickle.load(token)</span><br></pre></td></tr></table></figure>
+
 
       
     </div>
@@ -699,7 +704,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Get-Labels-from-GMail-API-using-Python"><span class="nav-number">1.</span> <span class="nav-text">Get Labels from GMail API using Python</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#main-py"><span class="nav-number">1.1.</span> <span class="nav-text">main.py</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Deploy-python-package-to-AWS-Lambda"><span class="nav-number">2.</span> <span class="nav-text">Deploy python package to AWS Lambda</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#AWS-Lambda-Console"><span class="nav-number">2.1.</span> <span class="nav-text">AWS Lambda Console</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#test-event"><span class="nav-number">2.2.</span> <span class="nav-text">test event</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#AWS-Gateway-API"><span class="nav-number">3.</span> <span class="nav-text">AWS Gateway API</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#create-a-usage-plan"><span class="nav-number">3.1.</span> <span class="nav-text">create a usage plan</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#PostMan"><span class="nav-number">4.</span> <span class="nav-text">PostMan</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Get-Labels-from-GMail-API-using-Python"><span class="nav-number">1.</span> <span class="nav-text">Get Labels from GMail API using Python</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#main-py"><span class="nav-number">1.1.</span> <span class="nav-text">main.py</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Deploy-python-package-to-AWS-Lambda"><span class="nav-number">2.</span> <span class="nav-text">Deploy python package to AWS Lambda</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#AWS-Lambda-Console"><span class="nav-number">2.1.</span> <span class="nav-text">AWS Lambda Console</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#test-event"><span class="nav-number">2.2.</span> <span class="nav-text">test event</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#AWS-Gateway-API"><span class="nav-number">3.</span> <span class="nav-text">AWS Gateway API</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#create-a-usage-plan"><span class="nav-number">3.1.</span> <span class="nav-text">create a usage plan</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#PostMan"><span class="nav-number">4.</span> <span class="nav-text">PostMan</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#issues"><span class="nav-number">5.</span> <span class="nav-text">issues</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Read-only-file-system-‘token-pickle’"><span class="nav-number">5.1.</span> <span class="nav-text">Read-only file system: ‘token.pickle’</span></a></li></ol></li></ol></div>
             
 
           </div>
