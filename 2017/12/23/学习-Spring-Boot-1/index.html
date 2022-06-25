@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>学习 Spring Boot - 1 | Programmer&#39;s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="声明：本文为 ryanluoxu 原创文章，欢迎转载，请在明显位置注明出处。 学习 Spring Boot 有一段时间，也看过很多人的教程，中途放弃了几次，又重新开始。需要很不负责地说，有些教程确实因为时间的关系，已经不适合用来学习参考了。 这篇博客包括以下内容：  项目初始化 Maven 的作用 内置 TomCat   运行项目，创建简单的 info 页面 添加如下 Web Service GE">
+<meta property="og:type" content="article">
+<meta property="og:title" content="学习 Spring Boot - 1">
+<meta property="og:url" content="https://ryanluoxu.github.io/2017/12/23/%E5%AD%A6%E4%B9%A0-Spring-Boot-1/index.html">
+<meta property="og:site_name" content="Programmer&#39;s Blog">
+<meta property="og:description" content="声明：本文为 ryanluoxu 原创文章，欢迎转载，请在明显位置注明出处。 学习 Spring Boot 有一段时间，也看过很多人的教程，中途放弃了几次，又重新开始。需要很不负责地说，有些教程确实因为时间的关系，已经不适合用来学习参考了。 这篇博客包括以下内容：  项目初始化 Maven 的作用 内置 TomCat   运行项目，创建简单的 info 页面 添加如下 Web Service GE">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://ryanluoxu.github.io/images/spring-init.png">
+<meta property="og:image" content="https://ryanluoxu.github.io/images/springboot-structure.png">
+<meta property="og:image" content="https://ryanluoxu.github.io/images/get-uses.png">
+<meta property="og:image" content="https://ryanluoxu.github.io/images/post-add-user.png">
+<meta property="og:image" content="https://ryanluoxu.github.io/images/post-result.png">
+<meta property="og:image" content="https://ryanluoxu.github.io/images/put-update-user.png">
+<meta property="og:image" content="https://ryanluoxu.github.io/images/put-result.png">
+<meta property="article:published_time" content="2017-12-22T21:28:24.000Z">
+<meta property="article:modified_time" content="2022-06-25T04:45:56.410Z">
+<meta property="article:author" content="Ryan Luo">
+<meta property="article:tag" content="beginner">
+<meta property="article:tag" content="Spring">
+<meta property="article:tag" content="Spring Boot">
+<meta property="article:tag" content="Rest">
+<meta property="article:tag" content="Maven">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://ryanluoxu.github.io/images/spring-init.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Programmer's Blog" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+<meta name="generator" content="Hexo 6.2.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Programmer&#39;s Blog</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">途探生灵</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://ryanluoxu.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-学习-Spring-Boot-1" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2017/12/23/%E5%AD%A6%E4%B9%A0-Spring-Boot-1/" class="article-date">
+  <time class="dt-published" datetime="2017-12-22T21:28:24.000Z" itemprop="datePublished">2017-12-23</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/SpringBoot/">SpringBoot</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      学习 Spring Boot - 1
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p><strong>声明：本文为 ryanluoxu 原创文章，欢迎转载，请在明显位置注明出处。</strong></p>
+<p>学习 Spring Boot 有一段时间，也看过很多人的教程，中途放弃了几次，又重新开始。<br>需要很不负责地说，有些教程确实因为时间的关系，已经不适合用来学习参考了。</p>
+<p>这篇博客包括以下内容：</p>
+<ol>
+<li>项目初始化<ul>
+<li>Maven 的作用</li>
+<li>内置 TomCat</li>
+</ul>
+</li>
+<li>运行项目，创建简单的 info 页面</li>
+<li>添加如下 Web Service<ul>
+<li>GET 获得全部用户信息</li>
+<li>GET 获得某个用户信息</li>
+<li>POST 添加一个用户</li>
+<li>PUT 更新某个用户</li>
+<li>DELETE 删除某个用户</li>
+</ul>
+</li>
+</ol>
+<span id="more"></span>
+
+<h1 id="项目初始化"><a href="#项目初始化" class="headerlink" title="项目初始化"></a>项目初始化</h1><p>Spring Boot 常用的初始方式有三种：</p>
+<ul>
+<li>Spring Initializer</li>
+<li>Spring Boot CLI</li>
+<li>Spring Tool Suite</li>
+</ul>
+<p>后两者需要额外安装，我比较推荐使用 Spring Initializer 初始化之后，再导入到 Eclipse 中。</p>
+<h2 id="初始化操作"><a href="#初始化操作" class="headerlink" title="初始化操作"></a>初始化操作</h2><ol>
+<li>Go to <a target="_blank" rel="noopener" href="https://start.spring.io/">https://start.spring.io/</a></li>
+<li>如图填写，在 <code>Search for dependencies</code> 下面填 <code>web</code> 之后选择，我们需要用到这个 Dependency。<br> <img src="/images/spring-init.png" alt="spring-init"></li>
+<li>点击 <code>Generate Project</code>，生成并且下载。 解压后放在 Eclipse 的 workspace 文件夹下面。</li>
+<li>打开 <code>Eclipse</code>, 右键-<code>Import..</code>-<code>Existing Maven Projects</code></li>
+<li>选择刚才解压的项目文件夹。例如：D:\workspace\SpringBootDemo</li>
+<li><code>Projects</code> 窗口中会出现 <code>pom.xml</code>，完成。</li>
+</ol>
+<p>可能碰到的问题：</p>
+<ul>
+<li>这里可能会出现 <code>Project build error</code>，到 pom.xml 里面，把 Parent 的版本改成 1.5.8 即可。 估计 1.5.9 以及以上的版本和我的 Maven 不合吧。</li>
+<li><code>Configuration is not up-to-date</code>： 右键项目-<code>Maven</code>-<code>Update Project</code>。</li>
+</ul>
+<p>效果如下：<br><img src="/images/springboot-structure.png" alt="springboot-structure"></p>
+<h2 id="Maven-的作用"><a href="#Maven-的作用" class="headerlink" title="Maven 的作用"></a>Maven 的作用</h2><p>在我的理解中，Maven 主要的作用就是帮助管理 library。 作为一个框架，Spring 会用到很多其他的库，这些库也有自己的版本以及各种更新。 Maven 可以帮助节约大量的操作。</p>
+<p>比如<code>spring-boot-starter-web</code>, 用到几十个库，自己下载再添加，费时且可能出错。<br>而在 Maven 的 pom.xml 文件中，输入下面这段代码：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependencies&gt;</span><br><span class="line">	...</span><br><span class="line">	&lt;dependency&gt;</span><br><span class="line">		&lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</span><br><span class="line">		&lt;artifactId&gt;spring-boot-starter-web&lt;/artifactId&gt;</span><br><span class="line">	&lt;/dependency&gt;</span><br><span class="line">	...</span><br><span class="line">&lt;/dependencies&gt;</span><br></pre></td></tr></table></figure>
+<p>保存后，系统会自动添加 <code>Maven Dependencies</code>，里面会有所有相关的库。<br>之后只需在 pom.xml 中修改，保存之后，系统会自动完成更新。</p>
+<h2 id="内置的-TomCat"><a href="#内置的-TomCat" class="headerlink" title="内置的 TomCat"></a>内置的 TomCat</h2><p>这是一个困扰我很长一段时间的问题，程序开始工作，向外发布信息，需要在一个 Server 上运作。 所以一般的 Web Project，我们都会添加 TomCat 作为服务器，程序运行在 TomCat 上面。</p>
+<p>但是对于 Spring Boot 来说，就不需要了，在这里，其实它只是一个普通的 Java Project。 只是内置了 TomCat，可以在<code>Maven Dependencies</code>中找到<code>tomcat-embed-core-8.5.23.jar</code>等库，说明事实上程序运行依然是通过 TomCat 完成，内置的好处就是…有太多好处了。</p>
+<p>所以只需要按照普通的 Java 程序来运行即可。</p>
+<h1 id="运行项目，创建简单的-info-页面"><a href="#运行项目，创建简单的-info-页面" class="headerlink" title="运行项目，创建简单的 info 页面"></a>运行项目，创建简单的 info 页面</h1><h2 id="运行项目"><a href="#运行项目" class="headerlink" title="运行项目"></a>运行项目</h2><p>打开 DemoApplication.java，如下代码已经自动生成：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">import org.springframework.boot.SpringApplication;</span><br><span class="line">import org.springframework.boot.autoconfigure.SpringBootApplication;</span><br><span class="line"></span><br><span class="line">@SpringBootApplication</span><br><span class="line">public class DemoApplication &#123;</span><br><span class="line"></span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		SpringApplication.run(DemoApplication.class, args);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>直接按照普通的程序运行即可。</p>
+<p>Console 里面会得到 Spring 图标，以及几个关键提示：</p>
+<ul>
+<li>Initializing Spring embedded WebApplicationContext</li>
+<li>Tomcat started on port(s): 8080 (http)</li>
+<li>Started DemoApplication in 1.509 seconds</li>
+</ul>
+<p>这样，程序已经开始在 TomCat 上运行了。</p>
+<p>打开 <code>http://localhost:8080/</code> 会得到 <code>Whitelabel Error Page</code>，因为我们还没有创建任何内容。<br>下面我们添加一个 Controller，来显示一些内容。</p>
+<h2 id="添加-info-页面"><a href="#添加-info-页面" class="headerlink" title="添加 info 页面"></a>添加 info 页面</h2><ol>
+<li>添加 package: <code>io.ryanluoxu.springboot.demo.controller</code></li>
+<li>在此 package 下面创建 InfoController.java, 如下： <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">import org.springframework.web.bind.annotation.RequestMapping;</span><br><span class="line">import org.springframework.web.bind.annotation.RestController;</span><br><span class="line"></span><br><span class="line">@RestController</span><br><span class="line">public class InfoController &#123;</span><br><span class="line"></span><br><span class="line">	@RequestMapping(&quot;/info&quot;)</span><br><span class="line">	public String showInfo() &#123;</span><br><span class="line">		String info = &quot;This is a Spring Boot Starter Project by RyanLuoXu..&quot;;</span><br><span class="line">		return info;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+这样，事实上已经创建了一个简单的 web service。<br>运行程序，前往 <a target="_blank" rel="noopener" href="http://localhost:8080/info">http://localhost:8080/info</a> 即可看到 info 的内容。</li>
+</ol>
+<p>这里我们只是返回了一个字符串，下面我们以 JSON 格式返回更多的信息。</p>
+<h2 id="添加-moreinfo-页面"><a href="#添加-moreinfo-页面" class="headerlink" title="添加 moreinfo 页面"></a>添加 moreinfo 页面</h2><ol>
+<li>添加 package: io.ryanluoxu.springboot.demo.model</li>
+<li>在此 package下面创建 Info.java，如下： <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">public class Info &#123;</span><br><span class="line">	</span><br><span class="line">	private String description;</span><br><span class="line">	private String startDate;</span><br><span class="line">	private String author;</span><br><span class="line">	private String framework;</span><br><span class="line">	private String database;</span><br><span class="line">	</span><br><span class="line">	...setters and getters...</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
+<li>在 InfoController.java 中添加： <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">@RequestMapping(&quot;/moreinfo&quot;)</span><br><span class="line">public Info showMoreInfo() &#123;</span><br><span class="line">	Info info = new Info();</span><br><span class="line">	</span><br><span class="line">	info.setAuthor(&quot;RyanLuoXu&quot;);</span><br><span class="line">	info.setDatabase(&quot;PostgreSQL&quot;);</span><br><span class="line">	info.setDescription(&quot;This is a Spring Boot Starter Project&quot;);</span><br><span class="line">	info.setFramework(&quot;Spring Boot&quot;);</span><br><span class="line">	info.setStartDate(&quot;2017-12-23&quot;);</span><br><span class="line">	</span><br><span class="line">	return info;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>创建 info 为一个类</li>
+<li>然后在 showMoreInfo() 里面定义它的内容，并且返回含有多个信息的 info 对象</li>
+<li>info 会被自动转成 JSON 格式</li>
+</ul>
+</li>
+</ol>
+<p>运行程序，前往 <a target="_blank" rel="noopener" href="http://localhost:8080/moreinfo">http://localhost:8080/moreinfo</a> 即可看到 info 的内容。 如下：</p>
+<blockquote>
+<p>{<br>  “description”: “This is a Spring Boot Starter Project”,<br>  “startDate”: “2017-12-23”,<br>  “author”: “RyanLuoXu”,<br>  “framework”: “Spring Boot”,<br>  “database”: “PostgreSQL”<br>}</p>
+</blockquote>
+<p>这里为了方便，我们把信息直接放在了 Controller 里面，事实上 Controller 是通过调用 Service 里的方法得到信息的。<br>下面的例子会把这部分分离开来，并且创建几个常用的 web service。</p>
+<h1 id="添加-Web-Service-GET-POST-PUT-amp-DELETE"><a href="#添加-Web-Service-GET-POST-PUT-amp-DELETE" class="headerlink" title="添加 Web Service : GET, POST, PUT &amp; DELETE"></a>添加 Web Service : GET, POST, PUT &amp; DELETE</h1><p>这部分，我们新添加一个 User 类，实现对 user 信息的获取，更新，修改和删除。</p>
+<h2 id="GET-获得全部"><a href="#GET-获得全部" class="headerlink" title="GET 获得全部"></a>GET 获得全部</h2><ol>
+<li>在 io.ryanluoxu.springboot.demo.model 下面，创建 User.java， 如下： <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">public class User &#123;</span><br><span class="line"></span><br><span class="line">	private String userName;</span><br><span class="line">	private int age;</span><br><span class="line">	private String nationality;</span><br><span class="line"></span><br><span class="line">	...setters and getters...		</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li>添加 package: io.ryanluoxu.springboot.demo.service</li>
+<li>在此 package 下面，创建 UserService.java, 如下： <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">@Service</span><br><span class="line">public class UserService &#123;</span><br><span class="line">	</span><br><span class="line">	ArrayList&lt;User&gt; userList = new ArrayList&lt;&gt;();</span><br><span class="line">	</span><br><span class="line">	public UserService() &#123;</span><br><span class="line">		</span><br><span class="line">		// create fake database here</span><br><span class="line">		User user1 = new User();</span><br><span class="line">		user1.setUserName(&quot;Melvin&quot;);</span><br><span class="line">		user1.setAge(30);</span><br><span class="line">		user1.setNationality(&quot;Singaporean&quot;);</span><br><span class="line">		</span><br><span class="line">		User user2 = new User();</span><br><span class="line">		user2.setUserName(&quot;Ryan&quot;);</span><br><span class="line">		user2.setAge(36);</span><br><span class="line">		user2.setNationality(&quot;American&quot;);</span><br><span class="line">		</span><br><span class="line">		User user3 = new User();</span><br><span class="line">		user3.setUserName(&quot;Hazel&quot;);</span><br><span class="line">		user3.setAge(26);</span><br><span class="line">		user3.setNationality(&quot;Chinese&quot;);</span><br><span class="line">		</span><br><span class="line">		userList.add(user1);</span><br><span class="line">		userList.add(user2);</span><br><span class="line">		userList.add(user3);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 一旦获取 UserService 类的对象，该对象中自带以上虚拟的信息</span><br><span class="line">// 后续可以连接数据库，用 DAO 来获取数据</span><br></pre></td></tr></table></figure></li>
+<li>在 UserService.java 里，添加 getUserList()： <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">public ArrayList&lt;User&gt; getUserList()&#123;</span><br><span class="line">	return userList;</span><br><span class="line">&#125;	</span><br></pre></td></tr></table></figure></li>
+<li>在 io.ryanluoxu.springboot.demo.controller 下面，创建 UserController.java： <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">@RestController</span><br><span class="line">public class UserController &#123;</span><br><span class="line">	</span><br><span class="line">	@Autowired</span><br><span class="line">	private UserService userService;	// get one time instance</span><br><span class="line">	</span><br><span class="line">	@RequestMapping(&quot;/users&quot;)			// default method = SET</span><br><span class="line">	public ArrayList&lt;User&gt; getUserList()&#123;</span><br><span class="line">		ArrayList&lt;User&gt; userList = userService.getUserList();</span><br><span class="line">		return userList;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>这里获取了一个 userService 对象。 </li>
+<li>事实上是 Spring 巡视项目，根据 <code>@RestController</code> 和 <code>@Service</code> 创建了 userController 和 userService</li>
+<li>然后根据 <code>@Autowired</code> 将 userService 注入到 userController 中，所谓的依赖注入。</li>
+<li>当 ~&#x2F;users 的 web service 被翻牌的时候，getUserList() 运行，通过 userService.getUserList() 得到信息，返回给呼叫该服务的前端。</li>
+</ul>
+</li>
+<li>运行程序, 前往 <a target="_blank" rel="noopener" href="http://localhost:8080/users">http://localhost:8080/users</a> 得到：<br><img src="/images/get-uses.png" alt="get-uses"></li>
+</ol>
+<p>这里通过 URL，得到所有用户信息，下面获取特定某个人的信息。</p>
+<h2 id="GET-获得特定某个"><a href="#GET-获得特定某个" class="headerlink" title="GET 获得特定某个"></a>GET 获得特定某个</h2><ol>
+<li>在 UserService.java, 添加： <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">public User getUserByName(String name) &#123;</span><br><span class="line">	User user  = userList.stream().filter(u -&gt; u.getUserName().equals(name)).findFirst().get();</span><br><span class="line">	return user;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li>在 UserController.java, 添加： <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">@RequestMapping(&quot;/users/&#123;name&#125;&quot;)</span><br><span class="line">public User getUserByName(@PathVariable String name) &#123;</span><br><span class="line">	User user = userService.getUserByName(name);</span><br><span class="line">	return user;</span><br><span class="line">&#125;</span><br><span class="line">// link &#123;name&#125; to name; &#123;name1&#125; X</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>@RequestMapping(&quot;/users/&#123;name&#125;&quot;)</code></li>
+<li><code>@PathVariable String name</code></li>
+</ul>
+</li>
+<li>controller 根据前端过来的 name 参数，呼叫 userService。</li>
+<li>userService 在用户列表里找到符合条件的信息，返回给 controller。</li>
+<li>controller 再以 JSON 格式返回给前端</li>
+<li>运行程序, 前往 <a target="_blank" rel="noopener" href="http://localhost:8080/users/Melvin">http://localhost:8080/users/Melvin</a>, 得到：<blockquote>
+<p>{<br>  “userName”: “Melvin”,<br>  “age”: 30,<br>  “nationality”: “Singaporean”<br>}</p>
+</blockquote>
+</li>
+</ol>
+<p>对于 GET 来说，都是获取信息，当 URL 直接在浏览器上输入时，都是默认 GET 方法。<br>下面的添加，更新和删除需要借助额外的工具：PostMan。</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.getpostman.com/">https://www.getpostman.com/</a></li>
+<li>下载并安装</li>
+</ul>
+<h2 id="POST-添加"><a href="#POST-添加" class="headerlink" title="POST 添加"></a>POST 添加</h2><ol>
+<li>在 UserService.java, 添加： <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">public boolean addUser(User user) &#123;</span><br><span class="line">	boolean isSuccess = false;</span><br><span class="line">	</span><br><span class="line">	try &#123;</span><br><span class="line">		isSuccess = userList.add(user);		// add user may fail when connect to database</span><br><span class="line">		</span><br><span class="line">	&#125; catch (Exception e) &#123;</span><br><span class="line">		System.err.println(&quot;Fail to add user..&quot;);</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	return isSuccess;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li>在 UserController.java, 添加： <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">@RequestMapping(method=RequestMethod.POST, value=&quot;/users&quot;)</span><br><span class="line">public boolean addUser(@RequestBody User user) &#123;	// transfer RequestBody to User instance</span><br><span class="line">	boolean isSuccess = userService.addUser(user);</span><br><span class="line">	return isSuccess;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>@RequestMapping(method=RequestMethod.POST, value=&quot;/users&quot;)</code></li>
+<li><code>@RequestBody User user</code></li>
+</ul>
+</li>
+<li>对于前端来说：<ul>
+<li>同样是 <code>http://localhost:8080/users/</code>，此时采用的是 POST 方法</li>
+<li>POST 的同时需要将添加的信息，以 JSON 的格式传递到 Controller</li>
+<li>Controller 再用 <code>@RequestBody User user</code> 传递给 Service</li>
+<li>Service 添加成功，返回一个 True。</li>
+</ul>
+</li>
+<li>运行程序，用 PostMan 来测试。</li>
+</ol>
+<p>打开 PostMan：</p>
+<ol>
+<li>选择 POST 作为方法，URL&#x3D;<a target="_blank" rel="noopener" href="http://localhost:8080/users/">http://localhost:8080/users/</a></li>
+<li>Headers：<ul>
+<li>Key: Content-Type</li>
+<li>Value: application&#x2F;json</li>
+</ul>
+</li>
+<li>Body:<ul>
+<li>raw</li>
+<li>JSON (application&#x2F;json)</li>
+</ul>
+</li>
+</ol>
+<p>如图：<br><img src="/images/post-add-user.png" alt="post-add-user"></p>
+<p>返回的结果得到 true。<br>前往 <a target="_blank" rel="noopener" href="http://localhost:8080/users">http://localhost:8080/users</a> 得到：<br><img src="/images/post-result.png" alt="post-result"></p>
+<h2 id="PUT-更新某个"><a href="#PUT-更新某个" class="headerlink" title="PUT 更新某个"></a>PUT 更新某个</h2><ol>
+<li>在 UserService.java, 添加： <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">public boolean updateUserByName(User updatedUser, String name) &#123;</span><br><span class="line">	boolean isSuccess = false;</span><br><span class="line">	</span><br><span class="line">	// get user with request name and replace it</span><br><span class="line">	for (User currentUser : userList) &#123;</span><br><span class="line">		if (currentUser.getUserName().equals(name)) &#123;</span><br><span class="line">			int index = userList.indexOf(currentUser);</span><br><span class="line">			userList.set(index, updatedUser);</span><br><span class="line">			isSuccess = true;</span><br><span class="line">		&#125; </span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	if (!isSuccess) &#123;</span><br><span class="line">		System.err.println(&quot;There is no user called &quot; + name);</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	return isSuccess;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li>在 UserController.java, 添加： <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">@RequestMapping(method=RequestMethod.PUT, value=&quot;/users/&#123;name&#125;&quot;)</span><br><span class="line">public boolean updateUserByName(@RequestBody User user, @PathVariable String name) &#123;	</span><br><span class="line">	boolean isSuccess = userService.updateUserByName(user, name);</span><br><span class="line">	return isSuccess;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>@RequestMapping(method=RequestMethod.PUT, value=&quot;/users/&#123;name&#125;&quot;)</code></li>
+<li><code>@RequestBody User user, @PathVariable String name</code></li>
+</ul>
+</li>
+<li>用 name 来选中某个用户，用 user 来更新信息。 成功，返回 true。</li>
+<li>运行程序，用 PostMan 来测试。</li>
+</ol>
+<p>打开 PostMan：</p>
+<ol>
+<li>选择 PUT 作为方法, URL &#x3D; <a target="_blank" rel="noopener" href="http://localhost:8080/users/Melvin">http://localhost:8080/users/Melvin</a></li>
+<li>Headers：<ul>
+<li>Key: Content-Type</li>
+<li>Value: application&#x2F;json</li>
+</ul>
+</li>
+<li>Body:<ul>
+<li>raw</li>
+<li>JSON (application&#x2F;json)</li>
+</ul>
+</li>
+</ol>
+<p>如图：<br><img src="/images/put-update-user.png" alt="put-update-user"></p>
+<p>返回的结果得到 true。<br>前往 <a target="_blank" rel="noopener" href="http://localhost:8080/users">http://localhost:8080/users</a> 得到：<br><img src="/images/put-result.png" alt="put-result"></p>
+<p>Melvin 的信息已经被替换掉了。</p>
+<h2 id="DELETE-删除某个"><a href="#DELETE-删除某个" class="headerlink" title="DELETE 删除某个"></a>DELETE 删除某个</h2><ol>
+<li>在 UserService.java, 添加： <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">public boolean removeUserByName(String name) &#123;</span><br><span class="line">	boolean isSuccess = false;</span><br><span class="line">	try &#123;</span><br><span class="line">		isSuccess = userList.removeIf(user -&gt; user.getUserName().equals(name));</span><br><span class="line">		if (!isSuccess) &#123;</span><br><span class="line">			System.err.println(&quot;There is no user called &quot; + name);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125; catch (Exception e) &#123;</span><br><span class="line">		System.err.println(&quot;Fail to remove user called &quot; + name);</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	return isSuccess;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li>在 UserController.java, 添加： <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">@RequestMapping(method=RequestMethod.DELETE, value=&quot;/users/&#123;name&#125;&quot;)</span><br><span class="line">public boolean removeUserByName(@PathVariable String name) &#123;	</span><br><span class="line">	boolean isSuccess = userService.removeUserByName(name);</span><br><span class="line">	return isSuccess;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li>用 name 来选中某个用户，删除成功，返回 true。</li>
+<li>运行程序，用 PostMan 来测试。</li>
+</ol>
+<p>打开 PostMan：</p>
+<ol>
+<li>选择 DELETE 作为方法, URL &#x3D; <a target="_blank" rel="noopener" href="http://localhost:8080/users/Grace">http://localhost:8080/users/Grace</a></li>
+<li>前往 <a target="_blank" rel="noopener" href="http://localhost:8080/users">http://localhost:8080/users</a> 验证结果。</li>
+</ol>
+<h1 id="Web-Application-Layer"><a href="#Web-Application-Layer" class="headerlink" title="Web Application Layer"></a>Web Application Layer</h1><pre><code>HTML(view)
+controller.js
+service.js 
+===============
+Controller.java
+Service.java
+Repository.java
+===============
+BD-table
+        
+</code></pre>
+<p>** 继续学习 -&gt; <a href="/categories/SpringBoot">学习 Spring Boot</a>**</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://ryanluoxu.github.io/2017/12/23/%E5%AD%A6%E4%B9%A0-Spring-Boot-1/" data-id="cl4tf4gqx0036h7m05n7gefip" data-title="学习 Spring Boot - 1" class="article-share-link">Share</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Maven/" rel="tag">Maven</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Rest/" rel="tag">Rest</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Spring/" rel="tag">Spring</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Spring-Boot/" rel="tag">Spring Boot</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/beginner/" rel="tag">beginner</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2017/12/25/%E5%AD%A6%E4%B9%A0-Spring-Boot-2/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          学习 Spring Boot - 2
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/12/16/Database-PostgreSQL/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Database - PostgreSQL on AWS</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/AWS/">AWS</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/AngularJS/">AngularJS</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/BlockChain/">BlockChain</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/CICD/">CICD</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Database/">Database</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/FrontEnd/">FrontEnd</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Git/">Git</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/JUnit/">JUnit</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java-Basic/">Java Basic</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java-Master-Course/">Java Master Course</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/JavaWeb/">JavaWeb</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Note/">Note</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/">Python</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Selenium/">Selenium</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/SpringBoot/">SpringBoot</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/algorithm/">algorithm</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/others/">others</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/">使用记录</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%B0%8F%E7%A8%8B%E5%BA%8F/">小程序</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%8C%87%E5%8D%97-Guide/">指南-Guide</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/">搭建博客</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/10/" rel="tag">10</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/AWS/" rel="tag">AWS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Abstract%EF%BC%8CAbstract-Class/" rel="tag">Abstract，Abstract Class</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/AngularJS/" rel="tag">AngularJS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Array/" rel="tag">Array</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/BlockChain/" rel="tag">BlockChain</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Bootstrap/" rel="tag">Bootstrap</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CICD/" rel="tag">CICD</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Calendar/" rel="tag">Calendar</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CheatSheet/" rel="tag">CheatSheet</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Date/" rel="tag">Date</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/DateFormat/" rel="tag">DateFormat</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ETH/" rel="tag">ETH</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/FrontEnd/" rel="tag">FrontEnd</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GC/" rel="tag">GC</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/" rel="tag">Git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GitHub-Pages/" rel="tag">GitHub Pages</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Gitment/" rel="tag">Gitment</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/" rel="tag">Hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/IO/" rel="tag">IO</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Interface/" rel="tag">Interface</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JPA/" rel="tag">JPA</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JUnit/" rel="tag">JUnit</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JVM/" rel="tag">JVM</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/" rel="tag">Java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java-300%E9%9B%86/" rel="tag">Java 300集</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/LinkedList/" rel="tag">LinkedList</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/" rel="tag">Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Login/" rel="tag">Login</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Map/" rel="tag">Map</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Maven/" rel="tag">Maven</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Next/" rel="tag">Next</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ping/" rel="tag">Ping</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PostgreSQL/" rel="tag">PostgreSQL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Postgres/" rel="tag">Postgres</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/" rel="tag">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Rest/" rel="tag">Rest</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SCP/" rel="tag">SCP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SSH/" rel="tag">SSH</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Selenium/" rel="tag">Selenium</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Servlet/" rel="tag">Servlet</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Set/" rel="tag">Set</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Smart-Contract/" rel="tag">Smart Contract</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Spring/" rel="tag">Spring</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Spring-Boot/" rel="tag">Spring Boot</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Spring-Data-JPA/" rel="tag">Spring Data JPA</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TSP/" rel="tag">TSP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/URL/" rel="tag">URL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vector/" rel="tag">Vector</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Windows/" rel="tag">Windows</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/XML/" rel="tag">XML</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/algorithm/" rel="tag">algorithm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/automation/" rel="tag">automation</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/basic/" rel="tag">basic</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/beginner/" rel="tag">beginner</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/blog/" rel="tag">blog</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/center/" rel="tag">center</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/code/" rel="tag">code</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/command/" rel="tag">command</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/copy/" rel="tag">copy</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/course/" rel="tag">course</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/database/" rel="tag">database</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/demo/" rel="tag">demo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/docker/" rel="tag">docker</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/dom4j/" rel="tag">dom4j</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/generics/" rel="tag">generics</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/" rel="tag">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github/" rel="tag">github</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/gmail-API/" rel="tag">gmail API</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hanoi/" rel="tag">hanoi</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/head/" rel="tag">head</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/heima/" rel="tag">heima</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/" rel="tag">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/image/" rel="tag">image</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/install/" rel="tag">install</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/" rel="tag">java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/lambda/" rel="tag">lambda</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/menu/" rel="tag">menu</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/migrate/" rel="tag">migrate</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/next/" rel="tag">next</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/note/" rel="tag">note</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/notes/" rel="tag">notes</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ohm/" rel="tag">ohm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/password/" rel="tag">password</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/promote/" rel="tag">promote</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/" rel="tag">python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/random/" rel="tag">random</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/script/" rel="tag">script</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/server/" rel="tag">server</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/setup/" rel="tag">setup</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sh/" rel="tag">sh</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/shell/" rel="tag">shell</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/stack/" rel="tag">stack</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/template/" rel="tag">template</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/test/" rel="tag">test</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tutorial/" rel="tag">tutorial</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ubuntu/" rel="tag">ubuntu</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/unit/" rel="tag">unit</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vi/" rel="tag">vi</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/web/" rel="tag">web</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%B8%BB%E9%A2%98%E4%BC%98%E5%8C%96/" rel="tag">主题优化</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/" rel="tag">使用记录</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%85%A5%E9%97%A8/" rel="tag">入门</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%86%85%E5%AD%98%E5%88%86%E6%9E%90/" rel="tag">内存分析</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%8D%9A%E5%AE%A2/" rel="tag">博客</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" rel="tag">学习笔记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F/" rel="tag">小程序</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BA%8F%E5%88%97%E5%8C%96/" rel="tag">序列化</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%8C%87%E5%8D%97/" rel="tag">指南</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" rel="tag">数据结构</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%A8%8B%E5%BA%8F%E5%91%98/" rel="tag">程序员</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AE%97%E6%B3%95/" rel="tag">算法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%A3%85%E9%A5%B0%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" rel="tag">装饰设计模式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AF%84%E8%AE%BA/" rel="tag">评论</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%B4%AA%E5%BF%83/" rel="tag">贪心</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%BE%85%E5%8A%A9/" rel="tag">辅助</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/10/" style="font-size: 10px;">10</a> <a href="/tags/AWS/" style="font-size: 12px;">AWS</a> <a href="/tags/Abstract%EF%BC%8CAbstract-Class/" style="font-size: 10px;">Abstract，Abstract Class</a> <a href="/tags/AngularJS/" style="font-size: 10px;">AngularJS</a> <a href="/tags/Array/" style="font-size: 10px;">Array</a> <a href="/tags/BlockChain/" style="font-size: 12px;">BlockChain</a> <a href="/tags/Bootstrap/" style="font-size: 10px;">Bootstrap</a> <a href="/tags/CICD/" style="font-size: 10px;">CICD</a> <a href="/tags/Calendar/" style="font-size: 10px;">Calendar</a> <a href="/tags/CheatSheet/" style="font-size: 10px;">CheatSheet</a> <a href="/tags/Date/" style="font-size: 10px;">Date</a> <a href="/tags/DateFormat/" style="font-size: 10px;">DateFormat</a> <a href="/tags/ETH/" style="font-size: 10px;">ETH</a> <a href="/tags/FrontEnd/" style="font-size: 10px;">FrontEnd</a> <a href="/tags/GC/" style="font-size: 10px;">GC</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/GitHub-Pages/" style="font-size: 10px;">GitHub Pages</a> <a href="/tags/Gitment/" style="font-size: 10px;">Gitment</a> <a href="/tags/Hexo/" style="font-size: 14px;">Hexo</a> <a href="/tags/IO/" style="font-size: 10px;">IO</a> <a href="/tags/Interface/" style="font-size: 10px;">Interface</a> <a href="/tags/JPA/" style="font-size: 10px;">JPA</a> <a href="/tags/JUnit/" style="font-size: 10px;">JUnit</a> <a href="/tags/JVM/" style="font-size: 10px;">JVM</a> <a href="/tags/Java/" style="font-size: 20px;">Java</a> <a href="/tags/Java-300%E9%9B%86/" style="font-size: 16px;">Java 300集</a> <a href="/tags/LinkedList/" style="font-size: 10px;">LinkedList</a> <a href="/tags/Linux/" style="font-size: 18px;">Linux</a> <a href="/tags/Login/" style="font-size: 10px;">Login</a> <a href="/tags/Map/" style="font-size: 10px;">Map</a> <a href="/tags/Maven/" style="font-size: 10px;">Maven</a> <a href="/tags/Next/" style="font-size: 12px;">Next</a> <a href="/tags/Ping/" style="font-size: 10px;">Ping</a> <a href="/tags/PostgreSQL/" style="font-size: 12px;">PostgreSQL</a> <a href="/tags/Postgres/" style="font-size: 10px;">Postgres</a> <a href="/tags/Python/" style="font-size: 10px;">Python</a> <a href="/tags/Rest/" style="font-size: 12px;">Rest</a> <a href="/tags/SCP/" style="font-size: 10px;">SCP</a> <a href="/tags/SSH/" style="font-size: 10px;">SSH</a> <a href="/tags/Selenium/" style="font-size: 10px;">Selenium</a> <a href="/tags/Servlet/" style="font-size: 10px;">Servlet</a> <a href="/tags/Set/" style="font-size: 10px;">Set</a> <a href="/tags/Smart-Contract/" style="font-size: 10px;">Smart Contract</a> <a href="/tags/Spring/" style="font-size: 12px;">Spring</a> <a href="/tags/Spring-Boot/" style="font-size: 12px;">Spring Boot</a> <a href="/tags/Spring-Data-JPA/" style="font-size: 10px;">Spring Data JPA</a> <a href="/tags/TSP/" style="font-size: 10px;">TSP</a> <a href="/tags/URL/" style="font-size: 10px;">URL</a> <a href="/tags/Vector/" style="font-size: 10px;">Vector</a> <a href="/tags/Windows/" style="font-size: 10px;">Windows</a> <a href="/tags/XML/" style="font-size: 10px;">XML</a> <a href="/tags/algorithm/" style="font-size: 12px;">algorithm</a> <a href="/tags/automation/" style="font-size: 10px;">automation</a> <a href="/tags/basic/" style="font-size: 12px;">basic</a> <a href="/tags/beginner/" style="font-size: 14px;">beginner</a> <a href="/tags/blog/" style="font-size: 10px;">blog</a> <a href="/tags/center/" style="font-size: 10px;">center</a> <a href="/tags/code/" style="font-size: 10px;">code</a> <a href="/tags/command/" style="font-size: 12px;">command</a> <a href="/tags/copy/" style="font-size: 10px;">copy</a> <a href="/tags/course/" style="font-size: 16px;">course</a> <a href="/tags/database/" style="font-size: 10px;">database</a> <a href="/tags/demo/" style="font-size: 12px;">demo</a> <a href="/tags/docker/" style="font-size: 10px;">docker</a> <a href="/tags/dom4j/" style="font-size: 10px;">dom4j</a> <a href="/tags/generics/" style="font-size: 10px;">generics</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/github/" style="font-size: 10px;">github</a> <a href="/tags/gmail-API/" style="font-size: 10px;">gmail API</a> <a href="/tags/hanoi/" style="font-size: 10px;">hanoi</a> <a href="/tags/head/" style="font-size: 10px;">head</a> <a href="/tags/heima/" style="font-size: 10px;">heima</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/image/" style="font-size: 10px;">image</a> <a href="/tags/install/" style="font-size: 10px;">install</a> <a href="/tags/java/" style="font-size: 10px;">java</a> <a href="/tags/lambda/" style="font-size: 10px;">lambda</a> <a href="/tags/menu/" style="font-size: 10px;">menu</a> <a href="/tags/migrate/" style="font-size: 10px;">migrate</a> <a href="/tags/next/" style="font-size: 10px;">next</a> <a href="/tags/note/" style="font-size: 16px;">note</a> <a href="/tags/notes/" style="font-size: 16px;">notes</a> <a href="/tags/ohm/" style="font-size: 10px;">ohm</a> <a href="/tags/password/" style="font-size: 10px;">password</a> <a href="/tags/promote/" style="font-size: 10px;">promote</a> <a href="/tags/python/" style="font-size: 12px;">python</a> <a href="/tags/random/" style="font-size: 10px;">random</a> <a href="/tags/script/" style="font-size: 12px;">script</a> <a href="/tags/server/" style="font-size: 10px;">server</a> <a href="/tags/setup/" style="font-size: 10px;">setup</a> <a href="/tags/sh/" style="font-size: 10px;">sh</a> <a href="/tags/shell/" style="font-size: 12px;">shell</a> <a href="/tags/stack/" style="font-size: 10px;">stack</a> <a href="/tags/template/" style="font-size: 10px;">template</a> <a href="/tags/test/" style="font-size: 10px;">test</a> <a href="/tags/tutorial/" style="font-size: 10px;">tutorial</a> <a href="/tags/ubuntu/" style="font-size: 10px;">ubuntu</a> <a href="/tags/unit/" style="font-size: 10px;">unit</a> <a href="/tags/vi/" style="font-size: 10px;">vi</a> <a href="/tags/web/" style="font-size: 10px;">web</a> <a href="/tags/%E4%B8%BB%E9%A2%98%E4%BC%98%E5%8C%96/" style="font-size: 12px;">主题优化</a> <a href="/tags/%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/" style="font-size: 10px;">使用记录</a> <a href="/tags/%E5%85%A5%E9%97%A8/" style="font-size: 10px;">入门</a> <a href="/tags/%E5%86%85%E5%AD%98%E5%88%86%E6%9E%90/" style="font-size: 10px;">内存分析</a> <a href="/tags/%E5%8D%9A%E5%AE%A2/" style="font-size: 14px;">博客</a> <a href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" style="font-size: 10px;">学习笔记</a> <a href="/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F/" style="font-size: 10px;">小程序</a> <a href="/tags/%E5%BA%8F%E5%88%97%E5%8C%96/" style="font-size: 10px;">序列化</a> <a href="/tags/%E6%8C%87%E5%8D%97/" style="font-size: 10px;">指南</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" style="font-size: 10px;">数据结构</a> <a href="/tags/%E7%A8%8B%E5%BA%8F%E5%91%98/" style="font-size: 10px;">程序员</a> <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 10px;">算法</a> <a href="/tags/%E8%A3%85%E9%A5%B0%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" style="font-size: 10px;">装饰设计模式</a> <a href="/tags/%E8%AF%84%E8%AE%BA/" style="font-size: 10px;">评论</a> <a href="/tags/%E8%B4%AA%E5%BF%83/" style="font-size: 10px;">贪心</a> <a href="/tags/%E8%BE%85%E5%8A%A9/" style="font-size: 10px;">辅助</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">June 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/05/">May 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">July 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">February 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">November 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">July 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">May 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">February 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">January 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">December 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">November 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">April 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2020/06/06/TSP%E9%97%AE%E9%A2%98-%E8%B4%AA%E5%BF%83%E7%AE%97%E6%B3%95-Python%E5%AE%9E%E7%8E%B0-%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90/">TSP问题-贪心算法-Python实现-算法分析</a>
+          </li>
+        
+          <li>
+            <a href="/2020/06/04/Hanoi-Tower-%E6%B1%89%E8%AF%BA%E5%A1%94-Python-%E7%A4%BA%E4%BE%8B/">Hanoi Tower 汉诺塔 - Python 示例</a>
+          </li>
+        
+          <li>
+            <a href="/2020/05/18/AWS-Lambda-Pyhton-GMail-API/">AWS Lambda - Pyhton - GMail API</a>
+          </li>
+        
+          <li>
+            <a href="/2019/07/14/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%8401/">数据结构01</a>
+          </li>
+        
+          <li>
+            <a href="/2019/04/14/IO-Stream/">IO Stream</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2022 Ryan Luo<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

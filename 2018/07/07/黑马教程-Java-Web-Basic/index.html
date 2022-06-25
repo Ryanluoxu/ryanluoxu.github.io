@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>黑马教程-Java Web Basic | Programmer&#39;s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="这篇博客是黑马JavaWeb教程的学习笔记。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="黑马教程-Java Web Basic">
+<meta property="og:url" content="https://ryanluoxu.github.io/2018/07/07/%E9%BB%91%E9%A9%AC%E6%95%99%E7%A8%8B-Java-Web-Basic/index.html">
+<meta property="og:site_name" content="Programmer&#39;s Blog">
+<meta property="og:description" content="这篇博客是黑马JavaWeb教程的学习笔记。">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2018-07-07T13:17:58.000Z">
+<meta property="article:modified_time" content="2022-06-25T04:45:56.412Z">
+<meta property="article:author" content="Ryan Luo">
+<meta property="article:tag" content="basic">
+<meta property="article:tag" content="java">
+<meta property="article:tag" content="web">
+<meta property="article:tag" content="heima">
+<meta property="article:tag" content="tutorial">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Programmer's Blog" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+<meta name="generator" content="Hexo 6.2.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Programmer&#39;s Blog</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">途探生灵</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://ryanluoxu.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-黑马教程-Java-Web-Basic" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2018/07/07/%E9%BB%91%E9%A9%AC%E6%95%99%E7%A8%8B-Java-Web-Basic/" class="article-date">
+  <time class="dt-published" datetime="2018-07-07T13:17:58.000Z" itemprop="datePublished">2018-07-07</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/JavaWeb/">JavaWeb</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      黑马教程-Java Web Basic
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>这篇博客是黑马JavaWeb教程的学习笔记。</p>
+<span id="more"></span>
+
+<h1 id="Java-基础"><a href="#Java-基础" class="headerlink" title="Java 基础"></a>Java 基础</h1><h2 id="Eclipse-的使用和断点调试"><a href="#Eclipse-的使用和断点调试" class="headerlink" title="Eclipse 的使用和断点调试"></a>Eclipse 的使用和断点调试</h2><h3 id="JRE-amp-Compiler"><a href="#JRE-amp-Compiler" class="headerlink" title="JRE &amp; Compiler"></a>JRE &amp; Compiler</h3><p>JRE version &gt;&#x3D; Java Compiler<br>否则抛出<code>Bad version</code>异常</p>
+<h3 id="Debug-断点调试"><a href="#Debug-断点调试" class="headerlink" title="Debug 断点调试"></a>Debug 断点调试</h3><ul>
+<li>设置断点</li>
+<li>F5: step into</li>
+<li>F6: step over</li>
+<li>F7: step return</li>
+<li>drop to frame: 跳到当前方法第一行</li>
+<li>F8: 跳到下一个断点。</li>
+<li>观察变量: 点击变量 - watch</li>
+<li>Breakpoints：全部断点视图。调试之后清除。</li>
+</ul>
+<h3 id="Eclipse-快捷键"><a href="#Eclipse-快捷键" class="headerlink" title="Eclipse 快捷键"></a>Eclipse 快捷键</h3><ul>
+<li>内容提示： alt+&#x2F;</li>
+<li>快速修复： ctrl+1</li>
+<li>导包：	ctrl+shift+o</li>
+<li>格式化代码块： ctrl+shift+f</li>
+<li>向前向后： alt+方向键</li>
+<li>查看方法说明： f2</li>
+<li>重置透视图： Windows - Reset Perspective</li>
+<li>更改大写： ctrl+shift+x</li>
+<li>更改小写： ctrl+shift+y</li>
+<li>复制一行： ctrl+alt+上下键</li>
+<li>移动一行： alt+上下键</li>
+<li>查看继承关系： ctrl+t</li>
+<li>查看源码： ctrl+shift+t</li>
+<li>查看快捷键： ctrl+shift+L</li>
+</ul>
+<h2 id="JUnit-测试"><a href="#JUnit-测试" class="headerlink" title="JUnit 测试"></a>JUnit 测试</h2><ol>
+<li>创建Person类</li>
+<li>创建测试类-TestPerson</li>
+<li>在 TestPerson 里，创建测试方法-testRun()</li>
+<li>加注释-@Test</li>
+<li>选择 testRun() - run as JUnit Test</li>
+<li>选择测试类，测试所有测试方法</li>
+</ol>
+<h3 id="Before-和-After"><a href="#Before-和-After" class="headerlink" title="Before 和 After"></a>Before 和 After</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">@Before</span><br><span class="line">public void before()&#123;</span><br><span class="line">	//初始化资源</span><br><span class="line">	//所有测试方法前运行</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">@After</span><br><span class="line">public void before()&#123;</span><br><span class="line">	//销毁资源</span><br><span class="line">	//所有测试方法后运行</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">@BeforeClass</span><br><span class="line">public static void beforeClass()&#123;</span><br><span class="line">	//每一个测试方法之前都运行</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">@AfterClass</span><br><span class="line">public static void beforeClass()&#123;</span><br><span class="line">	//每一个测试方法之后都运行</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="Assert-断言"><a href="#Assert-断言" class="headerlink" title="Assert 断言"></a>Assert 断言</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">public void testRun()&#123;</span><br><span class="line">	//通过：p.run() == &quot;2&quot;</span><br><span class="line">	Assert.assertEquals(&quot;2&quot;,p.run());</span><br><span class="line"></span><br><span class="line">	//不通过返回信息</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Java-部分特性"><a href="#Java-部分特性" class="headerlink" title="Java 部分特性"></a>Java 部分特性</h2><h3 id="静态导入（不常用）"><a href="#静态导入（不常用）" class="headerlink" title="静态导入（不常用）"></a>静态导入（不常用）</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">import static java.lang.System.out;</span><br><span class="line">out.print(&quot;&quot;)</span><br></pre></td></tr></table></figure>
+
+<h3 id="自动装箱、拆箱"><a href="#自动装箱、拆箱" class="headerlink" title="自动装箱、拆箱"></a>自动装箱、拆箱</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">//装箱，自动将1变成一个object。</span><br><span class="line">Integer i = 1;  //Interger i = new Integer(&quot;1&quot;)</span><br><span class="line"></span><br><span class="line">//拆箱，自动将i对象拆成数字1.</span><br><span class="line">int j = i; </span><br></pre></td></tr></table></figure>
+
+<h3 id="增强-for"><a href="#增强-for" class="headerlink" title="增强 for"></a>增强 for</h3><p>只用于array，或者实现 Iterable 借口的集合上。</p>
+<p>读取Map的两种方式：</p>
+<ol>
+<li>设置 keyset，通过iterator得到key，然后map.get(key)得到对应的值 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">// 传统方法</span><br><span class="line">Set set = map.keySet();</span><br><span class="line">Iterator it = set.iterator();</span><br><span class="line">while(it.hasNext())&#123;</span><br><span class="line">	String key = it.next();</span><br><span class="line">	System.out.println(key + &quot;-&gt;&quot; +map.get(key));</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// for each</span><br><span class="line">for(Object key : map.keySet())&#123;</span><br><span class="line">	System.out.println(key + &quot;-&gt;&quot; +map.get(key));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li>map的每一组key和value是一个entry。用entrySet()得到set。然后用iterator得到每一对entry。 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">// 传统方法</span><br><span class="line">Set set = map.entrySet();</span><br><span class="line">Iterator it = set.iterator();</span><br><span class="line">while(it.hasNext())&#123;</span><br><span class="line">	Map.Entry entry = it.next();</span><br><span class="line">	System.out.println(entry.getKey() + &quot;-&gt;&quot; +entry.getValue());</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// for each</span><br><span class="line">for(Object entry : map.entrySet())&#123;</span><br><span class="line">	System.out.println(entry.getKey() + &quot;-&gt;&quot; +entry.getValue());</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ol>
+<p>HashMap 没有顺序，需要顺序用 LinkedHashMap();</p>
+<p>For Each 需要注意的问题：</p>
+<ol>
+<li>只是取数据，不用于赋值。需要修改数据，用传统for方式</li>
+</ol>
+<h3 id="可变参数"><a href="#可变参数" class="headerlink" title="可变参数"></a>可变参数</h3><p>可变参数视为数组。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">public int sum(int ...nums)&#123;</span><br><span class="line">	int sum = 0;</span><br><span class="line">	for(int i:nums)&#123;</span><br><span class="line">		sum+=i;	</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">public void testSum()&#123;</span><br><span class="line">	sum(1,2,3,4,5,6); // sum(array);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">int nums[] = &#123;1,2,3,4&#125;  // nums 只是一个对象</span><br><span class="line">Integer nums[] = &#123;1,2,3,4&#125;  // 这时是多个对象</span><br><span class="line"></span><br><span class="line">// 在可变参数里，比如 “T...a”，要求参数为多个对象。</span><br></pre></td></tr></table></figure>
+
+<h3 id="枚举类"><a href="#枚举类" class="headerlink" title="枚举类"></a>枚举类</h3><p>限定了方法的使用对象。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">// 定义枚举的构造函数（私有），方法和字段。来封装信息。</span><br><span class="line">enum Grade()&#123;	// class</span><br><span class="line">	A(&quot;90-100&quot;),B(&quot;80-89&quot;),C(&quot;70-79&quot;);		// Object</span><br><span class="line"></span><br><span class="line">	private String value;  // 封装每个对象对应的分数</span><br><span class="line">	private Grade(String value)&#123;</span><br><span class="line">		this.value = value;	</span><br><span class="line">	&#125;</span><br><span class="line">	public String getValue()&#123;</span><br><span class="line">		return this.value;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">public void print(Grade g)&#123;</span><br><span class="line">	// 使用自己定义的枚举类</span><br><span class="line">	System.out.println(g.getValue());</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">@Test</span><br><span class="line">public void testPrint()&#123;</span><br><span class="line">	print(Grade.B);</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>带抽象方法的枚举</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line">// 要求调用枚举对象时，需要定义优良中。</span><br><span class="line">enum Grade()&#123;</span><br><span class="line">	A(&quot;90-100&quot;)&#123;</span><br><span class="line">		public String rank()&#123;</span><br><span class="line">			return &quot;优&quot;;	</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;;</span><br><span class="line">	B(&quot;80-89&quot;)&#123;</span><br><span class="line">		public String rank()&#123;</span><br><span class="line">			return &quot;良&quot;;	</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;;</span><br><span class="line">	C(&quot;70-79&quot;)&#123;</span><br><span class="line">		public String rank()&#123;</span><br><span class="line">			return &quot;中&quot;;	</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;;	</span><br><span class="line"></span><br><span class="line">	// 抽象方法</span><br><span class="line">	public abstract String rank();</span><br><span class="line"></span><br><span class="line">	// 封装数值</span><br><span class="line">	private String value;</span><br><span class="line">	private Grade(String value)&#123;</span><br><span class="line">		this.value = value;	</span><br><span class="line">	&#125;</span><br><span class="line">	public String getValue()&#123;</span><br><span class="line">		return this.value;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">public void print(Grade g)&#123;</span><br><span class="line">	// 使用自己定义的枚举类</span><br><span class="line">	System.out.println(g.getValue());</span><br><span class="line">	System.out.println(g.rank());</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">@Test</span><br><span class="line">public void testPrint()&#123;</span><br><span class="line">	print(Grade.B);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">@Test</span><br><span class="line">public void testEnum()&#123;</span><br><span class="line">	Grade.C.name();	 //得到C</span><br><span class="line">	Grade.C.ordinal();  //得到位置3</span><br><span class="line">	</span><br><span class="line">	Grade.valueOf(“B”);	// 返回一个枚举对象。可以用于检测得到的值是否是有效值。</span><br><span class="line">	</span><br><span class="line">	Grade.values();  // 返回枚举的所有值</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>枚举只有一个枚举值时，可以当作单态设计模式。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">// 用单态设计模式定义一个类</span><br><span class="line">enum Person&#123;</span><br><span class="line">	A;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="反射"><a href="#反射" class="headerlink" title="反射"></a>反射</h2><ol>
+<li>加载类<ol>
+<li>Class 代表某个类的字节码， Class.forName(String className)</li>
+</ol>
+</li>
+<li>解剖出类的各个部分</li>
+<li>用得到的各个部门执行相应的任务</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">// 加载所需类的字节码到内存</span><br><span class="line">Class classt = Class.forName(&quot;io.ryan.demo.Person&quot;);</span><br><span class="line"></span><br><span class="line">// 加载的另外两个方法</span><br><span class="line">Class classt = new Person().getClass();</span><br><span class="line">Class classt = Person.class;</span><br><span class="line"></span><br><span class="line">// 解剖每个部分</span><br><span class="line">class.getConstructor	// 用于创建对象</span><br><span class="line">class.getMethod			// 用于执行方法</span><br><span class="line">class.getField			// 用于封装数据</span><br><span class="line"></span><br><span class="line">class.getDeclaredConstructor</span><br><span class="line">class.getDeclaredMethod</span><br><span class="line">class.getDeclaredField</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 id="反射类的构造函数"><a href="#反射类的构造函数" class="headerlink" title="反射类的构造函数"></a>反射类的构造函数</h3><p>例子1，无参构造</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Class classt = Class.forName(&quot;io.ryan.demo.Person&quot;);</span><br><span class="line">Constructor c = class.getConstructor();		// 选择某个构造函数</span><br><span class="line">Person p = c.newInstance(); 	// 利用反射得到对象</span><br></pre></td></tr></table></figure>
+
+<p>例子2，有参构造</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Class classt = Class.forName(&quot;io.ryan.demo.Person&quot;);</span><br><span class="line">Constructor c = class.getConstructor(String.class);		// 接收 Class 类</span><br><span class="line">Person p = c.newInstance(“A String”);</span><br></pre></td></tr></table></figure>
+
+<p>例子3，私有构造</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Class classt = Class.forName(&quot;io.ryan.demo.Person&quot;);</span><br><span class="line">Constructor c = class.getDeclaredConstructor(List.class);	// private</span><br><span class="line">c.setAccessible(true); 	// 暴力反射，破解私有</span><br><span class="line">Person p = c.newInstance(new ArrayList());</span><br></pre></td></tr></table></figure>
+
+<p>例子4，创建对象的另一个途径</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Class classt = Class.forName(&quot;io.ryan.demo.Person&quot;);</span><br><span class="line">Person p = class.newInstance();  // 只限有无参的构造函数</span><br></pre></td></tr></table></figure>
+
+<h3 id="反射类的方法"><a href="#反射类的方法" class="headerlink" title="反射类的方法"></a>反射类的方法</h3><ul>
+<li>public</li>
+<li>static: 无需传入对象，null</li>
+<li>private： 需要暴力破解</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Class classt = Class.forName(&quot;io.ryan.demo.Person&quot;);</span><br><span class="line">Method method = classt.getMethod(methodName, 参数.class);	// 得到方法</span><br><span class="line">method.invoke(ojb,args)		// 指定对象来执行这个方法</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>main<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Class classt = Class.forName(&quot;io.ryan.demo.Person&quot;);</span><br><span class="line">Method method = classt.getMethod(“main”, String[].class);</span><br><span class="line">// 看到数组，就要拆。</span><br><span class="line">method.invoke(null, (Object)new String[]&#123;&quot;aa&quot;,&quot;dd&quot;&#125;);</span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="反射类的字段（属性）"><a href="#反射类的字段（属性）" class="headerlink" title="反射类的字段（属性）"></a>反射类的字段（属性）</h3><ul>
+<li>public</li>
+<li>private</li>
+<li>static</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Class classt = Class.forName(&quot;io.ryan.demo.Person&quot;);</span><br><span class="line">Field f = classt.getField(&quot;name&quot;);</span><br><span class="line">f.getType(); 	// 得到该字段的类型</span><br><span class="line">f.get(p1);		// 得到 p1 的名字。</span><br><span class="line"></span><br><span class="line">f.set(p1,&quot;xxx&quot;)	// 赋值</span><br></pre></td></tr></table></figure>
+
+<h2 id="内省-introspector"><a href="#内省-introspector" class="headerlink" title="内省 introspector"></a>内省 introspector</h2><p>用于获取或设置JavaBean的属性。</p>
+<ul>
+<li>Bean的属性由get&#x2F;set方法决定。</li>
+<li>getBeanInfo()，将bean的属性都省到BeanInfo里。</li>
+<li>getPropertiesDescriptor()</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">// 得到bean的所有属性</span><br><span class="line">BeanInfo info = Introspector.getBeanInfo(Person.class, Object.class); // 不要Object属性</span><br><span class="line">PropertyDescriptor[] pds = info.getPropertyDescriptors()</span><br><span class="line">for (PropertyDescriptor pd:pds)&#123;</span><br><span class="line">	System.out.println(pd.getName());</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 操纵bean的指定属性</span><br><span class="line">PropertyDescriptor pd = new PropertyDescriptor(&quot;age&quot;, Person.class);</span><br><span class="line">Method method = pd.getWriteMethod();	// 相当 setAge()</span><br><span class="line">method.invoke(p1, 30);</span><br><span class="line"></span><br><span class="line">Method method2 = pd.getReadMethod();</span><br><span class="line">method2.invoke(p1, null);	// 相当 getAge()</span><br><span class="line"></span><br><span class="line">// 获取当前操作的属性的类型</span><br><span class="line">PropertyDescriptor pd = new PropertyDescriptor(&quot;age&quot;, Person.class);</span><br><span class="line">pd.getPropertyType();</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="beanUtils操纵bean属性"><a href="#beanUtils操纵bean属性" class="headerlink" title="beanUtils操纵bean属性"></a>beanUtils操纵bean属性</h2><ul>
+<li>导入beanUtils包.</li>
+<li>导入logging包.</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line">Person p1 = new Person();</span><br><span class="line">BeanUtils.setProperty(p1, &quot;name&quot;, &quot;ryan&quot;);</span><br><span class="line"></span><br><span class="line">// 数据(String)来了，放到对象里去。包括自动转：8种基本类型。</span><br><span class="line">String name = &quot;ryan&quot;</span><br><span class="line">BeanUtils.setProperty(p1, &quot;name&quot;, name);</span><br><span class="line"></span><br><span class="line">// 以外的数据类型，会抛出异常</span><br><span class="line">String birthday = &quot;1988-09-09&quot;;</span><br><span class="line">BeanUtils.setProperty(p1, &quot;birthday&quot;, birthday);	//Date类型，所以报错</span><br><span class="line"></span><br><span class="line">//需要注册Date转换器</span><br><span class="line">Converter converter = new Converter()&#123;</span><br><span class="line">	public Object convert(Class type, Object value)&#123;</span><br><span class="line">		if(value==null)&#123;</span><br><span class="line">			return null;</span><br><span class="line">		&#125;</span><br><span class="line">		if(!value instanceof String)&#123;</span><br><span class="line">			throw new ConversionException(&quot;参数不是String.&quot;);</span><br><span class="line">		&#125;</span><br><span class="line">		String str = (String) value;</span><br><span class="line">		if(str.trim().equal(&quot;&quot;))&#123;</span><br><span class="line">			return null;</span><br><span class="line">		&#125;</span><br><span class="line">		SimpleDateFormat df = new SimpleDateFormat(&quot;yyyy-MM-dd&quot;);</span><br><span class="line">		try&#123;</span><br><span class="line">			return df.parss(str);	</span><br><span class="line">		&#125; catch(ParseException e)&#123;</span><br><span class="line">			throw new RuntimeException(e);	//异常链不能掉</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">ConvertUtils.register(converter, Date.class);</span><br><span class="line">BeanUtils.setProperty(p1, &quot;birthday&quot;, birthday);	//就不会有异常</span><br><span class="line"></span><br><span class="line">// 查看文档会发现，Converter已经有很多现成的实现类。</span><br><span class="line">ConvertUtils.register(new DateLocaleConverter(), Date.class);</span><br><span class="line">BeanUtils.setProperty(p1, &quot;birthday&quot;, birthday);	//有bug</span><br><span class="line"></span><br><span class="line">// 用map的值填充bean属性</span><br><span class="line">Map map = new HashMap():</span><br><span class="line">map.put(&quot;name&quot;,&quot;ryan&quot;);</span><br><span class="line"></span><br><span class="line">ConvertUtils.register(new DateLocaleConverter(), Date.class);</span><br><span class="line">BeanUtils.populate(bean, map); 	//填充</span><br></pre></td></tr></table></figure>
+
+<h2 id="泛型-Generic"><a href="#泛型-Generic" class="headerlink" title="泛型 Generic"></a>泛型 Generic</h2><p>相当一个类型的变量。<br>在编写集合时，限制了集合的处理类型，从而把运行问题，转为编译问题。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">// 声明的变量是String的集合。</span><br><span class="line">List&lt;String&gt; list = new ArrayList&lt;String&gt;();</span><br></pre></td></tr></table></figure>
+
+<p>泛型的使用：</p>
+<ul>
+<li>List<E> 泛型类，List<String>参数化的类</li>
+<li>Iterator<E></li>
+<li>Map&lt;K,V&gt;<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">List&lt;String&gt; list = new ArrayList&lt;String&gt;();</span><br><span class="line">//...</span><br><span class="line"></span><br><span class="line">Iterator&lt;String&gt; it = list.iterator();</span><br><span class="line">String value = it.next(); // 默认就是String，不需要强转。 </span><br><span class="line"></span><br><span class="line">// for each</span><br><span class="line">for( String s : list)&#123;...&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<p>Map</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">Map&lt;int, String&gt; map = new HashMap&lt;int, Stirng&gt;();</span><br><span class="line">//...</span><br><span class="line"></span><br><span class="line">Set&lt;Map.Entry&lt;Integer,String&gt;&gt; set = map.entrySet();</span><br><span class="line"></span><br><span class="line">for(Entry&lt;Integer,String&gt; entry : set) &#123;</span><br><span class="line">	entry.getKey();</span><br><span class="line">	entry.getValue();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="注意的问题："><a href="#注意的问题：" class="headerlink" title="注意的问题："></a>注意的问题：</h3><ul>
+<li>泛型的对象不能是基本类型。</li>
+<li>new时，前后泛型要一致。</li>
+<li>泛型是给java编译器用的，编译后的binary不带泛型信息。</li>
+</ul>
+<h3 id="自定义泛型方法："><a href="#自定义泛型方法：" class="headerlink" title="自定义泛型方法："></a>自定义泛型方法：</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">// 调用之前先声明</span><br><span class="line">public &lt;T&gt; void gMethod(T t)&#123;..&#125;</span><br><span class="line">public &lt;T,K&gt; void gMethod(T t, K k)&#123;..&#125;</span><br><span class="line"></span><br><span class="line">// 类上声明泛型</span><br><span class="line">public class gClass&lt;T,K&gt;&#123;</span><br><span class="line">	public void gMethod(T t, K k)&#123;...&#125;</span><br><span class="line"></span><br><span class="line">	// 静态是无效的</span><br><span class="line">	public static void gMethod(T t, K k)&#123;...&#125; 	// 错误</span><br><span class="line">	public static &lt;T,K&gt; void gMethod(T t, K k)&#123;...&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>例子：泛型方法-实现指定位置上的数组元素的交换</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">public &lt;T&gt; void swap(T arr[], int pos1, int pos2)&#123;</span><br><span class="line">	T tmp = arr[pos1];</span><br><span class="line">	arr[pos1] = arr[pos2]</span><br><span class="line">	arr[pos2] = tmp;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>例子：泛型方法-接收任意数组，颠倒所有元素</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">public &lt;T&gt; void reverse(T arr[])&#123;</span><br><span class="line">	int start = 0;</span><br><span class="line">	int end = arr,length-1;</span><br><span class="line">	</span><br><span class="line">	while(true)&#123;</span><br><span class="line">		if(start&gt;=end)&#123; break; &#125;</span><br><span class="line">	</span><br><span class="line">		T tmp = arr[start];</span><br><span class="line">		arr[start] = arr[end]</span><br><span class="line">		arr[end] = tmp;</span><br><span class="line">		</span><br><span class="line">		start++;</span><br><span class="line">		end--;</span><br><span class="line">	&#125;	</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>例子：泛型类</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">public class gClass&lt;T&gt;&#123;</span><br><span class="line">	private T t;</span><br><span class="line">	public void setT(T t)&#123;...&#125;</span><br><span class="line">	public T getT()&#123;...&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="XML-运用"><a href="#XML-运用" class="headerlink" title="XML 运用"></a>XML 运用</h1><ul>
+<li>描述数据</li>
+<li>程序的配置文件</li>
+</ul>
+<h2 id="XML-语法"><a href="#XML-语法" class="headerlink" title="XML 语法"></a>XML 语法</h2><h3 id="文档声明"><a href="#文档声明" class="headerlink" title="文档声明"></a>文档声明</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; ?&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="元素：标签"><a href="#元素：标签" class="headerlink" title="元素：标签"></a>元素：标签</h3><ul>
+<li>包含标签体：<a>hello</a></li>
+<li>不包含标签体：<a></a> 或者 <a/></li>
+<li>文档有且仅有一个根标签，其他都是子标签。</li>
+<li>标签体中的空格和换行都是有内容的。所以排版有时会影响到文档。<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;a&gt;hello&lt;/a&gt;</span><br><span class="line">&lt;a&gt;</span><br><span class="line">	hello</span><br><span class="line">&lt;/a&gt;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h3><p>一个标签可以有多个属性，每个属性都有自己的名称和取值。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;input name=&quot;text&quot;&gt;</span><br></pre></td></tr></table></figure>
+<p>相当于</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;input&gt;</span><br><span class="line">	&lt;name&gt;text&lt;/name&gt;</span><br><span class="line">&lt;/input&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h3><p><code>&lt;!-- 注释 --&gt;</code></p>
+<h3 id="转义字符"><a href="#转义字符" class="headerlink" title="转义字符"></a>转义字符</h3><ul>
+<li>&lt;	:	&lt;</li>
+<li><blockquote>
+<p>:	&gt;</p>
+</blockquote>
+</li>
+<li>&amp;	:	&amp;</li>
+<li>“	:	&quot;</li>
+<li>‘	:	&amp;apos;</li>
+</ul>
+<h3 id="处理指令-PI"><a href="#处理指令-PI" class="headerlink" title="处理指令-PI"></a>处理指令-PI</h3><p>指明该文档用哪个css来执行。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; ?&gt;</span><br><span class="line">&lt;?xml-stylesheet type=&quot;text/css&quot; href=&quot;xxx.css&quot;?&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="XML-约束"><a href="#XML-约束" class="headerlink" title="XML 约束"></a>XML 约束</h2><p>编写一个文档来约束另一个文档。用于框架的编写。</p>
+<h3 id="XML-DTD-（Doc-Type-Definition"><a href="#XML-DTD-（Doc-Type-Definition" class="headerlink" title="XML DTD （Doc Type Definition)"></a>XML DTD （Doc Type Definition)</h3><p>book.xml</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; ?&gt;</span><br><span class="line">&lt;!DOCTYPE shelf SYSTEM &quot;book.dtd&quot;&gt;	// 指明被谁约束，声明所有shelf内标签都要遵循dtd文档</span><br><span class="line">&lt;shelf&gt;</span><br><span class="line">	&lt;book&gt;</span><br><span class="line">		&lt;name&gt;Java..&lt;/name&gt;</span><br><span class="line">		&lt;price&gt;100.00&lt;/price&gt;</span><br><span class="line">	&lt;/book&gt;</span><br><span class="line">&lt;/shelf&gt;</span><br></pre></td></tr></table></figure>
+<p>book.dtd</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;!ELEMENT shelf(book+)&gt;		// shelf 只可以有 book 标签</span><br><span class="line">	&lt;!ELEMENT book(name,price)&gt;		// book 里包含 name 和 price 标签</span><br><span class="line">	&lt;!ELEMENT name(#PCDATA)&gt;	// 	name 标签里包含字符串</span><br><span class="line">	&lt;!ELEMENT price(#PCDATA)&gt;</span><br></pre></td></tr></table></figure>
+
+<p>引用公共文档</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE web-app PUBLIC &quot;&lt;URL&gt;&quot;&gt; // 本地文档 -&gt; SYSTEM </span><br></pre></td></tr></table></figure>
+
+<p>元素定义</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;!ELEMENT shelf(book+)&gt;		// （ ）里为元素内容</span><br><span class="line">&lt;!ELEMENT price(#PCDATA)&gt;	// （ ）里为元素类型，EMPTY，ANY</span><br><span class="line"></span><br><span class="line">&lt;!ELEMENT book(name,price)&gt;	//	name 和 price 必须依次出现</span><br><span class="line">&lt;!ELEMENT book(name|price)&gt;	//	name 和 price 任选其一</span><br><span class="line"></span><br><span class="line">&lt;!ELEMENT shelf(book+)&gt;		// 一次或多次</span><br><span class="line">&lt;!ELEMENT shelf(book？)&gt;		// 零次或一次</span><br><span class="line">&lt;!ELEMENT shelf(book*)&gt;		// 零次或多次</span><br></pre></td></tr></table></figure>
+
+<p>属性定义</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;!ATTLIST 元素名/标签名</span><br><span class="line">	属性名1 属性值类型 设置说明</span><br><span class="line">	属性名2 属性值类型 设置说明</span><br><span class="line">&gt;</span><br><span class="line"></span><br><span class="line">&lt;!ATTLIST product</span><br><span class="line">	name CDATA #REQUIRED	// 必选</span><br><span class="line">	color CDATA #IMPLIRED	// 可选</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>CDATA</li>
+<li>ENUMERATED</li>
+<li>ID</li>
+<li>ENTITY：为一段内容创建一个别名，用于引用</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; ?&gt;</span><br><span class="line">&lt;!DOCTYPE contacts[</span><br><span class="line">	&lt;!ELEMENT contacts ANY&gt;</span><br><span class="line">	&lt;!ELEMENT contact(name, email)&gt;</span><br><span class="line">	&lt;!ELEMENT name(#PCDATA)&gt;</span><br><span class="line">	&lt;!ELEMENT email(#PCDATA)&gt;</span><br><span class="line"></span><br><span class="line">	&lt;!ATTLIST contact serial_number ID #REQUIRED&gt;</span><br><span class="line">]&gt;</span><br><span class="line"></span><br><span class="line">&lt;contacts&gt;</span><br><span class="line">	&lt;contact serial_number=&quot;a1&quot;&gt;	// ID 不能数字开头</span><br><span class="line">		&lt;name&gt;ryan&lt;/name&gt;</span><br><span class="line">		&lt;email&gt;ryan@mail.com&lt;/email&gt;</span><br><span class="line">	&lt;/contact&gt;</span><br><span class="line">	&lt;contact serial_number=&quot;a2&quot;&gt;</span><br><span class="line">		&lt;name&gt;tim&lt;/name&gt;</span><br><span class="line">		&lt;email&gt;tim@mail.com&lt;/email&gt;</span><br><span class="line">	&lt;/contact&gt;</span><br><span class="line">&lt;/contacts&gt;</span><br></pre></td></tr></table></figure>
+
+<p>实体定义</p>
+<ul>
+<li>引用实体<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; ?&gt;</span><br><span class="line">&lt;!DOCTYPE book[</span><br><span class="line">	&lt;!ENTITY bookname &quot;Java Web Development&quot;</span><br><span class="line"></span><br><span class="line">	&lt;!ELEMENT book(name)&gt;</span><br><span class="line">	&lt;!ELEMENT name(#PCDATA)&gt;</span><br><span class="line">]&gt;</span><br><span class="line"></span><br><span class="line">&lt;book&gt;</span><br><span class="line">	&lt;name&gt;&amp;bookname&lt;/name&gt;</span><br><span class="line">&lt;/book&gt;</span><br></pre></td></tr></table></figure></li>
+<li>参数实体: 代码重用 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version=&quot;1.0&quot; encod ing=&quot;UTF-8&quot; ?&gt;</span><br><span class="line">&lt;!DOCTYPE contact[</span><br><span class="line">	&lt;!ENTITY % tag &quot;name,email,address&quot;</span><br><span class="line"></span><br><span class="line">	&lt;!ELEMENT contact(%tag)&gt;</span><br><span class="line">]&gt;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="XML-Schema"><a href="#XML-Schema" class="headerlink" title="XML Schema"></a>XML Schema</h3><h2 id="XML-编程（CRUD）"><a href="#XML-编程（CRUD）" class="headerlink" title="XML 编程（CRUD）"></a>XML 编程（CRUD）</h2><p>解析方式：</p>
+<ul>
+<li>dom: doc obj model</li>
+<li>sax: simple Api for xml</li>
+<li>解析开发包：Jaxp, Jdom, dom4j</li>
+</ul>
+<h3 id="dom"><a href="#dom" class="headerlink" title="dom"></a>dom</h3><ul>
+<li>xml文档解析成 element，attribute 和 text 节点(Node)对象。</li>
+<li>方便 crud</li>
+<li>占用内存大</li>
+</ul>
+<h3 id="sax"><a href="#sax" class="headerlink" title="sax"></a>sax</h3><ul>
+<li>读一行，处理一行</li>
+<li>只适合读取，不适合cud</li>
+</ul>
+<h3 id="调整jvm内存"><a href="#调整jvm内存" class="headerlink" title="调整jvm内存"></a>调整jvm内存</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">// jvm 默认占用 xxM</span><br><span class="line">byte b[] = new byte[1024*1024*1024]	// 占用1G</span><br></pre></td></tr></table></figure>
+<p>设定jvm占用100m内存：<br><code>Arguments - VM argument: -Xmx100m</code></p>
+<h3 id="Jaxp对xml解析"><a href="#Jaxp对xml解析" class="headerlink" title="Jaxp对xml解析"></a>Jaxp对xml解析</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">// 1 创建factory</span><br><span class="line">DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();</span><br><span class="line"></span><br><span class="line">// 2 得到 dom builder</span><br><span class="line">DocumentBuilder builder = factory.newDocumentInstance();</span><br><span class="line"></span><br><span class="line">// 3 解析xml文档，得到代表文档的document</span><br><span class="line">Document doc = builder.parse(&quot;src/book.xml&quot;);</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="dom-读"><a href="#dom-读" class="headerlink" title="dom 读"></a>dom 读</h3><p>XML文档例子：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;shelf&gt;</span><br><span class="line">	&lt;book name=&quot;xxx&quot;&gt;</span><br><span class="line">		&lt;price&gt;???&lt;/price&gt;</span><br><span class="line">	&lt;/book&gt;</span><br><span class="line">&lt;/shelf&gt;</span><br></pre></td></tr></table></figure>
+<p>使用dom对xml文档r</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">// 读取一个</span><br><span class="line">NodeList nodeList = doc.getElementsByTagName(&quot;price&quot;);</span><br><span class="line">Node node = nodeList.item(0);</span><br><span class="line">String content = node.getContent();</span><br><span class="line"></span><br><span class="line">// 遍历，递归，得到所有标签</span><br><span class="line">Node root = doc.getElementsByTagName(&quot;shelf&quot;).item(0);</span><br><span class="line">printAll(root);</span><br><span class="line"></span><br><span class="line">public void printAll(Node node)&#123;</span><br><span class="line">	if(node instanceof Element)&#123;</span><br><span class="line">		System.out.println(node.getNodeName());</span><br><span class="line">	&#125;</span><br><span class="line">	NodeList nodeList = node.getChildNodes();</span><br><span class="line">	for(Node tmpNode:nodeList)&#123;</span><br><span class="line">		printAll(tmpNode);</span><br><span class="line">	&#125;	</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 得到xml文档中标签属性的值</span><br><span class="line">Node bookName = doc.getElementsByTagName(&quot;book&quot;).item(0);</span><br><span class="line">// 强转</span><br><span class="line">Element bookName = doc.getElementsByTagName(&quot;book&quot;).item(0);</span><br><span class="line">bookName.getAttribute(&quot;name&quot;)</span><br></pre></td></tr></table></figure>
+
+<h3 id="dom-增"><a href="#dom-增" class="headerlink" title="dom 增"></a>dom 增</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">// 添加： &lt;price&gt;$$$&lt;/price&gt;</span><br><span class="line"></span><br><span class="line">// 创建节点</span><br><span class="line">Element price = doc.createElement(&quot;price&quot;)</span><br><span class="line">price.setTextContent(&quot;$$$&quot;);</span><br><span class="line"></span><br><span class="line">// 把节点挂到book下面</span><br><span class="line">Element book = (Element) doc.getElementsByTagName(&quot;book&quot;).item(0);</span><br><span class="line">book.appendChild(price);</span><br><span class="line"></span><br><span class="line">// 更新好内存中的 doc，需要再写回到文档中</span><br><span class="line">TransformerFactory tfFactory = TransformerFactory.newInstance();</span><br><span class="line">Transformer tf = tfFoctory.newTransformer();</span><br><span class="line">tf.transfrom(new DOMSource(doc), new StreamResult(new FileOutputStream(&quot;src/book.xml&quot;)));</span><br><span class="line"></span><br><span class="line">// 加属性 &lt;book name=&quot;xxx&quot; color=&quot;blue&quot;&gt;</span><br><span class="line">Element book = doc.getElementsByTagName(&quot;book&quot;).item(0);</span><br><span class="line">book.setAttribute(&quot;color&quot;,&quot;blue&quot;);</span><br></pre></td></tr></table></figure>
+
+<h3 id="dom-删"><a href="#dom-删" class="headerlink" title="dom 删"></a>dom 删</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">// 得到要删除的节点</span><br><span class="line">Element price = doc.getElementsByTagName(&quot;price&quot;).item(1);</span><br><span class="line"></span><br><span class="line">// 得到要删除节点的上级节点</span><br><span class="line">price.getParentNode().removeChild(price);</span><br></pre></td></tr></table></figure>
+
+<h3 id="dom-改"><a href="#dom-改" class="headerlink" title="dom 改"></a>dom 改</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">// 得到要更改的节点</span><br><span class="line">Element price = doc.getElementsByTagName(&quot;price&quot;).item(1);</span><br><span class="line"></span><br><span class="line">// 更改</span><br><span class="line">price.setTextContent(&quot;100&quot;);</span><br></pre></td></tr></table></figure>
+
+<h3 id="XML-编程实例：考生成绩管理系统"><a href="#XML-编程实例：考生成绩管理系统" class="headerlink" title="XML 编程实例：考生成绩管理系统"></a>XML 编程实例：考生成绩管理系统</h3><ul>
+<li>添加用户</li>
+<li>删除用户</li>
+<li>查询成绩</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;student id=&quot;xxx&quot;&gt;</span><br><span class="line">	&lt;name&gt;xxx&lt;/name&gt;</span><br><span class="line">	&lt;location&gt;xxx&lt;/location&gt;</span><br><span class="line">	&lt;score&gt;xxx&lt;/score&gt;  </span><br><span class="line">&lt;/student&gt;</span><br></pre></td></tr></table></figure>
+
+<p>模块设计：</p>
+<ul>
+<li>Main.java (A,B,C) - io.demo.ui</li>
+<li>StudentController.java (A,B,C) - io.demo.controller</li>
+<li>StudentDao.java (A,B,C)  - io.demo.dao </li>
+<li>传输的数据都封装在student对象里 - io.demo.bean</li>
+<li>XmlUtils (getDoc, writeToDoc) - io.demo.util</li>
+<li>exam-system.xml (数据库）</li>
+</ul>
+<p>代码 –&gt; <a target="_blank" rel="noopener" href="https://github.com/Ryanluoxu/heima-java-web-course/tree/master/xml-exam-system">xml-exam-system</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://ryanluoxu.github.io/2018/07/07/%E9%BB%91%E9%A9%AC%E6%95%99%E7%A8%8B-Java-Web-Basic/" data-id="cl4tf4gqx0033h7m05vff3b8t" data-title="黑马教程-Java Web Basic" class="article-share-link">Share</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/basic/" rel="tag">basic</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/heima/" rel="tag">heima</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/" rel="tag">java</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/tutorial/" rel="tag">tutorial</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/web/" rel="tag">web</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2018/08/09/Play-XML-with-Dom4j/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Play XML with Dom4j
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/05/21/Notes-LinuxShellScriptsCookBook/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Notes_LinuxShellScriptsCookBook</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/AWS/">AWS</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/AngularJS/">AngularJS</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/BlockChain/">BlockChain</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/CICD/">CICD</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Database/">Database</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/FrontEnd/">FrontEnd</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Git/">Git</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/JUnit/">JUnit</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java-Basic/">Java Basic</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java-Master-Course/">Java Master Course</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/JavaWeb/">JavaWeb</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Note/">Note</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/">Python</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Selenium/">Selenium</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/SpringBoot/">SpringBoot</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/algorithm/">algorithm</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/others/">others</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/">使用记录</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%B0%8F%E7%A8%8B%E5%BA%8F/">小程序</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%8C%87%E5%8D%97-Guide/">指南-Guide</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/">搭建博客</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/10/" rel="tag">10</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/AWS/" rel="tag">AWS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Abstract%EF%BC%8CAbstract-Class/" rel="tag">Abstract，Abstract Class</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/AngularJS/" rel="tag">AngularJS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Array/" rel="tag">Array</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/BlockChain/" rel="tag">BlockChain</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Bootstrap/" rel="tag">Bootstrap</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CICD/" rel="tag">CICD</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Calendar/" rel="tag">Calendar</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CheatSheet/" rel="tag">CheatSheet</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Date/" rel="tag">Date</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/DateFormat/" rel="tag">DateFormat</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ETH/" rel="tag">ETH</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/FrontEnd/" rel="tag">FrontEnd</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GC/" rel="tag">GC</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/" rel="tag">Git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GitHub-Pages/" rel="tag">GitHub Pages</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Gitment/" rel="tag">Gitment</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/" rel="tag">Hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/IO/" rel="tag">IO</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Interface/" rel="tag">Interface</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JPA/" rel="tag">JPA</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JUnit/" rel="tag">JUnit</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JVM/" rel="tag">JVM</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/" rel="tag">Java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java-300%E9%9B%86/" rel="tag">Java 300集</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/LinkedList/" rel="tag">LinkedList</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/" rel="tag">Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Login/" rel="tag">Login</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Map/" rel="tag">Map</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Maven/" rel="tag">Maven</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Next/" rel="tag">Next</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ping/" rel="tag">Ping</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PostgreSQL/" rel="tag">PostgreSQL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Postgres/" rel="tag">Postgres</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/" rel="tag">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Rest/" rel="tag">Rest</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SCP/" rel="tag">SCP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SSH/" rel="tag">SSH</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Selenium/" rel="tag">Selenium</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Servlet/" rel="tag">Servlet</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Set/" rel="tag">Set</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Smart-Contract/" rel="tag">Smart Contract</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Spring/" rel="tag">Spring</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Spring-Boot/" rel="tag">Spring Boot</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Spring-Data-JPA/" rel="tag">Spring Data JPA</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TSP/" rel="tag">TSP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/URL/" rel="tag">URL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vector/" rel="tag">Vector</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Windows/" rel="tag">Windows</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/XML/" rel="tag">XML</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/algorithm/" rel="tag">algorithm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/automation/" rel="tag">automation</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/basic/" rel="tag">basic</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/beginner/" rel="tag">beginner</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/blog/" rel="tag">blog</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/center/" rel="tag">center</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/code/" rel="tag">code</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/command/" rel="tag">command</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/copy/" rel="tag">copy</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/course/" rel="tag">course</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/database/" rel="tag">database</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/demo/" rel="tag">demo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/docker/" rel="tag">docker</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/dom4j/" rel="tag">dom4j</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/generics/" rel="tag">generics</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/" rel="tag">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github/" rel="tag">github</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/gmail-API/" rel="tag">gmail API</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hanoi/" rel="tag">hanoi</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/head/" rel="tag">head</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/heima/" rel="tag">heima</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/" rel="tag">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/image/" rel="tag">image</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/install/" rel="tag">install</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/" rel="tag">java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/lambda/" rel="tag">lambda</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/menu/" rel="tag">menu</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/migrate/" rel="tag">migrate</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/next/" rel="tag">next</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/note/" rel="tag">note</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/notes/" rel="tag">notes</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ohm/" rel="tag">ohm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/password/" rel="tag">password</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/promote/" rel="tag">promote</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/" rel="tag">python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/random/" rel="tag">random</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/script/" rel="tag">script</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/server/" rel="tag">server</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/setup/" rel="tag">setup</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sh/" rel="tag">sh</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/shell/" rel="tag">shell</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/stack/" rel="tag">stack</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/template/" rel="tag">template</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/test/" rel="tag">test</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tutorial/" rel="tag">tutorial</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ubuntu/" rel="tag">ubuntu</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/unit/" rel="tag">unit</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vi/" rel="tag">vi</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/web/" rel="tag">web</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%B8%BB%E9%A2%98%E4%BC%98%E5%8C%96/" rel="tag">主题优化</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/" rel="tag">使用记录</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%85%A5%E9%97%A8/" rel="tag">入门</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%86%85%E5%AD%98%E5%88%86%E6%9E%90/" rel="tag">内存分析</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%8D%9A%E5%AE%A2/" rel="tag">博客</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" rel="tag">学习笔记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F/" rel="tag">小程序</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BA%8F%E5%88%97%E5%8C%96/" rel="tag">序列化</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%8C%87%E5%8D%97/" rel="tag">指南</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" rel="tag">数据结构</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%A8%8B%E5%BA%8F%E5%91%98/" rel="tag">程序员</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AE%97%E6%B3%95/" rel="tag">算法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%A3%85%E9%A5%B0%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" rel="tag">装饰设计模式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AF%84%E8%AE%BA/" rel="tag">评论</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%B4%AA%E5%BF%83/" rel="tag">贪心</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%BE%85%E5%8A%A9/" rel="tag">辅助</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/10/" style="font-size: 10px;">10</a> <a href="/tags/AWS/" style="font-size: 12px;">AWS</a> <a href="/tags/Abstract%EF%BC%8CAbstract-Class/" style="font-size: 10px;">Abstract，Abstract Class</a> <a href="/tags/AngularJS/" style="font-size: 10px;">AngularJS</a> <a href="/tags/Array/" style="font-size: 10px;">Array</a> <a href="/tags/BlockChain/" style="font-size: 12px;">BlockChain</a> <a href="/tags/Bootstrap/" style="font-size: 10px;">Bootstrap</a> <a href="/tags/CICD/" style="font-size: 10px;">CICD</a> <a href="/tags/Calendar/" style="font-size: 10px;">Calendar</a> <a href="/tags/CheatSheet/" style="font-size: 10px;">CheatSheet</a> <a href="/tags/Date/" style="font-size: 10px;">Date</a> <a href="/tags/DateFormat/" style="font-size: 10px;">DateFormat</a> <a href="/tags/ETH/" style="font-size: 10px;">ETH</a> <a href="/tags/FrontEnd/" style="font-size: 10px;">FrontEnd</a> <a href="/tags/GC/" style="font-size: 10px;">GC</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/GitHub-Pages/" style="font-size: 10px;">GitHub Pages</a> <a href="/tags/Gitment/" style="font-size: 10px;">Gitment</a> <a href="/tags/Hexo/" style="font-size: 14px;">Hexo</a> <a href="/tags/IO/" style="font-size: 10px;">IO</a> <a href="/tags/Interface/" style="font-size: 10px;">Interface</a> <a href="/tags/JPA/" style="font-size: 10px;">JPA</a> <a href="/tags/JUnit/" style="font-size: 10px;">JUnit</a> <a href="/tags/JVM/" style="font-size: 10px;">JVM</a> <a href="/tags/Java/" style="font-size: 20px;">Java</a> <a href="/tags/Java-300%E9%9B%86/" style="font-size: 16px;">Java 300集</a> <a href="/tags/LinkedList/" style="font-size: 10px;">LinkedList</a> <a href="/tags/Linux/" style="font-size: 18px;">Linux</a> <a href="/tags/Login/" style="font-size: 10px;">Login</a> <a href="/tags/Map/" style="font-size: 10px;">Map</a> <a href="/tags/Maven/" style="font-size: 10px;">Maven</a> <a href="/tags/Next/" style="font-size: 12px;">Next</a> <a href="/tags/Ping/" style="font-size: 10px;">Ping</a> <a href="/tags/PostgreSQL/" style="font-size: 12px;">PostgreSQL</a> <a href="/tags/Postgres/" style="font-size: 10px;">Postgres</a> <a href="/tags/Python/" style="font-size: 10px;">Python</a> <a href="/tags/Rest/" style="font-size: 12px;">Rest</a> <a href="/tags/SCP/" style="font-size: 10px;">SCP</a> <a href="/tags/SSH/" style="font-size: 10px;">SSH</a> <a href="/tags/Selenium/" style="font-size: 10px;">Selenium</a> <a href="/tags/Servlet/" style="font-size: 10px;">Servlet</a> <a href="/tags/Set/" style="font-size: 10px;">Set</a> <a href="/tags/Smart-Contract/" style="font-size: 10px;">Smart Contract</a> <a href="/tags/Spring/" style="font-size: 12px;">Spring</a> <a href="/tags/Spring-Boot/" style="font-size: 12px;">Spring Boot</a> <a href="/tags/Spring-Data-JPA/" style="font-size: 10px;">Spring Data JPA</a> <a href="/tags/TSP/" style="font-size: 10px;">TSP</a> <a href="/tags/URL/" style="font-size: 10px;">URL</a> <a href="/tags/Vector/" style="font-size: 10px;">Vector</a> <a href="/tags/Windows/" style="font-size: 10px;">Windows</a> <a href="/tags/XML/" style="font-size: 10px;">XML</a> <a href="/tags/algorithm/" style="font-size: 12px;">algorithm</a> <a href="/tags/automation/" style="font-size: 10px;">automation</a> <a href="/tags/basic/" style="font-size: 12px;">basic</a> <a href="/tags/beginner/" style="font-size: 14px;">beginner</a> <a href="/tags/blog/" style="font-size: 10px;">blog</a> <a href="/tags/center/" style="font-size: 10px;">center</a> <a href="/tags/code/" style="font-size: 10px;">code</a> <a href="/tags/command/" style="font-size: 12px;">command</a> <a href="/tags/copy/" style="font-size: 10px;">copy</a> <a href="/tags/course/" style="font-size: 16px;">course</a> <a href="/tags/database/" style="font-size: 10px;">database</a> <a href="/tags/demo/" style="font-size: 12px;">demo</a> <a href="/tags/docker/" style="font-size: 10px;">docker</a> <a href="/tags/dom4j/" style="font-size: 10px;">dom4j</a> <a href="/tags/generics/" style="font-size: 10px;">generics</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/github/" style="font-size: 10px;">github</a> <a href="/tags/gmail-API/" style="font-size: 10px;">gmail API</a> <a href="/tags/hanoi/" style="font-size: 10px;">hanoi</a> <a href="/tags/head/" style="font-size: 10px;">head</a> <a href="/tags/heima/" style="font-size: 10px;">heima</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/image/" style="font-size: 10px;">image</a> <a href="/tags/install/" style="font-size: 10px;">install</a> <a href="/tags/java/" style="font-size: 10px;">java</a> <a href="/tags/lambda/" style="font-size: 10px;">lambda</a> <a href="/tags/menu/" style="font-size: 10px;">menu</a> <a href="/tags/migrate/" style="font-size: 10px;">migrate</a> <a href="/tags/next/" style="font-size: 10px;">next</a> <a href="/tags/note/" style="font-size: 16px;">note</a> <a href="/tags/notes/" style="font-size: 16px;">notes</a> <a href="/tags/ohm/" style="font-size: 10px;">ohm</a> <a href="/tags/password/" style="font-size: 10px;">password</a> <a href="/tags/promote/" style="font-size: 10px;">promote</a> <a href="/tags/python/" style="font-size: 12px;">python</a> <a href="/tags/random/" style="font-size: 10px;">random</a> <a href="/tags/script/" style="font-size: 12px;">script</a> <a href="/tags/server/" style="font-size: 10px;">server</a> <a href="/tags/setup/" style="font-size: 10px;">setup</a> <a href="/tags/sh/" style="font-size: 10px;">sh</a> <a href="/tags/shell/" style="font-size: 12px;">shell</a> <a href="/tags/stack/" style="font-size: 10px;">stack</a> <a href="/tags/template/" style="font-size: 10px;">template</a> <a href="/tags/test/" style="font-size: 10px;">test</a> <a href="/tags/tutorial/" style="font-size: 10px;">tutorial</a> <a href="/tags/ubuntu/" style="font-size: 10px;">ubuntu</a> <a href="/tags/unit/" style="font-size: 10px;">unit</a> <a href="/tags/vi/" style="font-size: 10px;">vi</a> <a href="/tags/web/" style="font-size: 10px;">web</a> <a href="/tags/%E4%B8%BB%E9%A2%98%E4%BC%98%E5%8C%96/" style="font-size: 12px;">主题优化</a> <a href="/tags/%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/" style="font-size: 10px;">使用记录</a> <a href="/tags/%E5%85%A5%E9%97%A8/" style="font-size: 10px;">入门</a> <a href="/tags/%E5%86%85%E5%AD%98%E5%88%86%E6%9E%90/" style="font-size: 10px;">内存分析</a> <a href="/tags/%E5%8D%9A%E5%AE%A2/" style="font-size: 14px;">博客</a> <a href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" style="font-size: 10px;">学习笔记</a> <a href="/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F/" style="font-size: 10px;">小程序</a> <a href="/tags/%E5%BA%8F%E5%88%97%E5%8C%96/" style="font-size: 10px;">序列化</a> <a href="/tags/%E6%8C%87%E5%8D%97/" style="font-size: 10px;">指南</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" style="font-size: 10px;">数据结构</a> <a href="/tags/%E7%A8%8B%E5%BA%8F%E5%91%98/" style="font-size: 10px;">程序员</a> <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 10px;">算法</a> <a href="/tags/%E8%A3%85%E9%A5%B0%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" style="font-size: 10px;">装饰设计模式</a> <a href="/tags/%E8%AF%84%E8%AE%BA/" style="font-size: 10px;">评论</a> <a href="/tags/%E8%B4%AA%E5%BF%83/" style="font-size: 10px;">贪心</a> <a href="/tags/%E8%BE%85%E5%8A%A9/" style="font-size: 10px;">辅助</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">June 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/05/">May 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">July 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">February 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">November 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">July 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">May 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">February 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">January 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">December 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">November 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">April 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2020/06/06/TSP%E9%97%AE%E9%A2%98-%E8%B4%AA%E5%BF%83%E7%AE%97%E6%B3%95-Python%E5%AE%9E%E7%8E%B0-%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90/">TSP问题-贪心算法-Python实现-算法分析</a>
+          </li>
+        
+          <li>
+            <a href="/2020/06/04/Hanoi-Tower-%E6%B1%89%E8%AF%BA%E5%A1%94-Python-%E7%A4%BA%E4%BE%8B/">Hanoi Tower 汉诺塔 - Python 示例</a>
+          </li>
+        
+          <li>
+            <a href="/2020/05/18/AWS-Lambda-Pyhton-GMail-API/">AWS Lambda - Pyhton - GMail API</a>
+          </li>
+        
+          <li>
+            <a href="/2019/07/14/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%8401/">数据结构01</a>
+          </li>
+        
+          <li>
+            <a href="/2019/04/14/IO-Stream/">IO Stream</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2022 Ryan Luo<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
